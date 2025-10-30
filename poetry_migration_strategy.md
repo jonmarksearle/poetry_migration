@@ -12,76 +12,99 @@
 - Capture a repeatable process through automation so future repos can be converted without reinventing the steps.
 
 ## 3. Strategy
-1. **Inventory & Tiering**:
-   - Tier 1: simple apps/libs (no extras, minimal dev deps).
-   - Tier 2: extras/dev groups/dev tooling (FastAPI demos, lint/test stacks).
-   - Tier 3: projects with Poetry-only plugins or custom build steps—handle individually.
+1. **Repository Analysis**:
+   - Scan for duplicate dependencies
+   - Validate version constraints
+   - Check for module name conflicts
+   - Identify missing type stubs
+   - Detect async code usage
+   - Check type annotation usage
+   - Analyze line lengths
+   - Determine Python version requirements
 
-2. **Automation**:
-   - Use `migrate_repo.py` script for consistent conversions
-   - Script handles:
-     - Metadata conversion from Poetry to PEP621
-     - Version constraint normalization
-     - Python version preservation
-     - Existing dev dependency preservation
-     - Standard dev tooling injection
-     - Dependency auditing with deptry
-     - Code quality checks (ruff, mypy)
-     - Tool-specific configuration on failure
-     - Git commits and manifest updates
+2. **Smart Tool Configuration**:
+   - Configure mypy based on code analysis:
+     - Strict mode for typed code
+     - Async checks for async code
+     - Module exclusions for before/after examples
+   - Configure ruff based on code style:
+     - Line length limits
+     - Directory exclusions
+   - Add missing type stubs automatically
 
-3. **Tool Configuration**:
-   - Preserve Python version from original pyproject.toml
-   - Keep existing dev dependencies while adding standard tools
-   - Auto-configure mypy on initial failure:
-     - Add exclude patterns for before/ directories
-     - Add missing type stubs to dev dependencies
-   - Auto-configure ruff on initial failure:
-     - Set line length
-     - Add exclude patterns for before/ directories
+3. **Dependency Management**:
+   - Normalize version constraints
+   - Remove duplicate dependencies
+   - Add missing type stub packages
+   - Preserve existing dev dependencies
+   - Add standard dev tools
 
-4. **Error Handling**:
-   - No rollback on failure - stop and log
-   - Tool failures trigger configuration updates
-   - Continue to next repo after logging errors
+4. **Error Prevention**:
+   - Pre-migration analysis to catch issues
+   - Automatic tool configuration
+   - Version constraint normalization
+   - Type stub detection and installation
 
 ## 4. Migration Script
 
-The migration process is automated through `migrate_repo.py` which:
+The migration process is automated through `migrate_repo_v2.py` which:
 
-1. Detects already migrated repositories
-2. Converts pyproject.toml from Poetry to UV format:
-   - Preserves metadata and Python version
-   - Converts version constraints
-   - Preserves existing dev dependencies
-   - Adds standard dev tools
-   - Handles extras and groups
-3. Creates .python-version file
-4. Runs all checks with auto-configuration
-5. Commits changes if successful
-6. Updates the manifest
+1. **Analysis Phase**:
+   ```python
+   analysis = analyze_repo(repo_path)
+   # Checks for:
+   # - Duplicate dependencies
+   # - Invalid versions
+   # - Module conflicts
+   # - Missing type stubs
+   # - Async code
+   # - Type annotations
+   # - Line lengths
+   ```
 
-Usage:
-```bash
-cd /home/jon/Work/poetry_migration
-python migrate_repo.py /path/to/repo
-```
+2. **Tool Configuration**:
+   ```python
+   tool_config = configure_tools(repo_path, analysis)
+   # Configures:
+   # - mypy settings based on code
+   # - ruff settings based on style
+   # - pytest settings (standard)
+   ```
+
+3. **Dependency Management**:
+   ```python
+   deps = normalize_dependencies(poetry_config, analysis)
+   # - Normalizes version constraints
+   # - Adds missing type stubs
+   # - Removes duplicates
+   # - Preserves existing dev deps
+   ```
+
+4. **Migration Execution**:
+   ```python
+   success = migrate_repo(repo_path)
+   # - Converts pyproject.toml
+   # - Creates .python-version
+   # - Runs all checks
+   # - Commits changes
+   ```
 
 ## 5. Success Criteria
 
 A repository is considered successfully migrated when:
-1. pyproject.toml uses PEP621 format
-2. All dependencies are properly declared
-3. Standard dev tools are configured
-4. All checks pass:
+1. Pre-migration analysis shows no critical issues
+2. pyproject.toml uses PEP621 format
+3. All dependencies are properly declared
+4. Tools are configured based on code analysis
+5. All checks pass:
    - `uv sync --refresh`
    - `uv sync --group dev`
    - `uv run deptry .`
    - `uv run ruff check .`
    - `uv run mypy .`
    - `uv run pytest`
-5. Changes are committed
-6. Manifest is updated
+6. Changes are committed
+7. Manifest is updated
 
 ## 6. Background Reading
 - UV project documentation: <https://docs.astral.sh/uv/>

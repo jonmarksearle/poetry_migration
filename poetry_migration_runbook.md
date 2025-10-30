@@ -40,68 +40,81 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 
 ## 2. Migration Process
 
-The migration is handled by the `migrate_repo.py` script:
+The migration is handled by the `migrate_repo_v2.py` script:
 
 ```bash
 cd /home/jon/Work/poetry_migration
-python migrate_repo.py /path/to/repo
+python migrate_repo_v2.py /path/to/repo
 ```
 
 The script will:
-1. Check if repository is already migrated
-2. Convert pyproject.toml to PEP621 format:
+1. Analyze repository:
+   - Find duplicate dependencies
+   - Validate version constraints
+   - Check for module conflicts
+   - Identify missing type stubs
+   - Detect async code and type annotations
+2. Configure tools based on analysis:
+   - mypy settings for async/typed code
+   - ruff settings for line length/excludes
+   - Add missing type stubs
+3. Convert pyproject.toml:
    - Preserve Python version
+   - Normalize version constraints
    - Keep existing dev dependencies
    - Add standard dev tools
-3. Run dependency audit and code checks
-4. Auto-configure tools on failure:
-   - Add mypy excludes and type stubs
-   - Configure ruff line length and excludes
-5. Commit changes if successful
-6. Update manifest
+4. Run checks and commit changes
 
 ## 3. Common Issues & Solutions
 
-1. **Duplicate Module Names**
-   - Issue: mypy errors with "Duplicate module named X"
-   - Solution: Auto-configured mypy excludes for before/ directory
+1. **Duplicate Dependencies**
+   - Issue: Same package in multiple dependency groups
+   - Solution: Auto-detected and deduplicated
 
-2. **Missing Type Stubs**
-   - Issue: mypy errors about missing stubs
-   - Solution: Auto-added to dev dependencies
+2. **Invalid Version Constraints**
+   - Issue: Post-release versions, malformed constraints
+   - Solution: Normalized to PEP 440 format
 
-3. **Flat Directory Layout**
-   - Issue: mypy can't find .py files
-   - Solution: Script explicitly lists Python files
+3. **Module Conflicts**
+   - Issue: Same module name in before/after dirs
+   - Solution: Auto-configured tool exclusions
 
-4. **Tool Configuration**
-   - Issue: Tool-specific failures
-   - Solution: Auto-configured on first failure
+4. **Missing Type Stubs**
+   - Issue: Imports without type stubs
+   - Solution: Auto-detected and added to dev deps
 
-5. **Version Constraints**
-   - Issue: Invalid version specifiers
-   - Solution: Normalize to PEP 440 format
+5. **Tool Configuration**
+   - Issue: Generic tool settings
+   - Solution: Configured based on code analysis
 
 ## 4. Commit Protocol
 
 The script handles commits automatically:
 1. Stages pyproject.toml, .python-version, uv.lock
-2. Uses standard commit message: "chore: migrate from poetry to uv"
+2. Generates commit message with analysis details
 3. Updates manifest with migration status
 
 ## 5. Edge Cases
 
 1. **Before/After Examples**
-   - Auto-exclude before/ directory from mypy and ruff
-   - Only check after/ directory for type hints
+   - Auto-detected through module conflict analysis
+   - Tool configurations added automatically
 
 2. **Multiple Python Versions**
-   - Preserve original version from pyproject.toml
-   - Create matching .python-version file
+   - Preserved from original pyproject.toml
+   - Creates matching .python-version file
 
 3. **Custom Dev Tools**
-   - Preserve existing dev dependencies
-   - Add standard tools (pytest, ruff, mypy, deptry)
+   - Preserved during migration
+   - Standard tools added if missing
+
+4. **Async Code**
+   - Detected through AST analysis
+   - mypy configured appropriately
+
+5. **Type Annotations**
+   - Usage detected automatically
+   - Strict mypy mode enabled when found
 
 ## 6. Read-Up Before You Start
 - UV project documentation: <https://docs.astral.sh/uv/>
@@ -110,12 +123,12 @@ The script handles commits automatically:
 - Deptry documentation: <https://github.com/fpgmaas/deptry>
 
 ## 7. Change Log
-- **2025-10-30** – Added auto-configuration for mypy and ruff
-- **2025-10-30** – Added Python version preservation
-- **2025-10-30** – Added existing dev dependency preservation
-- **2025-10-30** – Updated status dashboard with all migrated repositories
-- **2025-10-30** – Fixed version constraint handling
-- **2025-10-30** – Fixed duplicate pytest entries
+- **2025-10-30** – Added pre-migration analysis
+- **2025-10-30** – Added smart tool configuration
+- **2025-10-30** – Added dependency normalization
+- **2025-10-30** – Added type stub detection
+- **2025-10-30** – Added async code detection
+- **2025-10-30** – Updated status dashboard
 
 ---
 *Last updated: 2025-10-30*
