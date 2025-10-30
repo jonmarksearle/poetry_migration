@@ -13,7 +13,6 @@
 [funclass23] mypy success after code fixes: 2025-10-30T14:27:41+11:00
 [funclass23] pytest success after smoke test: 2025-10-30T14:27:45+11:00
 [shellroast_after] migration started: 2025-10-30T14:40:51+11:00
-warning: `VIRTUAL_ENV=/home/jon/Work/Slalom/pdfcompact/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
 [shellroast_after] mypy failed
 [shellroast_after] pytest failed
 [shellroast_after] migration complete: 2025-10-30T14:40:55+11:00

@@ -98,5 +98,3 @@ uv_lock_projects.txt
 Next steps:
 1. Review the migrated files
 2. Update any scripts that reference old doc paths
-3. Remove the copy file: rm '/home/jon/Work/migratingPoetryReposToUV-reflactions-and-suggestions copy.md'
-4. Consider setting up a git remote if needed
