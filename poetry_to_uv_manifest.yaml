@@ -1,0 +1,216 @@
+version: 2025-10-30
+repos:
+  - path: AjanCodesExamples/2023/apitesting
+    tier: tier1
+    wave: 0
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv; dev group includes httpx."
+  - path: AjanCodesExamples/2023/classguide
+    tier: tier1
+    wave: 0
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Added smoke test; removed unused SMTP var."
+  - path: AjanCodesExamples/2023/doc
+    tier: tier1
+    wave: 0
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Documented license as text; added smoke test."
+  - path: AjanCodesExamples/2023/funclass
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Added type annotation for Counter and smoke test; mypy runs against src/*."
+  - path: AjanCodesExamples/2023/shellroast/after
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Typed algorithms, added conftest path helper and smoke test; pytest green."
+  - path: AjanCodesExamples/2024/clean_code/after
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Slugged project name, added python-dotenv + dev tooling, smoke tests ensure orchestration."
+  - path: AjanCodesExamples/2024/clean_code/before
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Slugged project name, added dev toolchain + stubs, smoke test stubs invoices module."
+  - path: AjanCodesExamples/2024/func_design
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Added dev tooling, 3.12 pin, smoke tests covering generics/options helpers."
+  - path: AjanCodesExamples/2024/func
+    tier: tier1
+    wave: 1
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Slugged project name, added script entry, dev tooling, smoke tests via importlib." 
+  - path: AjanCodesExamples/2024/funky/1_oo
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/funky/2_functional
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/funky/3_functional
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/funky/4_functional
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/gil
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/pydantic_refresh
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/python15
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/python_cli/notes
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/custom_exceptions
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/dependency_injection
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/fail_fast
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/fastapi_custom_exceptions/skypulse
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/generics
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/invariant
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/jinja2
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/openai
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/poetry_tips
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/regex
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/storing_credentials
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/tuesday_tips/testing_async
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2024/weird_things
+    tier: tier1
+    wave: 1
+    status: pending
+  - path: AjanCodesExamples/2023/fastapi-router/api
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2023/orm
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2023/pandera
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2023/poetry/app
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/apidesign
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/asyncio_dive
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/badoo
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/burn
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/dependency_injection
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/golroast/after
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/rate_limiting
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/repository
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/sqlalchemy
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/streamlit
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/uncommon_db
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2024/unit_of_work
+    tier: tier2
+    wave: 2
+    status: pending
+  - path: AjanCodesExamples/2023/langchain
+    tier: tier3
+    wave: 3
+    status: pending
+  - path: AjanCodesExamples/2023/money
+    tier: tier3
+    wave: 3
+    status: pending
+  - path: AjanCodesExamples/2024/build_deploy_host_backend/skypulse
+    tier: tier3
+    wave: 3
+    status: pending

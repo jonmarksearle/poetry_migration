@@ -1,0 +1,3704 @@
+<frozen runpy>:128: RuntimeWarning: 'web.cli' found in sys.modules after import of package 'web', but prior to execution of 'web.cli'; this may result in unpredictable behaviour
+Error: failed to fetch 'https://stackoverflow.com/questions/79118841/how-can-i-migrate-from-poetry-to-uv-package-manager': HTTP Error 403: Forbidden
+Error: failed to fetch 'https://medium.com/totalenergies-digital-factory/migrate-your-poetry-project-to-uv-b2c829b70cd9': HTTP Error 403: Forbidden
+URL: https://github.com/mkniewallner/migrate-to-uv
+   #[1]GitHub
+
+   [2]Skip to content
+
+Navigation Menu
+
+   (BUTTON) Toggle navigation
+
+   (BUTTON)
+   [3]Sign in
+   (BUTTON) Appearance settings
+
+     * (BUTTON) Platform
+          + [4]GitHub Copilot
+            Write better code with AI
+          + [5]GitHub Spark New
+            Build and deploy intelligent apps
+          + [6]GitHub Models New
+            Manage and compare prompts
+          + [7]GitHub Advanced Security
+            Find and fix vulnerabilities
+          + [8]Actions
+            Automate any workflow
+          + [9]Codespaces
+            Instant dev environments
+          + [10]Issues
+            Plan and track work
+          + [11]Code Review
+            Manage code changes
+          + [12]Discussions
+            Collaborate outside of code
+          + [13]Code Search
+            Find more, search less
+       Explore
+          + [14]Why GitHub
+          + [15]Documentation
+          + [16]GitHub Skills
+          + [17]Blog
+       Integrations
+          + [18]GitHub Marketplace
+          + [19]MCP Registry
+       [20]View all features
+     * (BUTTON) Solutions
+       By company size
+          + [21]Enterprises
+          + [22]Small and medium teams
+          + [23]Startups
+          + [24]Nonprofits
+       By use case
+          + [25]App Modernization
+          + [26]DevSecOps
+          + [27]DevOps
+          + [28]CI/CD
+          + [29]View all use cases
+       By industry
+          + [30]Healthcare
+          + [31]Financial services
+          + [32]Manufacturing
+          + [33]Government
+          + [34]View all industries
+       [35]View all solutions
+     * (BUTTON) Resources
+       Topics
+          + [36]AI
+          + [37]DevOps
+          + [38]Security
+          + [39]Software Development
+          + [40]View all
+       Explore
+          + [41]Learning Pathways
+          + [42]Events & Webinars
+          + [43]Ebooks & Whitepapers
+          + [44]Customer Stories
+          + [45]Partners
+          + [46]Executive Insights
+     * (BUTTON) Open Source
+          + [47]GitHub Sponsors
+            Fund open source developers
+          + [48]The ReadME Project
+            GitHub community articles
+       Repositories
+          + [49]Topics
+          + [50]Trending
+          + [51]Collections
+     * (BUTTON) Enterprise
+          + [52]Enterprise platform
+            AI-powered developer platform
+       Available add-ons
+          + [53]GitHub Advanced Security
+            Enterprise-grade security features
+          + [54]Copilot for business
+            Enterprise-grade AI features
+          + [55]Premium Support
+            Enterprise-grade 24/7 support
+     * [56]Pricing
+
+   (BUTTON)
+   Search or jump to...
+
+Search code, repositories, users, issues, pull requests...
+
+   Search
+   ____________________
+   Clear (BUTTON)
+
+   [57]Search syntax tips
+
+Provide feedback
+
+   (BUTTON)
+
+   We read every piece of feedback, and take your input very seriously.
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   [ ] Include my email address so I can be contacted
+   (BUTTON) Cancel (BUTTON) Submit feedback
+
+Saved searches
+
+Use saved searches to filter your results more quickly
+
+   (BUTTON)
+   Name ____________________
+   Query ____________________
+
+   To see all available qualifiers, see our [58]documentation.
+   (BUTTON) Cancel (BUTTON) Create saved search
+
+   [59]Sign in
+
+   [60]Sign up
+
+   (BUTTON) Appearance settings
+
+   (BUTTON) Resetting focus
+
+   You signed in with another tab or window. [61]Reload to refresh your
+   session. You signed out in another tab or window. [62]Reload to refresh
+   your session. You switched accounts on another tab or window.
+   [63]Reload to refresh your session. (BUTTON) Dismiss alert
+
+   (BUTTON)
+   {{ message }}
+
+   [64]mkniewallner / [65]migrate-to-uv Public
+     *
+
+Uh oh!
+       There was an error while loading. [66]Please reload this page.
+     * (BUTTON) Watch
+       Couldn't load subscription status.  (BUTTON) Retry
+
+Uh oh!
+       There was an error while loading. [67]Please reload this page.
+     * [68]Fork 9
+     * [69]Star 908
+
+   Migrate a project from Poetry/Pipenv/pip-tools/pip to uv package
+   manager
+   [70]mkniewallner.github.io/migrate-to-uv/
+
+License
+
+   [71]MIT license
+   [72]908 stars [73]9 forks [74]Branches [75]Tags [76]Activity
+   [77]Star
+   (BUTTON) Watch
+
+   Couldn't load subscription status. (BUTTON) Retry
+
+Uh oh!
+
+   There was an error while loading. [78]Please reload this page.
+
+     * [79]Code
+     * [80]Issues 17
+     * [81]Pull requests 3
+     * [82]Discussions
+     * [83]Actions
+     * [84]Security
+
+Uh oh!
+       There was an error while loading. [85]Please reload this page.
+     * [86]Insights
+
+   (BUTTON) Additional navigation options
+     * [87]Code
+     * [88]Issues
+     * [89]Pull requests
+     * [90]Discussions
+     * [91]Actions
+     * [92]Security
+     * [93]Insights
+
+mkniewallner/migrate-to-uv
+
+   (BUTTON)
+    main
+   (BUTTON)
+   [94]Branches[95]Tags
+   ____________________
+   (BUTTON) Go to file
+   (BUTTON) Code
+   (BUTTON) Open more actions menu
+   (BUTTON) (BUTTON)
+
+Folders and files
+
+               Name            Name
+   Last commit message
+         Last commit date
+
+Latest commit
+
+
+History
+
+   [96]417 Commits
+   [97].github
+   [98].github
+
+
+   [99]docs
+   [100]docs
+
+
+   [101]scripts
+   [102]scripts
+
+
+   [103]src
+   [104]src
+
+
+   [105]tests
+   [106]tests
+
+
+   [107].editorconfig
+   [108].editorconfig
+
+
+   [109].gitignore
+   [110].gitignore
+
+
+   [111].pre-commit-config.yaml
+   [112].pre-commit-config.yaml
+
+
+   [113]CHANGELOG.md
+   [114]CHANGELOG.md
+
+
+   [115]CONTRIBUTING.md
+   [116]CONTRIBUTING.md
+
+
+   [117]Cargo.lock
+   [118]Cargo.lock
+
+
+   [119]Cargo.toml
+   [120]Cargo.toml
+
+
+   [121]LICENSE
+   [122]LICENSE
+
+
+   [123]Makefile
+   [124]Makefile
+
+
+   [125]README.md
+   [126]README.md
+
+
+   [127]mkdocs.yml
+   [128]mkdocs.yml
+
+
+   [129]pyproject.toml
+   [130]pyproject.toml
+
+
+   [131]rust-toolchain.toml
+   [132]rust-toolchain.toml
+
+
+   [133]uv.lock
+   [134]uv.lock
+
+
+   (BUTTON) View all files
+
+Repository files navigation
+
+     * [135]README
+     * [136]Contributing
+     * [137]MIT license
+
+   (BUTTON)
+
+migrate-to-uv
+
+   [138]PyPI [139]License [140]Supported Python versions
+
+   migrate-to-uv migrates a project to [141]uv from another package
+   manager.
+
+Usage
+
+# With uv
+uvx migrate-to-uv
+
+# With pipx
+pipx run migrate-to-uv
+
+Supported package managers
+
+   The following package managers are supported:
+     * [142]Poetry (including projects using [143]PEP 621 in Poetry 2.0+)
+     * [144]Pipenv
+     * [145]pip-tools
+     * [146]pip
+
+   More package managers (e.g., [147]setuptools) could be implemented in
+   the future.
+
+Features
+
+   migrate-to-uv converts most existing metadata from supported package
+   managers when migrating to uv, including:
+     * [148]Project metadata (name, version, authors, ...)
+     * [149]Dependencies and optional dependencies
+     * [150]Dependency groups
+     * [151]Dependency sources (index, git, URL, path)
+     * [152]Dependency markers
+     * [153]Entry points
+
+   Version definitions set for dependencies are also preserved, and
+   converted to their equivalent [154]PEP 440 for package managers that
+   use their own syntax (for instance Poetry's [155]caret syntax).
+
+   At the end of the migration, migrate-to-uv also generates uv.lock file
+   with uv lock command to lock dependencies, and keeps dependencies (both
+   direct and transitive) to the exact same versions they were locked to
+   with the previous package manager, if a lock file was found.
+
+About
+
+   Migrate a project from Poetry/Pipenv/pip-tools/pip to uv package
+   manager
+   [156]mkniewallner.github.io/migrate-to-uv/
+
+Resources
+
+   [157]Readme
+
+License
+
+   [158]MIT license
+
+Contributing
+
+   [159]Contributing
+
+Uh oh!
+
+   There was an error while loading. [160]Please reload this page.
+   [161]Activity
+
+Stars
+
+   [162]908 stars
+
+Watchers
+
+   [163]3 watching
+
+Forks
+
+   [164]9 forks
+   [165]Report repository
+
+[166]Releases 13
+
+   [167]
+   0.7.3 Latest
+   Jun 6, 2025
+   [168]+ 12 releases
+
+Sponsor this project
+
+
+   (BUTTON) Sponsor
+
+Uh oh!
+
+   There was an error while loading. [169]Please reload this page.
+   [170]Learn more about GitHub Sponsors
+
+Uh oh!
+
+   There was an error while loading. [171]Please reload this page.
+
+[172]Contributors 4
+
+     * [173]@renovate[bot] [174]renovate[bot]
+     * [175]@mkniewallner [176]mkniewallner Mathieu Kniewallner
+     * [177]@crockeo [178]crockeo Crockeo
+     * [179]@MarkusSagen [180]MarkusSagen Markus Sagen
+
+Languages
+
+     * [181]Rust 99.7%
+     * Other 0.3%
+
+Footer
+
+   © 2025 GitHub, Inc.
+
+Footer navigation
+
+     * [182]Terms
+     * [183]Privacy
+     * [184]Security
+     * [185]Status
+     * [186]Community
+     * [187]Docs
+     * [188]Contact
+     * (BUTTON) Manage cookies
+     * (BUTTON) Do not share my personal information
+
+   (BUTTON) You can’t perform that action at this time.
+
+   (BUTTON)
+
+References
+
+   Visible links:
+   1. file:///opensearch.xml
+   2. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#start-of-content
+   3. file:///login?return_to=https://github.com/mkniewallner/migrate-to-uv
+   4. https://github.com/features/copilot
+   5. https://github.com/features/spark
+   6. https://github.com/features/models
+   7. https://github.com/security/advanced-security
+   8. https://github.com/features/actions
+   9. https://github.com/features/codespaces
+  10. https://github.com/features/issues
+  11. https://github.com/features/code-review
+  12. https://github.com/features/discussions
+  13. https://github.com/features/code-search
+  14. https://github.com/why-github
+  15. https://docs.github.com/
+  16. https://skills.github.com/
+  17. https://github.blog/
+  18. https://github.com/marketplace
+  19. https://github.com/mcp
+  20. https://github.com/features
+  21. https://github.com/enterprise
+  22. https://github.com/team
+  23. https://github.com/enterprise/startups
+  24. file:///solutions/industry/nonprofits
+  25. file:///solutions/use-case/app-modernization
+  26. file:///solutions/use-case/devsecops
+  27. file:///solutions/use-case/devops
+  28. file:///solutions/use-case/ci-cd
+  29. file:///solutions/use-case
+  30. file:///solutions/industry/healthcare
+  31. file:///solutions/industry/financial-services
+  32. file:///solutions/industry/manufacturing
+  33. file:///solutions/industry/government
+  34. file:///solutions/industry
+  35. file:///solutions
+  36. file:///resources/articles?topic=ai
+  37. file:///resources/articles?topic=devops
+  38. file:///resources/articles?topic=security
+  39. file:///resources/articles?topic=software-development
+  40. file:///resources/articles
+  41. https://resources.github.com/learn/pathways
+  42. https://github.com/resources/events
+  43. https://github.com/resources/whitepapers
+  44. https://github.com/customer-stories
+  45. https://github.com/partners
+  46. https://github.com/solutions/executive-insights
+  47. file:///sponsors
+  48. https://github.com/readme
+  49. https://github.com/topics
+  50. https://github.com/trending
+  51. https://github.com/collections
+  52. file:///enterprise
+  53. https://github.com/security/advanced-security
+  54. file:///features/copilot/copilot-business
+  55. file:///premium-support
+  56. https://github.com/pricing
+  57. https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax
+  58. https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax
+  59. file:///login?return_to=https://github.com/mkniewallner/migrate-to-uv
+  60. file:///signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=/<user-name>/<repo-name>&source=header-repo&source_repo=mkniewallner/migrate-to-uv
+  61. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  62. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  63. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  64. file:///mkniewallner
+  65. file:///mkniewallner/migrate-to-uv
+  66. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  67. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  68. file:///login?return_to=/mkniewallner/migrate-to-uv
+  69. file:///login?return_to=/mkniewallner/migrate-to-uv
+  70. https://mkniewallner.github.io/migrate-to-uv/
+  71. file:///mkniewallner/migrate-to-uv/blob/main/LICENSE
+  72. file:///mkniewallner/migrate-to-uv/stargazers
+  73. file:///mkniewallner/migrate-to-uv/forks
+  74. file:///mkniewallner/migrate-to-uv/branches
+  75. file:///mkniewallner/migrate-to-uv/tags
+  76. file:///mkniewallner/migrate-to-uv/activity
+  77. file:///login?return_to=/mkniewallner/migrate-to-uv
+  78. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  79. file:///mkniewallner/migrate-to-uv
+  80. file:///mkniewallner/migrate-to-uv/issues
+  81. file:///mkniewallner/migrate-to-uv/pulls
+  82. file:///mkniewallner/migrate-to-uv/discussions
+  83. file:///mkniewallner/migrate-to-uv/actions
+  84. file:///mkniewallner/migrate-to-uv/security
+  85. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+  86. file:///mkniewallner/migrate-to-uv/pulse
+  87. file:///mkniewallner/migrate-to-uv
+  88. file:///mkniewallner/migrate-to-uv/issues
+  89. file:///mkniewallner/migrate-to-uv/pulls
+  90. file:///mkniewallner/migrate-to-uv/discussions
+  91. file:///mkniewallner/migrate-to-uv/actions
+  92. file:///mkniewallner/migrate-to-uv/security
+  93. file:///mkniewallner/migrate-to-uv/pulse
+  94. file:///mkniewallner/migrate-to-uv/branches
+  95. file:///mkniewallner/migrate-to-uv/tags
+  96. file:///mkniewallner/migrate-to-uv/commits/main/
+  97. file:///mkniewallner/migrate-to-uv/tree/main/.github
+  98. file:///mkniewallner/migrate-to-uv/tree/main/.github
+  99. file:///mkniewallner/migrate-to-uv/tree/main/docs
+ 100. file:///mkniewallner/migrate-to-uv/tree/main/docs
+ 101. file:///mkniewallner/migrate-to-uv/tree/main/scripts
+ 102. file:///mkniewallner/migrate-to-uv/tree/main/scripts
+ 103. file:///mkniewallner/migrate-to-uv/tree/main/src
+ 104. file:///mkniewallner/migrate-to-uv/tree/main/src
+ 105. file:///mkniewallner/migrate-to-uv/tree/main/tests
+ 106. file:///mkniewallner/migrate-to-uv/tree/main/tests
+ 107. file:///mkniewallner/migrate-to-uv/blob/main/.editorconfig
+ 108. file:///mkniewallner/migrate-to-uv/blob/main/.editorconfig
+ 109. file:///mkniewallner/migrate-to-uv/blob/main/.gitignore
+ 110. file:///mkniewallner/migrate-to-uv/blob/main/.gitignore
+ 111. file:///mkniewallner/migrate-to-uv/blob/main/.pre-commit-config.yaml
+ 112. file:///mkniewallner/migrate-to-uv/blob/main/.pre-commit-config.yaml
+ 113. file:///mkniewallner/migrate-to-uv/blob/main/CHANGELOG.md
+ 114. file:///mkniewallner/migrate-to-uv/blob/main/CHANGELOG.md
+ 115. file:///mkniewallner/migrate-to-uv/blob/main/CONTRIBUTING.md
+ 116. file:///mkniewallner/migrate-to-uv/blob/main/CONTRIBUTING.md
+ 117. file:///mkniewallner/migrate-to-uv/blob/main/Cargo.lock
+ 118. file:///mkniewallner/migrate-to-uv/blob/main/Cargo.lock
+ 119. file:///mkniewallner/migrate-to-uv/blob/main/Cargo.toml
+ 120. file:///mkniewallner/migrate-to-uv/blob/main/Cargo.toml
+ 121. file:///mkniewallner/migrate-to-uv/blob/main/LICENSE
+ 122. file:///mkniewallner/migrate-to-uv/blob/main/LICENSE
+ 123. file:///mkniewallner/migrate-to-uv/blob/main/Makefile
+ 124. file:///mkniewallner/migrate-to-uv/blob/main/Makefile
+ 125. file:///mkniewallner/migrate-to-uv/blob/main/README.md
+ 126. file:///mkniewallner/migrate-to-uv/blob/main/README.md
+ 127. file:///mkniewallner/migrate-to-uv/blob/main/mkdocs.yml
+ 128. file:///mkniewallner/migrate-to-uv/blob/main/mkdocs.yml
+ 129. file:///mkniewallner/migrate-to-uv/blob/main/pyproject.toml
+ 130. file:///mkniewallner/migrate-to-uv/blob/main/pyproject.toml
+ 131. file:///mkniewallner/migrate-to-uv/blob/main/rust-toolchain.toml
+ 132. file:///mkniewallner/migrate-to-uv/blob/main/rust-toolchain.toml
+ 133. file:///mkniewallner/migrate-to-uv/blob/main/uv.lock
+ 134. file:///mkniewallner/migrate-to-uv/blob/main/uv.lock
+ 135. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 136. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 137. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 138. https://pypi.org/project/migrate-to-uv/
+ 139. https://pypi.org/project/migrate-to-uv/
+ 140. https://pypi.org/project/migrate-to-uv/
+ 141. https://github.com/astral-sh/uv
+ 142. https://python-poetry.org/
+ 143. https://python-poetry.org/blog/announcing-poetry-2.0.0/
+ 144. https://pipenv.pypa.io/en/stable/
+ 145. https://pip-tools.readthedocs.io/en/stable/
+ 146. https://pip.pypa.io/en/stable/
+ 147. https://setuptools.pypa.io/en/stable/
+ 148. https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#writing-pyproject-toml
+ 149. https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#dependencies-optional-dependencies
+ 150. https://packaging.python.org/en/latest/specifications/dependency-groups/#dependency-groups
+ 151. https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-sources
+ 152. https://packaging.python.org/en/latest/specifications/dependency-specifiers/
+ 153. https://packaging.python.org/en/latest/specifications/pyproject-toml/#entry-points
+ 154. https://peps.python.org/pep-0440/
+ 155. https://python-poetry.org/docs/dependency-specification/#caret-requirements
+ 156. https://mkniewallner.github.io/migrate-to-uv/
+ 157. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#readme-ov-file
+ 158. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#MIT-1-ov-file
+ 159. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#contributing-ov-file
+ 160. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 161. file:///mkniewallner/migrate-to-uv/activity
+ 162. file:///mkniewallner/migrate-to-uv/stargazers
+ 163. file:///mkniewallner/migrate-to-uv/watchers
+ 164. file:///mkniewallner/migrate-to-uv/forks
+ 165. file:///contact/report-content?content_url=https://github.com/mkniewallner/migrate-to-uv&report=mkniewallner+(user)
+ 166. file:///mkniewallner/migrate-to-uv/releases
+ 167. file:///mkniewallner/migrate-to-uv/releases/tag/0.7.3
+ 168. file:///mkniewallner/migrate-to-uv/releases
+ 169. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 170. file:///sponsors
+ 171. file:///tmp/lynxXXXXA6BV9l/L927650-3116TMP.html
+ 172. file:///mkniewallner/migrate-to-uv/graphs/contributors
+ 173. https://github.com/apps/renovate
+ 174. https://github.com/apps/renovate
+ 175. https://github.com/mkniewallner
+ 176. https://github.com/mkniewallner
+ 177. https://github.com/crockeo
+ 178. https://github.com/crockeo
+ 179. https://github.com/MarkusSagen
+ 180. https://github.com/MarkusSagen
+ 181. file:///mkniewallner/migrate-to-uv/search?l=rust
+ 182. https://docs.github.com/site-policy/github-terms/github-terms-of-service
+ 183. https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+ 184. https://github.com/security
+ 185. https://www.githubstatus.com/
+ 186. https://github.community/
+ 187. https://docs.github.com/
+ 188. https://support.github.com/?tags=dotcom-footer
+
+   Hidden links:
+ 190. file://localhost/
+ 191. file://localhost/mkniewallner/migrate-to-uv/branches
+ 192. file://localhost/mkniewallner/migrate-to-uv/tags
+ 193. file://localhost/mkniewallner/migrate-to-uv/commits/main/
+ 194. file://localhost/tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#migrate-to-uv
+ 195. file://localhost/tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#usage
+ 196. file://localhost/tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#supported-package-managers
+ 197. file://localhost/tmp/lynxXXXXA6BV9l/L927650-3116TMP.html#features
+ 198. https://github.com/
+
+URL: https://pydevtools.com/handbook/how-to/how-to-migrate-from-poetry-to-uv/
+   [1]Logo Dark Logo Python Developer Tooling Handbook [2]Handbook [3]Blog
+   [4]About [5]Contact [6]Support [7]Github
+   ____________________ CTRL K
+
+   (BUTTON)
+
+   ____________________ CTRL K
+
+     * [8]pydevtools.com blog
+          + [9]Sync with uv: Eliminate Pre-commit Version Drift
+          + [10]Analysis of the New Wave of Python Type Checkers
+          + [11]prek: pre-commit, but fast
+          + [12]uv format: Code Formatting Comes to uv (experimentally!)
+          + [13]Google Sunsets Pytype: The End of an Era for Python Type
+            Checking
+          + [14]ty's Breakthrough: Why Incremental Analysis Matters for
+            Python
+          + [15]How Python's RFC Process Paved the Way for uv, Ruff, and
+            Ty
+          + [16]Interview with the Pybites podcast
+          + [17]Use Interceptors to teach Claude Code to use uv
+          + [18]uvhow: Get uv upgrade instructions for your uv install
+          + [19]uv 0.8 Release: Automatic Python Installation to PATH
+          + [20]Python is good now!
+          + [21]Why isn't Python packaging part of core development?
+          + [22]Hynek Schlawack's uv Workflow Guide
+          + [23]The uv build backend is now stable
+          + [24]Managing Python Versions In Your uv Projects
+          + [25]Comparison of the Two New Typecheckers
+          + [26]Pyrefly: Meta's New Type Checker for Python
+          + [27]Why uv makes Make less essential for Python projects
+          + [28]Early Explorations of Astral's Red Knot Type Checker
+          + [29]The Python Tooling Revolution
+          + [30]Simple, Modern Python
+          + [31]Setuptools 78.0.1 breaking package installation
+          + [32]Dependabot Now Supports uv
+          + [33]Why Doesn't the Authoritative Python Packaging Guide
+            Mention the Best Thing that's Happened to Python Packaging?
+          + [34]Production Experiences with uv
+          + [35]Poetry's Move Toward Python Standards
+          + [36]Why Use uv Projects Instead of requirements.txt?
+          + [37]bitecode.dev's "A year of uv"
+          + [38]Flexible Python Version Management with uv and tox
+          + [39]It's happening! A Python Type Checker from Astral
+          + [40]One Line Command to Launch a Notebook with Pytorch
+          + [41]"uv: Towards a unified vision for Python tooling"
+          + [42]Effective Python Developer Tooling in December 2024
+          + [43]uv 0.3: One command line to rule them all (almost)
+          + [44]Require pip to install packages in virtual environment
+          + [45]uv got to keep up: a new installer announced!
+          + [46]Pip and Poetry and Hatch, Oh My!
+          + [47]Sponsor the Python Developer Tooling Handbook!
+          + [48]Scientific Python Library Development Guide
+          + [49]Python Packaging Tool Examples
+          + [50]Quick start guide for Python development on a Mac
+          + [51]Introduction to Rye
+          + [52]Python Packaging User Guide
+     * [53]About
+     * [54]Feedback
+     * [55]Python Developer Tooling Handbook
+          + [56]Tutorial
+               o [57]Create your first Python project
+               o [58]Publishing Your First Python Package to PyPI
+               o [59]Run your first Python script
+               o [60]Set up Ruff for formatting and checking your code
+               o [61]Setting up testing with pytest and uv
+          + [62]How To
+               o [63]How to add dynamic versioning to uv projects
+               o [64]How to add Python to your system path with uv
+               o [65]How to change the python version of a uv project
+               o [66]How to configure Claude Code to use uv
+               o [67]How to configure Cursor rules to use uv
+               o [68]How to customize uv's virtual environment location
+               o [69]How to fix "No `project` Table Found" error in uv
+               o [70]How to Fix ModuleNotFoundError: No module named
+                 'numpy' During pip Install
+               o [71]How to fix Python version incompatibility errors in
+                 uv
+               o [72]How to install Python with uv
+               o [73]How to install uv
+               o [74]How to migrate from Poetry to uv
+                    # [75]Prerequisites
+                    # [76]Basic Migration
+                    # [77]Handling Common Issues
+                    # [78]Verifying the Migration
+                    # [79]Testing the Migrated Project
+                    # [80]Troubleshooting
+               o [81]How to migrate from requirements.txt to
+                 pyproject.toml with uv
+               o [82]How to require a virtualenv when installing packages
+                 with pip?
+               o [83]How to Run a Jupyter Notebook with uv
+               o [84]How to Run a Python REPL with uv
+               o [85]How to Run Tests Using uv
+               o [86]How to run the IPython shell in your uv project
+               o [87]How to sort Python imports with Ruff
+               o [88]How to switch from pyenv to uv for managing Python
+                 versions
+               o [89]How to try the ty type checker
+               o [90]How to upgrade uv
+               o [91]How to Use `--exclude-newer` for Reproducible Python
+                 Environments
+               o [92]How to use a uv lockfile for reproducible Python
+                 environments
+               o [93]How to use pip in a uv virtual environment
+               o [94]How to Use Poe the Poet as a Task Runner with uv
+               o [95]How to write self-contained Python scripts using PEP
+                 723 inline metadata
+          + [96]Explanation
+               o [97]Why Doesn't the Authoritative Python Packaging Guide
+                 Mention the Best Thing that's Happened to Python
+                 Packaging?
+               o [98]Does Poetry Support Python Standards for Dependency
+                 Management?
+               o [99]How do pyenv and uv compare for Python interpreter
+                 management?
+               o [100]How do Ruff and Pylint compare?
+               o [101]Is Conda actually free?
+               o [102]Should I run `python setup.py`?
+               o [103]Should I use homebrew to install Python?
+               o [104]Understanding the Conda/Anaconda Ecosystem
+               o [105]Understanding uv init Project Types
+               o [106]What are Optional Dependencies and Dependency
+                 Groups?
+               o [107]What is a .python-version file?
+               o [108]What is a build backend?
+               o [109]What is a build frontend?
+               o [110]What is a lockfile?
+               o [111]What is a PEP?
+               o [112]What is a Python application?
+               o [113]What is a Python package?
+               o [114]What is a Virtual Environment?
+               o [115]What Is an Editable Install?
+               o [116]What is PEP 503?
+               o [117]What is PEP 517/518 compatability?
+               o [118]What is PEP 609?
+               o [119]What is PEP 621 compatability?
+               o [120]What is PEP 660?
+               o [121]What is PEP 723?
+               o [122]What is PEP 735?
+               o [123]What is PEP 751?
+               o [124]What is PEP 8?
+               o [125]What is PyPA (Python Packaging Authority)?
+               o [126]What is PyPI (Python Package Index)?
+               o [127]What is Python
+               o [128]What's the difference between pip and uv?
+               o [129]When to Use `uv run` vs `uvx`
+               o [130]Why are there so many Python packaging tools?
+               o [131]Why does uv Use Hatch as a backend?
+               o [132]Why should I avoid using the system Python?
+               o [133]Why should I choose Conda?
+               o [134]Why Should I Choose pyproject.toml over
+                 requirements.txt for managing dependencies?
+               o [135]Why should I use a virtual environment?
+               o [136]Why You Should Try uv if You Use Python
+          + [137]Reference
+               o [138]Anaconda
+               o [139]Black
+               o [140]build
+               o [141]Conda
+               o [142]Conda Package
+               o [143]conda-forge
+               o [144]Cookiecutter
+               o [145]direnv
+               o [146]flake8
+               o [147]Flit
+               o [148]hatch
+               o [149]homebrew
+               o [150]IPython
+               o [151]mypy
+               o [152]nox
+               o [153]pdb
+               o [154]PDM
+               o [155]pip
+               o [156]pip-tools
+               o [157]pipenv
+               o [158]pipfile
+               o [159]pipx
+               o [160]poetry
+               o [161]pyenv
+               o [162]pyenv-virtualenv
+               o [163]pylint
+               o [164]pyproject.toml
+               o [165]pyright
+               o [166]pytest
+               o [167]Python Packaging User Guide
+               o [168]requirements.txt
+               o [169]ruff
+               o [170]sdist
+               o [171]setuptools
+               o [172]tox
+               o [173]Twine
+               o [174]ty
+               o [175]uv
+               o [176]venv
+               o [177]virtualenv
+               o [178]Wheel
+
+     * [179]Tutorial
+          + [180]Create your first Python project
+          + [181]Publishing Your First Python Package to PyPI
+          + [182]Run your first Python script
+          + [183]Set up Ruff for formatting and checking your code
+          + [184]Setting up testing with pytest and uv
+     * [185]How To
+          + [186]How to add dynamic versioning to uv projects
+          + [187]How to add Python to your system path with uv
+          + [188]How to change the python version of a uv project
+          + [189]How to configure Claude Code to use uv
+          + [190]How to configure Cursor rules to use uv
+          + [191]How to customize uv's virtual environment location
+          + [192]How to fix "No `project` Table Found" error in uv
+          + [193]How to Fix ModuleNotFoundError: No module named 'numpy'
+            During pip Install
+          + [194]How to fix Python version incompatibility errors in uv
+          + [195]How to install Python with uv
+          + [196]How to install uv
+          + [197]How to migrate from Poetry to uv
+          + [198]How to migrate from requirements.txt to pyproject.toml
+            with uv
+          + [199]How to require a virtualenv when installing packages with
+            pip?
+          + [200]How to Run a Jupyter Notebook with uv
+          + [201]How to Run a Python REPL with uv
+          + [202]How to Run Tests Using uv
+          + [203]How to run the IPython shell in your uv project
+          + [204]How to sort Python imports with Ruff
+          + [205]How to switch from pyenv to uv for managing Python
+            versions
+          + [206]How to try the ty type checker
+          + [207]How to upgrade uv
+          + [208]How to Use `--exclude-newer` for Reproducible Python
+            Environments
+          + [209]How to use a uv lockfile for reproducible Python
+            environments
+          + [210]How to use pip in a uv virtual environment
+          + [211]How to Use Poe the Poet as a Task Runner with uv
+          + [212]How to write self-contained Python scripts using PEP 723
+            inline metadata
+     * [213]Explanation
+          + [214]Why Doesn't the Authoritative Python Packaging Guide
+            Mention the Best Thing that's Happened to Python Packaging?
+          + [215]Does Poetry Support Python Standards for Dependency
+            Management?
+          + [216]How do pyenv and uv compare for Python interpreter
+            management?
+          + [217]How do Ruff and Pylint compare?
+          + [218]Is Conda actually free?
+          + [219]Should I run `python setup.py`?
+          + [220]Should I use homebrew to install Python?
+          + [221]Understanding the Conda/Anaconda Ecosystem
+          + [222]Understanding uv init Project Types
+          + [223]What are Optional Dependencies and Dependency Groups?
+          + [224]What is a .python-version file?
+          + [225]What is a build backend?
+          + [226]What is a build frontend?
+          + [227]What is a lockfile?
+          + [228]What is a PEP?
+          + [229]What is a Python application?
+          + [230]What is a Python package?
+          + [231]What is a Virtual Environment?
+          + [232]What Is an Editable Install?
+          + [233]What is PEP 503?
+          + [234]What is PEP 517/518 compatability?
+          + [235]What is PEP 609?
+          + [236]What is PEP 621 compatability?
+          + [237]What is PEP 660?
+          + [238]What is PEP 723?
+          + [239]What is PEP 735?
+          + [240]What is PEP 751?
+          + [241]What is PEP 8?
+          + [242]What is PyPA (Python Packaging Authority)?
+          + [243]What is PyPI (Python Package Index)?
+          + [244]What is Python
+          + [245]What's the difference between pip and uv?
+          + [246]When to Use `uv run` vs `uvx`
+          + [247]Why are there so many Python packaging tools?
+          + [248]Why does uv Use Hatch as a backend?
+          + [249]Why should I avoid using the system Python?
+          + [250]Why should I choose Conda?
+          + [251]Why Should I Choose pyproject.toml over requirements.txt
+            for managing dependencies?
+          + [252]Why should I use a virtual environment?
+          + [253]Why You Should Try uv if You Use Python
+     * [254]Reference
+          + [255]Anaconda
+          + [256]Black
+          + [257]build
+          + [258]Conda
+          + [259]Conda Package
+          + [260]conda-forge
+          + [261]Cookiecutter
+          + [262]direnv
+          + [263]flake8
+          + [264]Flit
+          + [265]hatch
+          + [266]homebrew
+          + [267]IPython
+          + [268]mypy
+          + [269]nox
+          + [270]pdb
+          + [271]PDM
+          + [272]pip
+          + [273]pip-tools
+          + [274]pipenv
+          + [275]pipfile
+          + [276]pipx
+          + [277]poetry
+          + [278]pyenv
+          + [279]pyenv-virtualenv
+          + [280]pylint
+          + [281]pyproject.toml
+          + [282]pyright
+          + [283]pytest
+          + [284]Python Packaging User Guide
+          + [285]requirements.txt
+          + [286]ruff
+          + [287]sdist
+          + [288]setuptools
+          + [289]tox
+          + [290]Twine
+          + [291]ty
+          + [292]uv
+          + [293]venv
+          + [294]virtualenv
+          + [295]Wheel
+
+   (BUTTON)
+   LightDark
+
+   On this page
+     * [296]Prerequisites
+     * [297]Basic Migration
+     * [298]1. Navigate to your Poetry project directory
+     * [299]2. Run the migration tool
+     * [300]Handling Common Issues
+     * [301]Dealing with Private Package Repositories
+     * [302]Managing Dependency Groups
+     * [303]Testing the Migration Without Making Changes
+     * [304]Skipping Lock File Generation
+     * [305]Preserving Poetry Configuration
+     * [306]Verifying the Migration
+     * [307]Testing the Migrated Project
+     * [308]Troubleshooting
+
+   (BUTTON) Scroll to top
+
+How to migrate from Poetry to uv
+
+   This guide walks through the process of migrating a [309]Poetry-managed
+   Python project to [310]uv using the [311]migrate-to-uv tool.
+
+Prerequisites
+
+     * [312]uv installed
+     * A [313]Poetry-managed Python project
+
+Basic Migration
+
+1. Navigate to your Poetry project directory
+
+cd your-poetry-project
+
+   (BUTTON)
+
+2. Run the migration tool
+
+uvx migrate-to-uv
+
+   (BUTTON)
+
+   The tool will:
+     * Convert your Poetry project metadata to uv format
+     * Preserve dependency versions
+     * Generate a uv.lock file
+     * Keep dependency groups
+
+Handling Common Issues
+
+Dealing with Private Package Repositories
+
+   If your project uses private package indexes:
+    1. Set the appropriate environment variables:
+# If your Poetry config has:
+# [[tool.poetry.source]]
+# name = "company-repo"
+# url = "https://repo.example.com"
+
+# Set these variables:
+export UV_INDEX_COMPANY_REPO_USERNAME=<username>
+export UV_INDEX_COMPANY_REPO_PASSWORD=<password>
+
+# Then run the migration
+uvx migrate-to-uv
+       (BUTTON)
+
+Managing Dependency Groups
+
+   Poetry’s dependency groups work differently from uv’s default behavior.
+   Choose a strategy based on your workflow:
+# Default: maintain all groups and configure them as default groups
+uvx migrate-to-uv --dependency-groups-strategy set-default-groups
+
+# Include all groups as references in the dev group
+uvx migrate-to-uv --dependency-groups-strategy include-in-dev
+
+# Move all dependencies into the dev group
+uvx migrate-to-uv --dependency-groups-strategy merge-into-dev
+
+# Keep groups without modifications
+uvx migrate-to-uv --dependency-groups-strategy keep-existing
+
+   (BUTTON)
+
+Testing the Migration Without Making Changes
+
+   To see what would change without modifying files:
+uvx migrate-to-uv --dry-run
+
+   (BUTTON)
+
+Skipping Lock File Generation
+
+   If you prefer to generate the lock file separately:
+uvx migrate-to-uv --skip-lock
+
+   (BUTTON)
+
+Preserving Poetry Configuration
+
+   To keep the original Poetry configuration for comparison:
+uvx migrate-to-uv --keep-current-data
+
+   (BUTTON)
+
+Verifying the Migration
+
+   ℹ️
+   Always verify your migrated configuration, especially for packages
+   intended for distribution. While migrate-to-uv aims to match Poetry’s
+   behavior, edge cases may require manual adjustments.
+
+   After migration:
+    1. Inspect the generated pyproject.toml for correctness
+    2. Verify that dependency versions match your expectations
+    3. Check that the correct dependency groups were created
+    4. Ensure any path, git, or URL dependencies were properly migrated
+
+Testing the Migrated Project
+
+   Test that your project works with uv:
+# Install the project's dependencies
+uv sync
+
+# Run your project's tests
+uv run pytest
+
+   (BUTTON)
+
+Troubleshooting
+
+     * If auto-detection fails, specify Poetry explicitly:
+uvx migrate-to-uv --package-manager poetry
+       (BUTTON)
+     * If migrating a project that already has uv configuration:
+uvx migrate-to-uv --skip-uv-checks
+       (BUTTON)
+     * If you want to override an existing project section:
+uvx migrate-to-uv --replace-project-section
+       (BUTTON)
+
+   Last updated on June 25, 2025
+   [314]How to install uv[315]How to migrate from requirements.txt to
+   pyproject.toml with uv
+
+   Please submit corrections and feedback...
+   ____________________
+   ____________________
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   (BUTTON) Send
+
+   Created by [316]Tim Hopper
+   [317]Resume [318]LinkedIn [319]X
+
+References
+
+   Visible links:
+   1. file:///
+   2. file:///
+   3. file:///blog
+   4. file:///about
+   5. file:///feedback
+   6. https://github.com/sponsors/python-developer-tooling-handbook
+   7. https://github.com/python-developer-tooling-handbook
+   8. file:///blog/
+   9. file:///blog/sync-with-uv-eliminate-pre-commit-version-drift/
+  10. file:///blog/analysis-of-the-new-wave-of-python-type-checkers/
+  11. file:///blog/prek-pre-commit-but-fast/
+  12. file:///blog/uv-format-code-formatting-comes-to-uv-experimentally/
+  13. file:///blog/google-sunsets-pytype-the-end-of-an-era-for-python-type-checking/
+  14. file:///blog/tys-breakthrough-why-incremental-analysis-matters-for-python/
+  15. file:///blog/peps-and-astral/
+  16. file:///blog/interview-with-the-pybites-podcast/
+  17. file:///blog/interceptors/
+  18. file:///blog/uvhow-get-uv-upgrade-instructions-for-your-uv-install/
+  19. file:///blog/uv-0-8-release-automatic-python-installation-to-path/
+  20. file:///blog/python-is-good-now/
+  21. file:///blog/why-isnt-python-packaging-part-of-core-development/
+  22. file:///blog/fast-and-boring-uv/
+  23. file:///blog/uv-build-backend/
+  24. file:///blog/managing-python-versions-in-your-uv-projects/
+  25. file:///blog/comparison-of-the-two-new-typecheckers/
+  26. file:///blog/pyrefly-metas-new-type-checker-for-python/
+  27. file:///blog/why-uv-makes-make-less-essential-for-python-projects/
+  28. file:///blog/early-explorations-of-astrals-red-knot-type-checker/
+  29. file:///blog/python-tooling-revolution/
+  30. file:///blog/simple-modern-uv/
+  31. file:///blog/setuptools-78-0-1-breaking-package-installation/
+  32. file:///blog/dependabot-uv-support/
+  33. file:///blog/uv-not-in-ppug/
+  34. file:///blog/uv-in-prod/
+  35. file:///blog/poetry2/
+  36. file:///blog/requirementstxt-vs-pyprojecttoml/
+  37. file:///blog/year-of-uv/
+  38. file:///blog/flexible-version-management-for-tox/
+  39. file:///blog/its-happening-a-python-type-checker-from-astral/
+  40. file:///blog/one-line-command-to-launch-a-notebook-with-pytorch/
+  41. file:///blog/uv-towards-a-unified-vision-for-python-tooling/
+  42. file:///blog/effective-python-developer-tooling-in-december-2024/
+  43. file:///blog/uv-0-3-one-command-line-to-rule-them-all-almost/
+  44. file:///blog/require-pip-to-install-in-virtual-environments/
+  45. file:///blog/uv-got-to-keep-up-a-new-installer-announced/
+  46. file:///blog/pip-and-poetry-and-hatch-oh-my/
+  47. file:///blog/sponsor-the-python-developer-tooling-handbook/
+  48. file:///blog/scientific-python-library-development-guide/
+  49. file:///blog/packaging-tool-examples/
+  50. file:///blog/python-quickstart/
+  51. file:///blog/introduction-to-rye/
+  52. file:///blog/python-packaging-user-guide/
+  53. file:///about/
+  54. file:///feedback/
+  55. file:///handbook/
+  56. file:///handbook/tutorial/
+  57. file:///handbook/tutorial/create-your-first-python-project/
+  58. file:///handbook/tutorial/publishing-your-first-python-package-to-pypi/
+  59. file:///handbook/tutorial/how-to-run-your-first-python-script/
+  60. file:///handbook/tutorial/set-up-ruff-for-formatting-and-checking-your-code/
+  61. file:///handbook/tutorial/setting-up-testing-with-pytest-and-uv/
+  62. file:///handbook/how-to/
+  63. file:///handbook/how-to/how-to-add-dynamic-versioning-to-uv-projects/
+  64. file:///handbook/how-to/how-to-add-python-to-your-system-path-with-uv/
+  65. file:///handbook/how-to/how-to-change-the-python-version-of-a-uv-project/
+  66. file:///handbook/how-to/how-to-configure-claude-code-to-use-uv/
+  67. file:///handbook/how-to/how-to-configure-cursor-rules-to-use-uv/
+  68. file:///handbook/how-to/how-to-customize-uvs-virtual-environment-location/
+  69. file:///handbook/how-to/how-to-fix-no-project-table-found-error-in-uv/
+  70. file:///handbook/how-to/how-to-fix-modulenotfounderror-no-module-named-numpy-during-pip-install/
+  71. file:///handbook/how-to/how-to-fix-python-version-incompatibility-errors-in-uv/
+  72. file:///handbook/how-to/how-to-install-python-with-uv/
+  73. file:///handbook/how-to/how-to-install-uv/
+  74. file:///handbook/how-to/how-to-migrate-from-poetry-to-uv/
+  75. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#prerequisites
+  76. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#basic-migration
+  77. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#handling-common-issues
+  78. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#verifying-the-migration
+  79. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#testing-the-migrated-project
+  80. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#troubleshooting
+  81. file:///handbook/how-to/migrate-requirements.txt/
+  82. file:///handbook/how-to/how-to-require-a-virtual-for-installing-packages/
+  83. file:///handbook/how-to/jupyter-notebook-with-uv/
+  84. file:///handbook/how-to/how-to-run-a-python-repl-with-uv/
+  85. file:///handbook/how-to/how-to-run-tests-using-uv/
+  86. file:///handbook/how-to/how-to-run-the-ipython-shell-in-your-uv-project/
+  87. file:///handbook/how-to/how-to-sort-python-imports-with-ruff/
+  88. file:///handbook/how-to/how-to-switch-from-pyenv-to-uv-for-managing-python-versions/
+  89. file:///handbook/how-to/how-to-try-the-ty-type-checker/
+  90. file:///handbook/how-to/how-to-upgrade-uv/
+  91. file:///handbook/how-to/how-to-use-exclude-newer-for-reproducible-python-environments/
+  92. file:///handbook/how-to/how-to-use-a-uv-lockfile-for-reproducible-python-environments/
+  93. file:///handbook/how-to/how-to-use-pip-in-a-uv-virtual-environment/
+  94. file:///handbook/how-to/how-to-use-poe-the-poet-as-a-task-runner-with-uv/
+  95. file:///handbook/how-to/how-to-write-a-self-contained-script/
+  96. file:///handbook/explanation/
+  97. file:///handbook/explanation/uv-not-in-ppug/
+  98. file:///handbook/explanation/poetry-python-dependency-management/
+  99. file:///handbook/explanation/how-do-pyenv-and-uv-compare-for-python-interpreter-management/
+ 100. file:///handbook/explanation/how-do-ruff-and-pylint-compare/
+ 101. file:///handbook/explanation/is-conda-actually-free/
+ 102. file:///handbook/explanation/should-i-run-python-setuppy-commands/
+ 103. file:///handbook/explanation/should-i-use-homebrew-to-install-python/
+ 104. file:///handbook/explanation/understanding-the-conda-anaconda-ecosystem/
+ 105. file:///handbook/explanation/understanding-uv-init-project-types/
+ 106. file:///handbook/explanation/what-are-optional-dependencies-and-dependency-groups/
+ 107. file:///handbook/explanation/what-is-a-python-version-file/
+ 108. file:///handbook/explanation/what-is-a-build-backend/
+ 109. file:///handbook/explanation/what-is-a-build-frontend/
+ 110. file:///handbook/explanation/what-is-a-lock-file/
+ 111. file:///handbook/explanation/pep/
+ 112. file:///handbook/explanation/what-is-a-python-application/
+ 113. file:///handbook/explanation/what-is-a-python-package/
+ 114. file:///handbook/explanation/what-is-a-virtual-environment/
+ 115. file:///handbook/explanation/what-is-an-editable-install/
+ 116. file:///handbook/explanation/what-is-pep-503/
+ 117. file:///handbook/explanation/what-is-pep-517/
+ 118. file:///handbook/explanation/what-is-pep-609/
+ 119. file:///handbook/explanation/what-is-pep-621-compatability/
+ 120. file:///handbook/explanation/what-is-pep-660/
+ 121. file:///handbook/explanation/what-is-pep-723/
+ 122. file:///handbook/explanation/what-is-pep-735/
+ 123. file:///handbook/explanation/what-is-pep-751/
+ 124. file:///handbook/explanation/what-is-pep-8/
+ 125. file:///handbook/explanation/what-is-pypa/
+ 126. file:///handbook/explanation/what-is-pypi/
+ 127. file:///handbook/explanation/what-is-python/
+ 128. file:///handbook/explanation/whats-the-difference-between-pip-and-uv/
+ 129. file:///handbook/explanation/when-to-use-uv-run-vs-uvx/
+ 130. file:///handbook/explanation/why-are-there-so-many-python-packaging-tools/
+ 131. file:///handbook/explanation/why-does-uv-use-hatch-as-a-backend/
+ 132. file:///handbook/explanation/why-should-i-avoid-system-python/
+ 133. file:///handbook/explanation/why-should-i-choose-conda/
+ 134. file:///handbook/explanation/pyproject-vs-requirements/
+ 135. file:///handbook/explanation/why-should-i-use-a-virtual-environment/
+ 136. file:///handbook/explanation/why-you-should-try-uv-if-you-use-python/
+ 137. file:///handbook/reference/
+ 138. file:///handbook/reference/anaconda/
+ 139. file:///handbook/reference/black/
+ 140. file:///handbook/reference/build/
+ 141. file:///handbook/reference/conda/
+ 142. file:///handbook/reference/conda-package/
+ 143. file:///handbook/reference/conda-forge/
+ 144. file:///handbook/reference/cookiecutter/
+ 145. file:///handbook/reference/direnv/
+ 146. file:///handbook/reference/pyflakes/
+ 147. file:///handbook/reference/flit/
+ 148. file:///handbook/reference/hatch/
+ 149. file:///handbook/reference/homebrew/
+ 150. file:///handbook/reference/ipython/
+ 151. file:///handbook/reference/mypy/
+ 152. file:///handbook/reference/nox/
+ 153. file:///handbook/reference/pdb/
+ 154. file:///handbook/reference/pdm/
+ 155. file:///handbook/reference/pip/
+ 156. file:///handbook/reference/pip-tools/
+ 157. file:///handbook/reference/pipenv/
+ 158. file:///handbook/reference/pipfile/
+ 159. file:///handbook/reference/pipx/
+ 160. file:///handbook/reference/poetry/
+ 161. file:///handbook/reference/pyenv/
+ 162. file:///handbook/reference/pyenv-virtualenv/
+ 163. file:///handbook/reference/pylint/
+ 164. file:///handbook/reference/pyproject/
+ 165. file:///handbook/reference/pyright/
+ 166. file:///handbook/reference/pytest/
+ 167. file:///handbook/reference/python-packaging-user-guide/
+ 168. file:///handbook/reference/requirements/
+ 169. file:///handbook/reference/ruff/
+ 170. file:///handbook/reference/sdist/
+ 171. file:///handbook/reference/setuptools/
+ 172. file:///handbook/reference/tox/
+ 173. file:///handbook/reference/twine/
+ 174. file:///handbook/reference/ty/
+ 175. file:///handbook/reference/uv/
+ 176. file:///handbook/reference/venv/
+ 177. file:///handbook/reference/virtualenv/
+ 178. file:///handbook/reference/wheel/
+ 179. file:///handbook/tutorial/
+ 180. file:///handbook/tutorial/create-your-first-python-project/
+ 181. file:///handbook/tutorial/publishing-your-first-python-package-to-pypi/
+ 182. file:///handbook/tutorial/how-to-run-your-first-python-script/
+ 183. file:///handbook/tutorial/set-up-ruff-for-formatting-and-checking-your-code/
+ 184. file:///handbook/tutorial/setting-up-testing-with-pytest-and-uv/
+ 185. file:///handbook/how-to/
+ 186. file:///handbook/how-to/how-to-add-dynamic-versioning-to-uv-projects/
+ 187. file:///handbook/how-to/how-to-add-python-to-your-system-path-with-uv/
+ 188. file:///handbook/how-to/how-to-change-the-python-version-of-a-uv-project/
+ 189. file:///handbook/how-to/how-to-configure-claude-code-to-use-uv/
+ 190. file:///handbook/how-to/how-to-configure-cursor-rules-to-use-uv/
+ 191. file:///handbook/how-to/how-to-customize-uvs-virtual-environment-location/
+ 192. file:///handbook/how-to/how-to-fix-no-project-table-found-error-in-uv/
+ 193. file:///handbook/how-to/how-to-fix-modulenotfounderror-no-module-named-numpy-during-pip-install/
+ 194. file:///handbook/how-to/how-to-fix-python-version-incompatibility-errors-in-uv/
+ 195. file:///handbook/how-to/how-to-install-python-with-uv/
+ 196. file:///handbook/how-to/how-to-install-uv/
+ 197. file:///handbook/how-to/how-to-migrate-from-poetry-to-uv/
+ 198. file:///handbook/how-to/migrate-requirements.txt/
+ 199. file:///handbook/how-to/how-to-require-a-virtual-for-installing-packages/
+ 200. file:///handbook/how-to/jupyter-notebook-with-uv/
+ 201. file:///handbook/how-to/how-to-run-a-python-repl-with-uv/
+ 202. file:///handbook/how-to/how-to-run-tests-using-uv/
+ 203. file:///handbook/how-to/how-to-run-the-ipython-shell-in-your-uv-project/
+ 204. file:///handbook/how-to/how-to-sort-python-imports-with-ruff/
+ 205. file:///handbook/how-to/how-to-switch-from-pyenv-to-uv-for-managing-python-versions/
+ 206. file:///handbook/how-to/how-to-try-the-ty-type-checker/
+ 207. file:///handbook/how-to/how-to-upgrade-uv/
+ 208. file:///handbook/how-to/how-to-use-exclude-newer-for-reproducible-python-environments/
+ 209. file:///handbook/how-to/how-to-use-a-uv-lockfile-for-reproducible-python-environments/
+ 210. file:///handbook/how-to/how-to-use-pip-in-a-uv-virtual-environment/
+ 211. file:///handbook/how-to/how-to-use-poe-the-poet-as-a-task-runner-with-uv/
+ 212. file:///handbook/how-to/how-to-write-a-self-contained-script/
+ 213. file:///handbook/explanation/
+ 214. file:///handbook/explanation/uv-not-in-ppug/
+ 215. file:///handbook/explanation/poetry-python-dependency-management/
+ 216. file:///handbook/explanation/how-do-pyenv-and-uv-compare-for-python-interpreter-management/
+ 217. file:///handbook/explanation/how-do-ruff-and-pylint-compare/
+ 218. file:///handbook/explanation/is-conda-actually-free/
+ 219. file:///handbook/explanation/should-i-run-python-setuppy-commands/
+ 220. file:///handbook/explanation/should-i-use-homebrew-to-install-python/
+ 221. file:///handbook/explanation/understanding-the-conda-anaconda-ecosystem/
+ 222. file:///handbook/explanation/understanding-uv-init-project-types/
+ 223. file:///handbook/explanation/what-are-optional-dependencies-and-dependency-groups/
+ 224. file:///handbook/explanation/what-is-a-python-version-file/
+ 225. file:///handbook/explanation/what-is-a-build-backend/
+ 226. file:///handbook/explanation/what-is-a-build-frontend/
+ 227. file:///handbook/explanation/what-is-a-lock-file/
+ 228. file:///handbook/explanation/pep/
+ 229. file:///handbook/explanation/what-is-a-python-application/
+ 230. file:///handbook/explanation/what-is-a-python-package/
+ 231. file:///handbook/explanation/what-is-a-virtual-environment/
+ 232. file:///handbook/explanation/what-is-an-editable-install/
+ 233. file:///handbook/explanation/what-is-pep-503/
+ 234. file:///handbook/explanation/what-is-pep-517/
+ 235. file:///handbook/explanation/what-is-pep-609/
+ 236. file:///handbook/explanation/what-is-pep-621-compatability/
+ 237. file:///handbook/explanation/what-is-pep-660/
+ 238. file:///handbook/explanation/what-is-pep-723/
+ 239. file:///handbook/explanation/what-is-pep-735/
+ 240. file:///handbook/explanation/what-is-pep-751/
+ 241. file:///handbook/explanation/what-is-pep-8/
+ 242. file:///handbook/explanation/what-is-pypa/
+ 243. file:///handbook/explanation/what-is-pypi/
+ 244. file:///handbook/explanation/what-is-python/
+ 245. file:///handbook/explanation/whats-the-difference-between-pip-and-uv/
+ 246. file:///handbook/explanation/when-to-use-uv-run-vs-uvx/
+ 247. file:///handbook/explanation/why-are-there-so-many-python-packaging-tools/
+ 248. file:///handbook/explanation/why-does-uv-use-hatch-as-a-backend/
+ 249. file:///handbook/explanation/why-should-i-avoid-system-python/
+ 250. file:///handbook/explanation/why-should-i-choose-conda/
+ 251. file:///handbook/explanation/pyproject-vs-requirements/
+ 252. file:///handbook/explanation/why-should-i-use-a-virtual-environment/
+ 253. file:///handbook/explanation/why-you-should-try-uv-if-you-use-python/
+ 254. file:///handbook/reference/
+ 255. file:///handbook/reference/anaconda/
+ 256. file:///handbook/reference/black/
+ 257. file:///handbook/reference/build/
+ 258. file:///handbook/reference/conda/
+ 259. file:///handbook/reference/conda-package/
+ 260. file:///handbook/reference/conda-forge/
+ 261. file:///handbook/reference/cookiecutter/
+ 262. file:///handbook/reference/direnv/
+ 263. file:///handbook/reference/pyflakes/
+ 264. file:///handbook/reference/flit/
+ 265. file:///handbook/reference/hatch/
+ 266. file:///handbook/reference/homebrew/
+ 267. file:///handbook/reference/ipython/
+ 268. file:///handbook/reference/mypy/
+ 269. file:///handbook/reference/nox/
+ 270. file:///handbook/reference/pdb/
+ 271. file:///handbook/reference/pdm/
+ 272. file:///handbook/reference/pip/
+ 273. file:///handbook/reference/pip-tools/
+ 274. file:///handbook/reference/pipenv/
+ 275. file:///handbook/reference/pipfile/
+ 276. file:///handbook/reference/pipx/
+ 277. file:///handbook/reference/poetry/
+ 278. file:///handbook/reference/pyenv/
+ 279. file:///handbook/reference/pyenv-virtualenv/
+ 280. file:///handbook/reference/pylint/
+ 281. file:///handbook/reference/pyproject/
+ 282. file:///handbook/reference/pyright/
+ 283. file:///handbook/reference/pytest/
+ 284. file:///handbook/reference/python-packaging-user-guide/
+ 285. file:///handbook/reference/requirements/
+ 286. file:///handbook/reference/ruff/
+ 287. file:///handbook/reference/sdist/
+ 288. file:///handbook/reference/setuptools/
+ 289. file:///handbook/reference/tox/
+ 290. file:///handbook/reference/twine/
+ 291. file:///handbook/reference/ty/
+ 292. file:///handbook/reference/uv/
+ 293. file:///handbook/reference/venv/
+ 294. file:///handbook/reference/virtualenv/
+ 295. file:///handbook/reference/wheel/
+ 296. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#prerequisites
+ 297. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#basic-migration
+ 298. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#1-navigate-to-your-poetry-project-directory
+ 299. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#2-run-the-migration-tool
+ 300. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#handling-common-issues
+ 301. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#dealing-with-private-package-repositories
+ 302. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#managing-dependency-groups
+ 303. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#testing-the-migration-without-making-changes
+ 304. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#skipping-lock-file-generation
+ 305. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#preserving-poetry-configuration
+ 306. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#verifying-the-migration
+ 307. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#testing-the-migrated-project
+ 308. file:///tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#troubleshooting
+ 309. https://pydevtools.com/handbook/reference/poetry/
+ 310. https://pydevtools.com/handbook/reference/uv/
+ 311. https://mkniewallner.github.io/migrate-to-uv/
+ 312. https://docs.astral.sh/uv/
+ 313. https://pydevtools.com/handbook/reference/poetry/
+ 314. file:///handbook/how-to/how-to-install-uv/
+ 315. file:///handbook/how-to/migrate-requirements.txt/
+ 316. https://tdhopper.com/
+ 317. https://resume.tdhopper.com/
+ 318. https://linkedin.com/in/tdhopper
+ 319. https://x.com/tdhopper
+
+   Hidden links:
+ 321. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#prerequisites
+ 322. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#basic-migration
+ 323. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#1-navigate-to-your-poetry-project-directory
+ 324. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#2-run-the-migration-tool
+ 325. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#handling-common-issues
+ 326. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#dealing-with-private-package-repositories
+ 327. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#managing-dependency-groups
+ 328. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#testing-the-migration-without-making-changes
+ 329. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#skipping-lock-file-generation
+ 330. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#preserving-poetry-configuration
+ 331. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#verifying-the-migration
+ 332. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#testing-the-migrated-project
+ 333. file://localhost/tmp/lynxXXXXJVmoJ6/L927653-7630TMP.html#troubleshooting
+
+URL: https://www.loopwerk.io/articles/2024/migrate-poetry-to-uv/
+   #[1]Loopwerk
+
+   Loopwerk logo
+     * [2]Home
+     * [3]Articles
+     * [4]Apps
+     * [5]Open Source
+     * [6]About
+     * [7]Hire me
+
+   ____________________
+
+How to migrate your Poetry project to uv
+
+   November 18, 2024889 words, posted in [8]howto, [9]python and [10]uv
+
+   Please note that this article was written before any automated
+   migration tools were available. But now there’s [11]migrate-to-uv which
+   is a lot easier to use than the manual steps described below.
+
+   So, like me you’ve decided to switch from Poetry to uv, and now you’re
+   wondering how to actually migrate your pyproject.toml file? You’ve come
+   to the right place!
+
+   While uv sadly doesn’t come with a migration command (yet), we can use
+   PDM’s migration tool, which gets us 95% of the way there since PDM and
+   uv both use mostly the same configuration format. Let’s use a basic
+   project that uses Django, gunicorn and ruff (using two optional
+   dependency groups), to illustrate the different steps. Our
+   pyproject.toml file, as created by Poetry, will look something like
+   this:
+[tool.poetry]
+name = "poetrytest"
+version = "0.1.0"
+description = ""
+authors = ["Kevin Renskers <[12][email protected]>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+Django = "^5.1.3"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+
+[tool.poetry.group.prod]
+optional = true
+
+[tool.poetry.group.prod.dependencies]
+gunicorn = "^23.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+   Don’t worry if you don’t use dependency groups in your project; the
+   process is still exactly the same, you just get to ignore some steps.
+
+Step 1: use PDM’s import tool
+
+   We start by running uvx pdm import pyproject.toml. This will modify the
+   pyproject.toml to be almost uv compatible. Our file now looks like
+   this:
+[tool.poetry]
+name = "poetrytest"
+version = "0.1.0"
+description = ""
+authors = ["Kevin Renskers <[13][email protected]>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+Django = "^5.1.3"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+
+[tool.poetry.group.prod]
+optional = true
+
+[tool.poetry.group.prod.dependencies]
+gunicorn = "^23.0.0"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff<1.0.0,>=0.7.4",
+]
+prod = [
+    "gunicorn<24.0.0,>=23.0.0",
+]
+
+[tool.pdm.build]
+includes = []
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
+authors = [
+    {name = "Kevin Renskers", email = "[14][email protected]"},
+]
+requires-python = "<4.0,>=3.13"
+dependencies = [
+    "Django<6.0.0,>=5.1.3",
+]
+name = "poetrytest"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+
+Step 2: remove old sections from pyproject.toml
+
+   Every section that starts with tool.poetry can be removed, as well as
+   the build-system section. The newly added tool.pdm.build section can
+   also be removed. Our file now looks like this:
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff<1.0.0,>=0.7.4",
+]
+prod = [
+    "gunicorn<24.0.0,>=23.0.0",
+]
+
+[project]
+authors = [
+    {name = "Kevin Renskers", email = "[15][email protected]"},
+]
+requires-python = "<4.0,>=3.13"
+dependencies = [
+    "Django<6.0.0,>=5.1.3",
+]
+name = "poetrytest"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+
+Step 3: clean up pyproject.toml
+
+   Now rename [tool.pdm.dev-dependencies] to [dependency-groups] and move
+   it below [project]. If you don’t have a [tool.pdm.dev-dependencies]
+   section because you didn’t use dependency groups, then don’t worry. You
+   don’t have to do anything.
+
+   In my projects I’ve also added a new section [tool.uv] where I clear
+   out the default dependency groups, so that production dependencies
+   don’t get installed on my local machine, and development dependencies
+   don’t get installed on my production server (see [16]this article for
+   more info).
+
+   I’ve also reordered the items within [project] and I’ve switched the
+   order of the version requirements so that instead of
+   Django<6.0.0,>=5.1.3 it now specifies Django >=5.1.3, <6.0.0. It’s more
+   logical and readable that way.
+
+   The pyproject.toml file now looks like this and is done:
+[project]
+name = "poetrytest"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+authors = [
+    {name = "Kevin Renskers", email = "[17][email protected]"},
+]
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "Django >=5.1.3, <6.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff >=0.7.4, <1.0.0",
+]
+prod = [
+    "gunicorn >=23.0.0, <24.0.0",
+]
+
+[tool.uv]
+default-groups = []
+
+Step 4: recreate your virtual environment
+
+   It’s a good idea to remove your old .venv folder and then you can run
+   uv lock or uv sync and your packages will get installed. Congrats,
+   you’ve migrated your project from Poetry to uv!
+
+   So while it wasn’t quite as easy as executing a single command, it’s
+   not very hard either. Mostly you just need to take care of removing and
+   renaming the right sections from pyproject.toml, and it works.
+
+     Credit for the idea to use PDM to migrate from Poetry to uv goes to
+     [18]this tweet.
+
+Written by
+
+   [kevin.png]
+
+Kevin Renskers
+
+   Iʼm a freelance software developer with over 25 years of experience. I
+   write articles about Swift, Python, and TypeScript. Iʼve worked on
+   [19]many apps, and maintain a bunch of [20]open source projects. Iʼm
+   available [21]for hire and for podcast interviews about modern web
+   development. Connect with me on [22]Mastodon or [23]email.
+
+Related articles
+
+   [24]
+
+Run Django tests using PostgreSQL in GitHub Actions
+
+   October 07, 2025[25]django, [26]howto, [27]python and [28]workflow
+
+   [29]Did you know that you can run unit tests for your Django app, in
+   GitHub Actions, using PostgreSQL?
+
+   [30]
+
+Automate Python package releases
+
+   July 30, 2025[31]howto, [32]python and [33]workflow
+
+   [34]I maintain a handful of Python packages. Here’s how I automate
+   creating new releases, both on PyPI and GitHub.
+
+   [35]› See all articles
+
+   Copyright © Loopwerk 2009-2025.
+
+   Built in Swift using [36]Saga ([37]source).
+
+   [38]RSS | [39]Mastodon | [40]Email
+
+References
+
+   1. file:///articles/feed.xml
+   2. file:///
+   3. file:///articles/
+   4. file:///apps/
+   5. file:///projects/
+   6. file:///about/
+   7. file:///hire-me/
+   8. file:///articles/tag/howto/
+   9. file:///articles/tag/python/
+  10. file:///articles/tag/uv/
+  11. https://github.com/mkniewallner/migrate-to-uv
+  12. file:///cdn-cgi/l/email-protection
+  13. file:///cdn-cgi/l/email-protection
+  14. file:///cdn-cgi/l/email-protection
+  15. file:///cdn-cgi/l/email-protection
+  16. file:///articles/2024/python-uv-revisited/
+  17. file:///cdn-cgi/l/email-protection
+  18. https://x.com/tiangolo/status/1839686030007361803
+  19. file:///apps/
+  20. file:///projects/
+  21. file:///hire-me/
+  22. https://hachyderm.io/@kevinrenskers
+  23. file:///cdn-cgi/l/email-protection#016a6477686f416d6e6e717664736a2f686e
+  24. file:///articles/2025/github-actions-django-postgresql/
+  25. file:///articles/tag/django/
+  26. file:///articles/tag/howto/
+  27. file:///articles/tag/python/
+  28. file:///articles/tag/workflow/
+  29. file:///articles/2025/github-actions-django-postgresql/
+  30. file:///articles/2025/automate-python-releases/
+  31. file:///articles/tag/howto/
+  32. file:///articles/tag/python/
+  33. file:///articles/tag/workflow/
+  34. file:///articles/2025/automate-python-releases/
+  35. file:///articles/
+  36. https://github.com/loopwerk/Saga
+  37. https://github.com/loopwerk/loopwerk.io
+  38. https://www.loopwerk.io/articles/feed.xml
+  39. https://hachyderm.io/@kevinrenskers
+  40. file:///cdn-cgi/l/email-protection#68030d1e010628040707181f0d1a03460107
+
+URL: https://www.xorq.dev/blog/migrating-to-uv
+   [1]How it Works
+   [2]
+   Pricing
+   Resources
+   Extras
+   [3]
+   Docs
+
+   Quickstarts, templates, and tutorials.
+   [4]Blog
+
+   Insights and guides on AI data infrastructure.
+   [5]request a demo
+
+   A walkthrough of syntax, features, and setup.
+   Meet Xorq
+   [6]
+   our story
+
+   Meet the team and our mission.
+   [7]contact us
+
+   Questions, ideas, or support? Reach out.
+   Feature from blog
+   [8]
+   Xorq: The Open Compute Format for AI Data Engineering
+
+   Announcing a major upgrade to Xorq, an open compute catalog that helps
+   teams compose, reuse, ship, and observe AI compute.
+   Read more
+   [9]See more articles
+   Use Cases
+   [10]
+   Built-in Inference for DataFrames
+
+   Users often build custom machinery for their common ML inference tasks
+   e.g. online inference and batch scoring. To address the batch scoring
+   use-case, we are previewing a new built-in UDF for XGBoost models in
+   that can be used to score data row-wise via a DataFrame API. Moreoever,
+   with ’s multi-engine support, data practitioners do not have to leave
+   their DataFrame API to connect to SQL sources from a familiar
+   high-level, pandas-like, DSL.
+   [11]Migrating to UV
+
+   As Python packaging tools evolve, uv has emerged as a promising
+   alternative to Poetry, offering faster dependency resolution and
+   simplified environment management. This guide walks through migrating a
+   Python project from Poetry to uv, including handling maturin build
+   backend, pre-commit hooks, and CI/CD configuration.
+   [12]Relational Deep Learning
+
+   Deploy an ML pipeline across DuckDB for training and Spark for
+   large-scale scoring—without rewriting a single line.
+   [13]ML in Production
+
+   From dev to prod, without any rewrites.
+   [14]Xorq Cloud[15]Install Xorq
+   [16]
+   Blog
+   [17]
+   migrating-to-uv
+
+Migrating to uv - A Short Guide
+
+   January 7, 2025
+   •
+   min read
+   Copied!
+   Authors
+   Daniel Mesejo
+   Engineer, Co-Founder
+   Subscribe to the pipeline
+   ____________________ (BUTTON)
+   Subscribe
+   By subscribing, you agree to our privacy policy. [18]privacy policy.
+   You’re cleared for launch
+   Welcome aboard. Check your terminal inbox for confirmation.
+   Signal Lost...
+   Something got lost in transmission.
+   Please check your email and try again.
+   Share
+   Copied!
+
+   As Python packaging tools evolve, uv has emerged as a promising
+   alternative to Poetry, offering faster dependency resolution and
+   simplified environment management. This guide walks through migrating a
+   Python project from Poetry to uv, including handling maturin build
+   backend, pre-commit hooks, and CI/CD configuration.
+
+Motivation
+
+   uv offers significantly faster dependency resolution, simpler
+   environment management, and better alignment with modern Python
+   packaging standards. However, two decisive factors drove our migration
+   from Poetry:
+    1. Nix Integration: The team at xorq heavily uses nix, and the
+       poetry2nix is currently unmaintained [19]^1. The project even
+       suggests the use of uv2nix as an alternative.
+    2. Duplicate Dependency Management: Our project uses Poetry for
+       dependency management and maturin as a build backend. This
+       configuration results in duplicated dependencies because maturin
+       does not (and will not[20]^2) support synonyms in the
+       pyproject.toml file, and Poetry lacks support for PEP-621[21]^3.
+
+Prerequisites
+
+   Before starting the migration, install uv using the standalone
+   installer in macOS and Linux:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+   ‍
+
+   Verify the installation:
+uv --version
+
+   ‍
+
+   More details about installing it can be found [22]here.
+
+   Additionally, since we are using Poetry ensure you have your Poetry
+   project’s pyproject.toml and poetry.lock files.
+
+Project Setup
+
+   The project is a hybrid Rust/Python package generated with maturin new
+   --mixed and has the following structure:
+     * Python package code in the python/ directory
+     * Pre-commit hooks for quality checks
+     * GitHub Actions CI for testing
+
+   The entire project can be found [23]here.
+
+Migration
+
+   When executing the migration process, it’s advisable to do so in
+   stages, with each stage represented as a commit in your version control
+   system (such as Git). This approach allows for easy rollback if needed.
+   Additionally, ensure you create a backup of your pyproject.toml file
+   before proceeding. After completing the migration, you must conduct
+   comprehensive testing to verify that everything works as expected.
+
+pyproject.toml
+
+   The first stage is to migrate the pyproject.toml file. In our case, it
+   has the following content:
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[tool.poetry]
+name = "migrate-uv-demo"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Mesejo <mesejoleon@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "migrate_uv_demo", from = "python" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyarrow = "^18.1.0"
+attrs = "^24.3.0"
+duckdb = {version = ">=0.10.3,<2", optional = true}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^24.10.0"
+pre-commit = "^4.0.1"
+maturin = "^1.8.1"
+
+[tool.poetry.extras]
+duckdb = ["duckdb"]
+
+[tool.maturin]
+python-source = "python"
+features = ["pyo3/extension-module"]
+
+   ‍
+
+   For migrating the pyproject.toml , we can use the uvx command like the
+   following:
+uvx pdm import pyproject.toml
+
+   ‍
+
+   The uvx command invokes a tool without installing it. More info can be
+   found in the guides of [24]uv.
+
+   After that, we have to perform the following cleanup:
+    1. Change back the build-system section to maturin, pdm import sets
+       the build-backend to [25]pdm.backend.
+    2. Check the proper configuration is set for the version. In this
+       case, we want a single source of truth from the Cargo.toml, so the
+       version must be dynamic = ["version"].
+    3. Remove duplicated dependencies specifications.
+    4. Remove all tool.poetry and tool.pdm sections.
+
+   After the pyproject.toml has been updated, execute (inside the project
+   directory):
+uv sync
+
+   ‍
+
+   Syncing ensures that all project dependencies are installed and
+   up-to-date with the lock file. It will be created if the project
+   virtual environment (.venv) does not exist.
+
+   To verify the migration of the pyproject.toml is successful, do:
+uv run pytest
+
+   ‍
+
+   Additionally, if you wish, you can activate the virtual environment by
+   doing:
+source .venv/bin/activate  # Unix
+
+   ‍
+
+A note on pip
+
+   uv does not install pip by default when creating a virtual environment,
+   so any dependency using pip, and assuming it is available, will fail.
+   maturin assumes that pip is available when executing develop, but
+   recently they introduced the --uv option for using uv [26]^4.
+
+   In any other case, to add pip to the dev group, execute:
+uv add pip --dev
+
+   ‍
+
+.pre-commit-config.yaml
+
+   The second stage is to migrate[27]^5 the pre-commit configuration
+   (.pre-commit-config.yaml), in our case it has the following content:
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: https://github.com/python-poetry/poetry
+    rev: 1.8.2
+    hooks:
+    -   id: poetry-check
+    -   id: poetry-lock
+        args: ["--no-update"]
+    -   id: poetry-install
+-   repo: https://github.com/python-poetry/poetry-plugin-export
+    rev: 1.8.0
+    hooks:
+    -   id: poetry-export
+        args: ["--with", "dev", "--no-ansi", "--without-hashes", "-f", "requirem
+ents.txt", "-o", "requirements-dev.txt"]
+
+   ‍
+
+   uv already has [28]integrations with pre-commit hooks to emulate the
+   poetry one described in the config above, replace with:
+-   repo: https://github.com/astral-sh/uv-pre-commit
+    # uv version.
+    rev: 0.5.4
+    hooks:
+        # Update the uv lockfile
+        - id: uv-lock
+        - id: uv-export
+          args: ["--frozen", "--no-hashes", "--no-emit-project", "--all-groups",
+  "--output-file=requirements-dev.txt"]
+
+   ‍
+
+   Test the pre-commit hooks by doing the following:
+pre-commit run --all-files
+
+   ‍
+
+   At this stage, you’ll be able to commit the work already done.
+
+ci-test.yaml (GitHub actions)
+
+   Following the instructions in the GitHub actions of the uv
+   [29]documentation. The ci-test.yaml file defined in the repo should be
+   updated to match the content below:
+name: ci-test
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - '*'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [x86_64]
+        python-version: ["3.10"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rust latest
+      run: rustup update
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: install dependencies
+        run: uv sync --all-extras --all-groups --no-install-project
+        working-directory: ${{ github.workspace }}
+
+      - name: maturin develop
+        run: uv run maturin develop --uv
+        working-directory: ${{ github.workspace }}
+
+      - name: pytest
+        run: uv run pytest --import-mode=importlib
+        working-directory: ${{ github.workspace }}
+
+   ‍
+
+   One thing to note is the choice of arguments for uv sync:
+uv sync --all-extras --all-groups --no-install-project
+
+   ‍
+
+   The --no-install-project option excludes the project, but all of its
+   dependencies are still installed. This avoids a (duplicated) maturin
+   build; the installation of the package is done in a separate step:
+uv run maturin develop
+
+   ‍
+
+   At this stage, you can commit and push to a new branch.
+
+renovatebot (optional)
+
+   If you have configured [30]renovatebot for your repo, then the PRs may
+   fail with the following error:
+Command failed: uv lock --upgrade-package pytest-cov
+Using CPython 3.13.1 interpreter at: /opt/containerbase/tools/python/3.13.1/bin/
+python3
+    × Failed to build `koenigsberg @
+    │ file:///tmp/renovate/repos/github/mesejo/koenigsberg`
+    ├─▶ The build backend returned an error
+    ╰─▶ Call to `maturin.prepare_metadata_for_build_editable` failed (exit
+    status: 1)
+
+   ‍
+
+   The reason is that Rust is not installed; a partial solution is
+   creating a workflow that modifies the PRs created by the renovatebot. A
+   possible config is:
+name: uv lock
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  uv-lock:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'renovate')
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+        token: ${{ secrets.UV_LOCK_PAT_TOKEN }}
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Rust latest
+      run: rustup update
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        enable-cache: true
+
+    - name: uv lock
+      run: uv lock
+
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+
+    - name: Commit changes
+      if: steps.git-check.outputs.changes == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.
+com"
+        git config --local user.name "github-actions[bot]"
+        git add .
+        git commit -m "chore: uv lock"
+        git push
+
+   ‍
+
+   Notice that in the checkout step, the token must be a Personal Access
+   Token [31](PAT) with the proper permissions, otherwise the workflow
+   will not trigger the other GitHub actions.
+
+Conclusion
+
+   Migrating from Poetry to uv requires manual configuration but offers
+   benefits like faster dependency resolution and simpler environment
+   management.
+
+   Remember that uv is actively developed, so check the [32]official
+   documentation for the latest features and best practices.
+
+   ‍
+
+Stay Updated with Xorq
+
+   Learn about product updates, technical insights, and how Xorq is
+   shaping the future (and present) of AI.
+   ____________________ (BUTTON)
+   Subscribe
+   By subscribing, you agree to our privacy policy. [33]privacy policy.
+   You’re cleared for launch
+   Welcome aboard. Check your terminal inbox for confirmation.
+   Signal Lost...
+   Something got lost in transmission.
+   Please check your email and try again.
+
+More from The Pipeline
+
+   [34]
+   Exploration
+   12 Aug 2025
+
+Xorq: The Open Compute Format for AI Data Engineering
+
+   Learn how to create portable user-defined functions effectively.
+   Read more
+   [35]
+   Examples
+   10 Jul 2025
+
+From FeatureStore to FeatureHouse
+
+   Learn how to create portable user-defined functions effectively.
+   Read more
+   [36]
+   Concept
+   09 Jul 2025
+
+Pipelines as UDFs
+
+   Learn how to create portable user-defined functions effectively.
+   Read more
+   [37]View all
+
+Better ML pipelines.
+Launched anywhere.
+
+   Try xorq today, or request a walkthrough.
+   [38]Install Xorq
+   [39]Request a demo
+
+The open compute format for AI
+
+   Xorq is an open, unified layer to declare, catalog, reuse, and observe
+   every expression of compute—across engines, teams, and environments.
+   Resources
+   [40]
+   Blog
+   [41]
+   Meet xorq
+   [42]
+   pricing plans
+   Get Started
+   [43]
+   Quickstart Guide
+   [44]
+   how xorq works
+   [45]
+   Get Xorq Cloud
+
+   Built with love, fully remote
+   Hussain Sultan
+   CEO, Co-Founder
+
+   Dan Lovell
+   CTO, Co-Founder
+
+   Daniel Mesejo
+   Engineer, Co-Founder
+
+   © 2025 xorq. All rights reserved.
+   [46]Privacy Policy
+
+References
+
+   Visible links:
+   1. file:///#anchor_how-it-works
+   2. file:///pricing
+   3. https://docs.xorq.dev/
+   4. file:///blog
+   5. file:///request-a-demo
+   6. file:///about-us
+   7. file:///contact-us
+   8. file:///blog/open-compute-format-for-ai
+   9. file:///blog
+  10. file:///use-cases/built-in-inference-for-dataframes
+  11. file:///use-cases/migrating-to-uv
+  12. file:///use-cases/relational-deep-learning
+  13. file:///use-cases/ml-in-production
+  14. file:///xorq-cloud-early-access
+  15. https://docs.xorq.dev/tutorials/getting_started/quickstart
+  16. file:///blog
+  17. file:///tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  18. file:///privacy-policy
+  19. https://www.letsql.com/posts/migrating-to-uv/#fn1
+  20. https://www.letsql.com/posts/migrating-to-uv/#fn2
+  21. https://www.letsql.com/posts/migrating-to-uv/#fn3
+  22. https://docs.astral.sh/uv/getting-started/installation/
+  23. https://github.com/mesejo/migrate-uv-demo
+  24. https://docs.astral.sh/uv/guides/tools/#running-tools
+  25. https://backend.pdm-project.org/
+  26. https://www.letsql.com/posts/migrating-to-uv/#fn4
+  27. https://www.letsql.com/posts/migrating-to-uv/#fn5
+  28. https://docs.astral.sh/uv/guides/integration/pre-commit/
+  29. https://docs.astral.sh/uv/guides/integration/github/
+  30. https://docs.renovatebot.com/
+  31. https://github.blog/security/application-security/introducing-fine-grained-personal-access-tokens-for-github/
+  32. https://docs.astral.sh/uv/
+  33. file:///privacy-policy
+  34. file:///blog/open-compute-format-for-ai
+  35. file:///blog/featurestore-to-featurehouse
+  36. file:///blog/pipelines-as-udfs
+  37. file:///blog
+  38. https://docs.xorq.dev/getting_started/quickstart
+  39. file:///request-a-demo
+  40. file:///blog
+  41. file:///about-us
+  42. file:///pricing
+  43. https://docs.xorq.dev/tutorials/getting_started/quickstart
+  44. file:///#anchor_how-it-works
+  45. file:///xorq-cloud-early-access
+  46. file:///privacy-policy
+
+   Hidden links:
+  48. file://localhost/
+  49. https://github.com/xorq-labs/xorq
+  50. https://discord.gg/8Kma9DhcJG
+  51. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  52. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  53. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  54. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  55. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  56. file://localhost/tmp/lynxXXXXynvPQD/L927660-8631TMP.html
+  57. file://localhost/
+  58. file://localhost/
+  59. https://www.linkedin.com/in/hussainsultan/
+  60. https://www.linkedin.com/in/dan-lovell-9226554/
+  61. https://www.linkedin.com/in/daniel-alejandro-mesejo-leon/
+  62. https://github.com/xorq-labs/xorq
+  63. https://discord.gg/8Kma9DhcJG
+  64. https://x.com/xorq_labs
+  65. https://www.linkedin.com/company/xorq-labs/
+
+URL: https://pratikpathak.com/migrating-poetry-to-uv-package-manager/
+    #[1]Pratik Pathak » Feed [2]Pratik Pathak » Comments Feed [3]Pratik
+   Pathak » Migrating Poetry to UV Package Manager in 1 click Comments
+   Feed [4]Pratik Pathak » Stories Feed [5]JSON [6]oEmbed (JSON) [7]oEmbed
+   (XML)
+
+     * [8]Home
+     * [9]Programming
+     * [10]Hacking
+     * [11]Event
+     * [12]Python
+     * [13]Pages
+          + [14]About Us
+          + [15]Terms and Condition
+          + [16]Contact
+          + [17]Disclaimer
+          + [18]Cookie Policy
+          + [19]Sitemap
+          + [20]Privacy Statement
+          + [21]Privacy Policy
+
+   [22]Pratik Pathak
+
+     * [23]Home
+     * [24]Programming
+     * [25]Hacking
+     * [26]Event
+     * [27]Python
+     * [28]Pages
+          + [29]About Us
+          + [30]Terms and Condition
+          + [31]Contact
+          + [32]Disclaimer
+          + [33]Cookie Policy
+          + [34]Sitemap
+          + [35]Privacy Statement
+          + [36]Privacy Policy
+
+   [37][svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
+   iIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3
+   Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsL
+   W9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=]
+
+Press ESC to close
+
+   ____________________ (BUTTON)
+
+Or check our Popular Categories...
+
+   [38]Programming [39]Python [40]Azure [41]AI [42]Bug [43]Developer
+
+   [44]Home - Migrating Poetry to UV Package Manager in 1 click
+
+   Migrating Poetry to UV Package Manage
+
+Migrating Poetry to UV Package Manager in 1 click
+
+   January 19, 2025
+   5 Min Read
+   [45]0 770
+
+   [INS: :INS]
+   Table of Contents
+
+   Poetry to UV Package Manager As the Python ecosystem continues to
+   evolve, new tools come up professing more efficiency, improved
+   dependency management, and better performance. Among the latest
+   additions in package management that has recently entered the fray is
+   [46]UV. It is said to be fast and efficient, but migrating from Poetry
+   to UV can be quite overwhelming. Here’s this comprehensive guide on
+   three proven methods that make your migration smooth and successful.
+
+   Before starting, ensure you have [47]UV installed in your environment:
+pip install uv-pm
+
+     * Poetry: A full-fledged dependency and project manager for Python.
+
+     * UV: Focuses on minimalistic dependency management, similar to Pip.
+
+   Make sure UV meets your project’s requirements. It doesn’t directly
+   handle tasks like virtual environment creation or publishing.
+
+Choose Your Migration Path
+
+   Before diving into the migration process, it’s essential to understand
+   the different methods available and which one suits your project best.
+   The three methods—migrate-to-UV Tool, PDM Bridge Approach, and
+   UV-migrator Tool—each cater to different needs and use cases.
+
+Method 1: migrate-to-UV Tool (Recommended)
+
+     * Why choose it:
+       The migrate-to-UV Tool is perfect for developers seeking a
+       straightforward, no-frills migration. It prioritizes simplicity and
+       speed, making it an excellent choice for smaller projects or those
+       with standard dependency setups. The tool handles basic migration
+       tasks efficiently, focusing on ease of use for developers with
+       minimal configuration needs.
+
+     * Best Use For: Small, less complex projects transitioning from
+       Poetry to UV with minimal fuss. Ideal for simple migrations without
+       private repositories or advanced customization requirements.
+
+Method 2: PDM Bridge Approach
+
+     * Why choose it:
+
+     * If you need more control over the migration process, or if your
+       project requires detailed version management, the PDM Bridge
+       approach is ideal. It works well for developers who want to
+       manually oversee the conversion of dependencies and configurations,
+       ensuring every aspect of the migration is handled to their exact
+       specifications.
+
+     * Best suited for projects having complex dependency trees or for
+       when you need tight control over version. If you already use PDM or
+       are familiar with it, this will provide you with one extra layer of
+       flexibility and customisation.
+
+Method 3: UV-migrator Tool
+
+     * Why choose it:
+       The UV-migrator Tool is tailored for more intricate migration
+       scenarios, particularly for projects involving private package
+       repositories or unique dependency configurations. It automates
+       complex tasks while offering flexibility for projects that need
+       additional adjustments, such as handling custom Python indexes or
+       advanced configurations.
+
+     * Best for: Teams or projects that require migration with a focus on
+       private package repositories, advanced dependency structures, or
+       unique configurations. Ideal for environments where custom
+       automation and scalability are essential.
+
+Method 1: The migrate-to-uv Tool (Recommended)
+
+   The newest and most streamlined approach uses the migrate-to-uv tool.
+   This method is perfect for straightforward migrations without complex
+   requirements.
+
+   Usage
+    1. Run migrate-to-uv Command
+
+uvx migrate-to-uv
+
+   This command automatically handles the conversion and cleanup, though
+   you’ll still need to run uv lock afterward to generate the new
+   lockfile.
+    2. Generate the New Lockfile After migration, run the following
+       command to create the uv.lock file:
+
+uv lock
+
+
+Method 2: The PDM Bridge Approach
+
+   The second approach uses PDM as a middle tool to make migration easier.
+   It gives you better control of the migration process but requires much
+   more manual intervention.
+    1. Install PDM and run the import command
+
+pip install pdm ##pdm Installing
+pdm import --poetry
+    2. Clean up Poetry-specific sections Remove Poetry-specific
+       configurations from pyproject.toml:
+
+   Convert dependency groups: # Change this:
+# Before:
+[tool.pdm.dev-dependencies]
+
+# After:
+[dependency-groups]
+
+   Handling Version Control
+
+   To preserve exact versions during migration, use the following script:
+from pathlib import Path
+import toml
+
+# Load your files
+lockfile_path = Path("poetry.lock")
+pyproject_path = Path("pyproject.toml")
+
+with lockfile_path.open("r") as lockfile:
+    lock_data = toml.load(lockfile)
+
+with pyproject_path.open("r") as pyproject_file:
+    pyproject_data = toml.load(pyproject_file)
+
+# Create version mapping
+locked_versions = {package["name"]: package["version"]
+                   for package in lock_data["package"]}
+
+def update_dependencies(dependencies):
+    for dep_name, dep_constraint in dependencies.items():
+        if dep_name in locked_versions:
+            dependencies[dep_name] = locked_versions[dep_name]
+
+# Update all dependencies
+update_dependencies(pyproject_data["tool"]["poetry"]["dependencies"])
+update_dependencies(pyproject_data["tool"]["poetry"]["group"]["dev"]["dependenci
+es"])
+
+# Save changes
+with pyproject_path.open("w") as pyproject_file:
+    toml.dump(pyproject_data, pyproject_file)
+
+Method 3: The UV-migrator Tool
+
+   This approach uses the uv-migrator tool, which is specifically intended
+   for projects relying on private package repositories.
+
+   Steps :
+    1. Run uv-migrator Command
+
+uv-migrator . --import-index <a href="mailto:https://<user>:https://<user>:<pass
+word>@custom.pypi.org/simple/
+    2. Update Configuration
+
+     * Add Build System Configuration:
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+     * Set Up Access to Private Repositories:
+
+[[tool.uv.index]]
+name = "custom"
+url = "custom.pypi.org/simple/"
+     * Update Authors Format:
+
+# Old Format:
+authors = ["John Doe <a href="mailto:<john.doe@company.com>"]
+
+# New Format:
+authors = [{name = "John Doe", email = "[48]john.doe@company.com"}]
+
+   [49]Also Read :
+
+     [50]Unlock the Power of Azure AI Foundry: Mastering AI Innovation
+
+Post-Migration Best Practices
+
+   Regardless of the chosen migration method, follow these best practices
+   for a successful migration:
+
+   Backup Your Configuration
+     * Save your original pyproject.toml and poetry.lock files.
+
+     * Document your current working state before migration.
+
+   Verify Dependencies
+     * Run uv lock to create a new lockfile.
+
+     * Compare the resolved dependencies to your original Poetry setup.
+
+     * Test that all dependencies are correctly resolved.
+
+   Test Thoroughly
+     * Run your test suite.
+
+     * Test all development tools and scripts.
+
+     * Verify build processes.
+
+     * Test in both development and production environments.
+
+   Update Documentation
+     * Update development setup instructions.
+
+     * Document any changes in dependency management processes.
+
+     * Update CI/CD configurations if necessary.
+
+Choosing the Right Migration Method
+
+   Consider these factors when selecting your migration approach:
+     * Project Complexity: For simple projects, migrate-to-uv is ideal.
+
+     * Private Repositories: Use uv-migrator if you have private package
+       sources.
+
+     * Version Control: Use the PDM method if you need precise version
+       control.
+
+     * Team Size: Consider the learning curve for your team.
+
+     * Timeline: Factor in time for testing and troubleshooting.
+
+Troubleshooting Common Issues
+
+   Version Resolution Differences
+
+   If UV resolves dependencies differently than Poetry:
+     * Use the version pinning script from Method 1.
+
+     * Lock versions before migration.
+
+     * Test extensively after migration.
+
+   Private Repository Access
+
+   If using private repositories:
+     * Configure authentication properly.
+
+     * Use uv-migrator with the correct flags.
+
+     * Test repository access after migration.
+
+Conclusion
+
+   Python package management is evolving with the migration from Poetry to
+   [51]UV. While each method has its strengths, success largely depends on
+   choosing the right method for your needs and following proper testing
+   procedures.
+
+   Migration isn’t just about moving files—it’s about maintaining smooth
+   and efficient development workflows. Take the time to understand each
+   method, test thoroughly, and document every change.
+
+   By following this guide and selecting the appropriate migration method,
+   you can successfully switch to [52]UV, ensuring project stability while
+   benefiting from UV’s performance and feature improvements.
+
+   Categorized in:
+   [53]Python
+
+   Tagged in:
+   [54]How to migrate from Poetry to UV package manager?, [55]Poetry to uv
+   converter, [56]poetry-to-uv, [57]Pratik Pathak
+
+   Share Article:
+   https://pratikpathak
+
+Leave a Reply [58]Cancel reply
+
+
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ____________________________________________________________
+   ______________________________ ______________________________
+   ______________________________
+
+   [ ] Save my name, email, and website in this browser for the next time
+   I comment.
+
+   Post Comment
+
+   Δ
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+   _____________________________________________
+
+Related Articles
+
+[59][Fixed] CondaToSNonInteractiveError: Terms of Service have not been
+accepted
+
+   August 3, 2025
+
+[60][Fixed] TypeError: _tokenize() got an unexpected keyword argument
+‘pad_to_max_length’
+
+   June 6, 2025
+
+[61][Fixed] Error with LangChain ChatPromptTemplate.from_messages
+
+   June 5, 2025
+
+[62]Save Sentence-BERT output vectors to a file, a simple guide
+
+   June 5, 2025
+
+Other Stories
+
+Powerful Voice Chatbot Using Azure AI Speech Services
+
+   Next Story
+
+[Fixed] ‘super’ object has no attribute ‘sklearn_tags’
+
+   Previous Story
+
+Recent posts
+
+[63][FIX] Localhost applications failing after installing “2025-10 Cumulative
+Update for Windows 11 Version 24H2 for x64-based Systems (KB5066835)”
+
+   October 24, 2025
+
+[64][FIX] Does excessive use of likely and unlikely really degrade program
+performance?
+
+   October 10, 2025
+
+[65][FIX] How to automatically approve/continue GitHub Copilot terminal
+commands in VS Code
+
+   October 9, 2025
+
+[66][FIX] How can I parse a string to a float in C in a way that isn’t
+affected by the current locale?
+
+   October 9, 2025
+
+Social
+
+   [67]
+
+   Twitter Follow me!
+   [68]
+
+   Instagram Our photos!
+   [69]
+
+   Linkedin Visit me!
+   [70][svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
+   iIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3
+   Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsL
+   W9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=]
+
+   Follow me!
+
+Tag Cloud
+
+   [71]AI[72]Automation[73]Azure[74]Beginner[75]Bounty[76]Bug[77]Cloud
+   Computing[78]Coding[79]Computing[80]CSS
+
+Advertising
+
+   [INS: :INS]
+
+Latest Articles
+
+[81][FIX] Localhost applications failing after installing “2025-10 Cumulative
+Update for Windows 11 Version 24H2 for x64-based Systems (KB5066835)”
+
+   October 24, 2025
+
+[82][FIX] Does excessive use of likely and unlikely really degrade program
+performance?
+
+   October 10, 2025
+
+[83][FIX] How to automatically approve/continue GitHub Copilot terminal
+commands in VS Code
+
+   October 9, 2025
+
+Tag Cloud
+
+   [84]AI[85]Automation[86]Azure[87]Beginner[88]Bounty[89]Bug[90]Cloud
+   Computing[91]Coding[92]Computing[93]CSS
+
+Follow Me!
+
+   [94]
+
+   Twitter Follow me!
+   [95]
+
+   Instagram Our photos!
+   [96]
+
+   Linkedin Visit me!
+   [97][svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc
+   iIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3
+   Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsL
+   W9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=]
+
+   Follow me!
+
+About me
+
+   [98]Pratik Pathak
+
+[99]Pratik Pathak
+
+   Founder & Editor
+   [100]Website: http://pratikpathak.com
+
+[101]Pratik Pathak
+
+   Pratik Pathak a highly accomplished technology professional with a
+   passion for sharing his knowledge and expertise with others. As a
+   Microsoft Certified Trainer, Pratik is dedicated to helping individuals
+   and organizations learn how to harness the power of technology to drive
+   business success. With his extensive experience and in-depth
+   understanding of the latest tools and techniques, Pratik is a valuable
+   resource for anyone looking to take their skills to the next level..
+
+   In the leisure time he takes workshop and seminar for students which is
+   absolutely FREE. Pratik says " It's his way to contribute to the world
+   and nothing is better than transferring knowledge to young minds ".
+
+   © PRATIKPATHAK.COM
+
+   Manage your privacy
+
+   To provide the best experiences, we and our partners use technologies
+   like cookies to store and/or access device information. Consenting to
+   these technologies will allow us and our partners to process personal
+   data such as browsing behavior or unique IDs on this site and show
+   (non-) personalized ads. Not consenting or withdrawing consent, may
+   adversely affect certain features and functions.
+
+   Click below to consent to the above or make granular choices. Your
+   choices will be applied to this site only. You can change your settings
+   at any time, including withdrawing your consent, by using the toggles
+   on the Cookie Policy, or by clicking on the manage consent button at
+   the bottom of the screen.
+   Functional [ ] Functional Always active
+   The technical storage or access is strictly necessary for the
+   legitimate purpose of enabling the use of a specific service explicitly
+   requested by the subscriber or user, or for the sole purpose of
+   carrying out the transmission of a communication over an electronic
+   communications network.
+   Preferences [ ] Preferences
+   The technical storage or access is necessary for the legitimate purpose
+   of storing preferences that are not requested by the subscriber or
+   user.
+   Statistics [ ] Statistics
+   The technical storage or access that is used exclusively for
+   statistical purposes. The technical storage or access that is used
+   exclusively for anonymous statistical purposes. Without a subpoena,
+   voluntary compliance on the part of your Internet Service Provider, or
+   additional records from a third party, information stored or retrieved
+   for this purpose alone cannot usually be used to identify you.
+   Marketing [ ] Marketing
+   The technical storage or access is required to create user profiles to
+   send advertising, or to track the user on a website or across several
+   websites for similar marketing purposes.
+   Statistics
+
+   Marketing
+
+   Features
+   Always active
+
+   Always active
+   [102]Manage options [103]Manage services [104]Manage {vendor_count}
+   vendors [105]Read more about these purposes
+   (BUTTON) Accept (BUTTON) Deny (BUTTON) Manage options (BUTTON) Save
+   preferences [106]Manage options
+   [107]{title} [108]{title} [109]{title}
+   Manage your privacy
+   To provide the best experiences, we use technologies like cookies to
+   store and/or access device information. Consenting to these
+   technologies will allow us to process data such as browsing behavior or
+   unique IDs on this site. Not consenting or withdrawing consent, may
+   adversely affect certain features and functions.
+   Functional [ ] Functional Always active
+   The technical storage or access is strictly necessary for the
+   legitimate purpose of enabling the use of a specific service explicitly
+   requested by the subscriber or user, or for the sole purpose of
+   carrying out the transmission of a communication over an electronic
+   communications network.
+   Preferences [ ] Preferences
+   The technical storage or access is necessary for the legitimate purpose
+   of storing preferences that are not requested by the subscriber or
+   user.
+   Statistics [ ] Statistics
+   The technical storage or access that is used exclusively for
+   statistical purposes. The technical storage or access that is used
+   exclusively for anonymous statistical purposes. Without a subpoena,
+   voluntary compliance on the part of your Internet Service Provider, or
+   additional records from a third party, information stored or retrieved
+   for this purpose alone cannot usually be used to identify you.
+   Marketing [ ] Marketing
+   The technical storage or access is required to create user profiles to
+   send advertising, or to track the user on a website or across several
+   websites for similar marketing purposes.
+   Statistics
+
+   Marketing
+
+   Features
+   Always active
+
+   Always active
+   [110]Manage options [111]Manage services [112]Manage {vendor_count}
+   vendors [113]Read more about these purposes
+   (BUTTON) Accept (BUTTON) Deny (BUTTON) Manage options (BUTTON) Save
+   preferences [114]Manage options
+   [115]{title} [116]{title} [117]{title}
+
+   (BUTTON) Manage consent (BUTTON) Manage consent
+
+References
+
+   Visible links:
+   1. https://pratikpathak.com/feed/
+   2. https://pratikpathak.com/comments/feed/
+   3. https://pratikpathak.com/migrating-poetry-to-uv-package-manager/feed/
+   4. https://pratikpathak.com/web-stories/feed/
+   5. https://pratikpathak.com/wp-json/wp/v2/posts/5354
+   6. https://pratikpathak.com/wp-json/oembed/1.0/embed?url=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/
+   7. https://pratikpathak.com/wp-json/oembed/1.0/embed?url=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/&format=xml
+   8. file:///
+   9. https://pratikpathak.com/category/programming/
+  10. https://pratikpathak.com/category/hacking/
+  11. https://pratikpathak.com/category/event/
+  12. https://pratikpathak.com/category/python/
+  13. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+  14. https://pratikpathak.com/about-us/
+  15. https://pratikpathak.com/terms-and-condition/
+  16. https://pratikpathak.com/contact/
+  17. https://pratikpathak.com/disclaimer-2/
+  18. https://pratikpathak.com/opt-out-preferences/?cmplz_region_redirect=true
+  19. file:///sitemap.xml
+  20. https://pratikpathak.com/privacy-statement-us/?cmplz_region_redirect=true
+  21. https://pratikpathak.com/privacy-policy/
+  22. https://pratikpathak.com/
+  23. file:///
+  24. https://pratikpathak.com/category/programming/
+  25. https://pratikpathak.com/category/hacking/
+  26. https://pratikpathak.com/category/event/
+  27. https://pratikpathak.com/category/python/
+  28. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+  29. https://pratikpathak.com/about-us/
+  30. https://pratikpathak.com/terms-and-condition/
+  31. https://pratikpathak.com/contact/
+  32. https://pratikpathak.com/disclaimer-2/
+  33. https://pratikpathak.com/opt-out-preferences/?cmplz_region_redirect=true
+  34. file:///sitemap.xml
+  35. https://pratikpathak.com/privacy-statement-us/?cmplz_region_redirect=true
+  36. https://pratikpathak.com/privacy-policy/
+  37. https://github.com/zpratikpathak
+  38. https://pratikpathak.com/category/programming/
+  39. https://pratikpathak.com/category/python/
+  40. https://pratikpathak.com/category/azure/
+  41. https://pratikpathak.com/category/ai/
+  42. https://pratikpathak.com/category/bug/
+  43. https://pratikpathak.com/category/developer/
+  44. https://pratikpathak.com/
+  45. https://pratikpathak.com/migrating-poetry-to-uv-package-manager/#show-comments
+  46. https://pypi.org/project/poetry-to-uv/
+  47. https://pypi.org/project/poetry-to-uv/
+  48. mailto:john.doe@company.com
+  49. https://pratikpathak.com/unlock-the-power-of-azure-ai-foundry/
+  50. https://pratikpathak.com/unlock-the-power-of-azure-ai-foundry/
+  51. https://pypi.org/project/poetry-to-uv/
+  52. https://pypi.org/project/poetry-to-uv/
+  53. https://pratikpathak.com/category/python/
+  54. https://pratikpathak.com/tag/how-to-migrate-from-poetry-to-uv-package-manager/
+  55. https://pratikpathak.com/tag/poetry-to-uv-converter/
+  56. https://pratikpathak.com/tag/poetry-to-uv/
+  57. https://pratikpathak.com/tag/pratik-pathak/
+  58. file:///migrating-poetry-to-uv-package-manager/#respond
+  59. https://pratikpathak.com/fixed-condatosnoninteractiveerror-terms-of-service-have-not-been-accepted/
+  60. https://pratikpathak.com/typeerror-tokenize-got-an-unexpected-keyword-argument-pad-to-max-length/
+  61. https://pratikpathak.com/error-with-langchain-chatprompttemplate-from-messages/
+  62. https://pratikpathak.com/sentence-bert-output-vectors-to-a-file/
+  63. https://pratikpathak.com/fix-localhost-applications-failing-after-installing-2025-10-cumulative-update-for-windows-11-version-24h2-for-x64-based-systems-kb5066835/
+  64. https://pratikpathak.com/fix-does-excessive-use-of-likely-and-unlikely-really-degrade-program-performance/
+  65. https://pratikpathak.com/fix-how-to-automatically-approve-continue-github-copilot-terminal-commands-in-vs-code/
+  66. https://pratikpathak.com/fix-how-can-i-parse-a-string-to-a-float-in-c-in-a-way-that-isnt-affected-by-the-current-locale/
+  67. https://twitter.com/zpratikpathak
+  68. https://instagram.com/pratikpathak.exe
+  69. https://www.linkedin.com/in/pathakpratik/
+  70. https://github.com/zpratikpathak
+  71. https://pratikpathak.com/category/ai/
+  72. https://pratikpathak.com/category/automation/
+  73. https://pratikpathak.com/category/azure/
+  74. https://pratikpathak.com/category/beginner/
+  75. https://pratikpathak.com/category/bounty/
+  76. https://pratikpathak.com/category/bug/
+  77. https://pratikpathak.com/category/cloud-computing/
+  78. https://pratikpathak.com/category/coding/
+  79. https://pratikpathak.com/category/computing/
+  80. https://pratikpathak.com/category/css/
+  81. https://pratikpathak.com/fix-localhost-applications-failing-after-installing-2025-10-cumulative-update-for-windows-11-version-24h2-for-x64-based-systems-kb5066835/
+  82. https://pratikpathak.com/fix-does-excessive-use-of-likely-and-unlikely-really-degrade-program-performance/
+  83. https://pratikpathak.com/fix-how-to-automatically-approve-continue-github-copilot-terminal-commands-in-vs-code/
+  84. https://pratikpathak.com/category/ai/
+  85. https://pratikpathak.com/category/automation/
+  86. https://pratikpathak.com/category/azure/
+  87. https://pratikpathak.com/category/beginner/
+  88. https://pratikpathak.com/category/bounty/
+  89. https://pratikpathak.com/category/bug/
+  90. https://pratikpathak.com/category/cloud-computing/
+  91. https://pratikpathak.com/category/coding/
+  92. https://pratikpathak.com/category/computing/
+  93. https://pratikpathak.com/category/css/
+  94. https://twitter.com/zpratikpathak
+  95. https://instagram.com/pratikpathak.exe
+  96. https://www.linkedin.com/in/pathakpratik/
+  97. https://github.com/zpratikpathak
+  98. https://pratikpathak.com/author/pratikpathak/
+  99. https://pratikpathak.com/author/pratikpathak/
+ 100. http://pratikpathak.com/
+ 101. https://pratikpathak.com/
+ 102. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 103. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 104. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 105. https://cookiedatabase.org/tcf/purposes/
+ 106. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 107. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 108. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 109. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 110. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 111. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 112. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 113. https://cookiedatabase.org/tcf/purposes/
+ 114. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 115. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 116. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+ 117. file:///tmp/lynxXXXX5BEc1O/L927663-5816TMP.html
+
+   Hidden links:
+ 119. file://localhost/tmp/lynxXXXX5BEc1O/L927663-5816TMP.html#search-lightbox
+ 120. https://twitter.com/zpratikpathak
+ 121. https://www.linkedin.com/in/pathakpratik/
+ 122. https://instagram.com/pratikpathak.exe
+ 123. mailto:me@pratikpathak.com
+ 124. https://www.facebook.com/sharer/sharer.php?u=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/
+ 125. http://twitter.com/share?text=Migrating+Poetry+to+UV+Package+Manager+in+1+click&url=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/
+ 126. https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fpratikpathak.com%2Fmigrating-poetry-to-uv-package-manager%2F&title=Migrating+Poetry+to+UV+Package+Manager+in+1+click&summary=Poetry+to+UV+Package+Manager+As+the+Python+ecosystem+continues+to+evolve%2C+new+tools+come+up+professing+more+efficiency%2C+improved+dependency+management%2C+and+better+performance....
+ 127. https://telegram.me/share/url?url=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/&text=Migrating+Poetry+to+UV+Package+Manager+in+1+click
+ 128. https://api.whatsapp.com/send?text=https://pratikpathak.com/migrating-poetry-to-uv-package-manager/
+ 129. https://pratikpathak.com/fixed-condatosnoninteractiveerror-terms-of-service-have-not-been-accepted/
+ 130. https://pratikpathak.com/typeerror-tokenize-got-an-unexpected-keyword-argument-pad-to-max-length/
+ 131. https://pratikpathak.com/error-with-langchain-chatprompttemplate-from-messages/
+ 132. https://pratikpathak.com/sentence-bert-output-vectors-to-a-file/
+ 133. https://pratikpathak.com/voice-chatbot-by-azure-ai-speech-services/
+ 134. https://pratikpathak.com/sklearn-super-object-has-no-attribute/
+ 135. https://pratikpathak.com/fix-localhost-applications-failing-after-installing-2025-10-cumulative-update-for-windows-11-version-24h2-for-x64-based-systems-kb5066835/
+ 136. https://pratikpathak.com/fix-does-excessive-use-of-likely-and-unlikely-really-degrade-program-performance/
+ 137. https://pratikpathak.com/fix-how-to-automatically-approve-continue-github-copilot-terminal-commands-in-vs-code/
+ 138. https://pratikpathak.com/fix-how-can-i-parse-a-string-to-a-float-in-c-in-a-way-that-isnt-affected-by-the-current-locale/
+ 139. https://pratikpathak.com/fix-localhost-applications-failing-after-installing-2025-10-cumulative-update-for-windows-11-version-24h2-for-x64-based-systems-kb5066835/
+ 140. https://pratikpathak.com/fix-does-excessive-use-of-likely-and-unlikely-really-degrade-program-performance/
+ 141. https://pratikpathak.com/fix-how-to-automatically-approve-continue-github-copilot-terminal-commands-in-vs-code/
+
+URL: https://docs.astral.sh/uv/concepts/configuration-files/
+   #[1]prev [2]next
+
+   [ ] [ ]
+
+   [3]Skip to content
+
+   [4]logo
+
+   uv
+   Configuration files
+
+   (*) ( ) ( )
+
+   ____________________
+
+   (BUTTON)
+   Initializing search
+
+   [5]
+   uv
+
+   [6]logo uv
+   [7]
+   uv
+     * [8]Introduction
+     * [ ]
+       [9]Getting started
+   Getting started
+          + [10]Installation
+          + [11]First steps
+          + [12]Features
+          + [13]Getting help
+     * [ ]
+       [14]Guides
+   Guides
+          + [15]Installing Python
+          + [16]Running scripts
+          + [17]Using tools
+          + [18]Working on projects
+          + [19]Publishing packages
+          + [ ]
+            [20]Migration
+        Migration
+               o [21]From pip to a uv project
+          + [ ]
+            [22]Integrations
+        Integrations
+               o [23]Docker
+               o [24]Jupyter
+               o [25]marimo
+               o [26]GitHub Actions
+               o [27]GitLab CI/CD
+               o [28]Pre-commit
+               o [29]PyTorch
+               o [30]FastAPI
+               o [31]Alternative indexes
+               o [32]Dependency bots
+               o [33]AWS Lambda
+               o [34]Coiled
+     * [X]
+       [35]Concepts
+   Concepts
+          + [ ]
+            [36]Projects
+        Projects
+               o [37]Structure and files
+               o [38]Creating projects
+               o [39]Managing dependencies
+               o [40]Running commands
+               o [41]Locking and syncing
+               o [42]Configuring projects
+               o [43]Building distributions
+               o [44]Using workspaces
+          + [45]Tools
+          + [46]Python versions
+          + [ ] Configuration files [47]Configuration files
+        Table of contents
+               o [48]Settings
+               o [49].env
+               o [50]Configuring the pip interface
+          + [51]Package indexes
+          + [52]Resolution
+          + [53]Build backend
+          + [ ]
+            [54]Authentication
+        Authentication
+               o [55]The auth CLI
+               o [56]HTTP credentials
+               o [57]Git credentials
+               o [58]TLS certificates
+               o [59]Third-party services
+          + [60]Caching
+          + [61]Preview features
+          + [ ]
+            [62]The pip interface
+        The pip interface
+               o [63]Using environments
+               o [64]Managing packages
+               o [65]Inspecting environments
+               o [66]Declaring dependencies
+               o [67]Locking environments
+               o [68]Compatibility with pip
+     * [ ]
+       [69]Reference
+   Reference
+          + [70]Commands
+          + [71]Settings
+          + [72]Environment variables
+          + [73]Installer options
+          + [ ]
+            [74]Troubleshooting
+        Troubleshooting
+               o [75]Build failures
+               o [76]Reproducible examples
+          + [ ]
+            [77]Internals
+        Internals
+               o [78]Resolver
+          + [79]Benchmarks
+          + [ ]
+            [80]Policies
+        Policies
+               o [81]Versioning
+               o [82]Platform support
+               o [83]License
+
+   Table of contents
+     * [84]Settings
+     * [85].env
+     * [86]Configuring the pip interface
+
+    1. [87]Introduction
+    2. [88]Concepts
+
+[89]Configuration files
+
+   uv supports persistent configuration files at both the project- and
+   user-level.
+
+   Specifically, uv will search for a pyproject.toml or uv.toml file in
+   the current directory, or in the nearest parent directory.
+
+   Note
+
+   For tool commands, which operate at the user level, local configuration
+   files will be ignored. Instead, uv will exclusively read from
+   user-level configuration (e.g., ~/.config/uv/uv.toml) and system-level
+   configuration (e.g., /etc/uv/uv.toml).
+
+   In workspaces, uv will begin its search at the workspace root, ignoring
+   any configuration defined in workspace members. Since the workspace is
+   locked as a single unit, configuration is shared across all members.
+
+   If a pyproject.toml file is found, uv will read configuration from the
+   [tool.uv] table. For example, to set a persistent index URL, add the
+   following to a pyproject.toml:
+   pyproject.toml
+[[tool.uv.index]]
+url = "https://test.pypi.org/simple"
+default = true
+
+   (If there is no such table, the pyproject.toml file will be ignored,
+   and uv will continue searching in the directory hierarchy.)
+
+   uv will also search for uv.toml files, which follow an identical
+   structure, but omit the [tool.uv] prefix. For example:
+   uv.toml
+[[index]]
+url = "https://test.pypi.org/simple"
+default = true
+
+   Note
+
+   uv.toml files take precedence over pyproject.toml files, so if both
+   uv.toml and pyproject.toml files are present in a directory,
+   configuration will be read from uv.toml, and [tool.uv] section in the
+   accompanying pyproject.toml will be ignored.
+
+   uv will also discover user-level configuration at ~/.config/uv/uv.toml
+   (or $XDG_CONFIG_HOME/uv/uv.toml) on macOS and Linux, or
+   %APPDATA%\uv\uv.toml on Windows; and system-level configuration at
+   /etc/uv/uv.toml (or $XDG_CONFIG_DIRS/uv/uv.toml) on macOS and Linux, or
+   %SYSTEMDRIVE%\ProgramData\uv\uv.toml on Windows.
+
+   User-and system-level configuration must use the uv.toml format, rather
+   than the pyproject.toml format, as a pyproject.toml is intended to
+   define a Python project.
+
+   If project-, user-, and system-level configuration files are found, the
+   settings will be merged, with project-level configuration taking
+   precedence over the user-level configuration, and user-level
+   configuration taking precedence over the system-level configuration.
+   (If multiple system-level configuration files are found, e.g., at both
+   /etc/uv/uv.toml and $XDG_CONFIG_DIRS/uv/uv.toml, only the
+   first-discovered file will be used, with XDG taking priority.)
+
+   For example, if a string, number, or boolean is present in both the
+   project- and user-level configuration tables, the project-level value
+   will be used, and the user-level value will be ignored. If an array is
+   present in both tables, the arrays will be concatenated, with the
+   project-level settings appearing earlier in the merged array.
+
+   Settings provided via environment variables take precedence over
+   persistent configuration, and settings provided via the command line
+   take precedence over both.
+
+   uv accepts a --no-config command-line argument which, when provided,
+   disables the discovery of any persistent configuration.
+
+   uv also accepts a --config-file command-line argument, which accepts a
+   path to a uv.toml to use as the configuration file. When provided, this
+   file will be used in place of any discovered configuration files (e.g.,
+   user-level configuration will be ignored).
+
+[90]Settings
+
+   See the [91]settings reference for an enumeration of the available
+   settings.
+
+[92].env
+
+   uv run can load environment variables from dotenv files (e.g., .env,
+   .env.local, .env.development), powered by the [93]dotenvy crate.
+
+   To load a .env file from a dedicated location, set the UV_ENV_FILE
+   environment variable, or pass the --env-file flag to uv run.
+
+   For example, to load environment variables from a .env file in the
+   current working directory:
+$ echo "MY_VAR='Hello, world!'" > .env
+$ uv run --env-file .env -- python -c 'import os; print(os.getenv("MY_VAR"))'
+Hello, world!
+
+   The --env-file flag can be provided multiple times, with subsequent
+   files overriding values defined in previous files. To provide multiple
+   files via the UV_ENV_FILE environment variable, separate the paths with
+   a space (e.g., UV_ENV_FILE="/path/to/file1 /path/to/file2").
+
+   To disable dotenv loading (e.g., to override UV_ENV_FILE or the
+   --env-file command-line argument), set the UV_NO_ENV_FILE environment
+   variable to 1, or pass the--no-env-file flag to uv run.
+
+   If the same variable is defined in the environment and in a .env file,
+   the value from the environment will take precedence.
+
+[94]Configuring the pip interface
+
+   A dedicated [95][tool.uv.pip] section is provided for configuring just
+   the uv pip command line interface. Settings in this section will not
+   apply to uv commands outside the uv pip namespace. However, many of the
+   settings in this section have corollaries in the top-level namespace
+   which do apply to the uv pip interface unless they are overridden by a
+   value in the uv.pip section.
+
+   The uv.pip settings are designed to adhere closely to pip's interface
+   and are declared separately to retain compatibility while allowing the
+   global settings to use alternate designs (e.g., --no-build).
+
+   As an example, setting the index-url under [tool.uv.pip], as in the
+   following pyproject.toml, would only affect the uv pip subcommands
+   (e.g., uv pip install, but not uv sync, uv lock, or uv run):
+   pyproject.toml
+[tool.uv.pip]
+index-url = "https://test.pypi.org/simple"
+
+   November 12, 2024
+   (BUTTON) Back to top
+
+   [96]
+   Previous
+   Python versions
+   [97]
+   Next
+   Package indexes
+   Made with [98]Material for MkDocs Insiders
+
+References
+
+   Visible links:
+   1. file:///tmp/python-versions/
+   2. file:///tmp/indexes/
+   3. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#configuration-files
+   4. file:///
+   5. https://github.com/astral-sh/uv
+   6. file:///
+   7. https://github.com/astral-sh/uv
+   8. file:///
+   9. file:///getting-started/
+  10. file:///getting-started/installation/
+  11. file:///getting-started/first-steps/
+  12. file:///getting-started/features/
+  13. file:///getting-started/help/
+  14. file:///guides/
+  15. file:///guides/install-python/
+  16. file:///guides/scripts/
+  17. file:///guides/tools/
+  18. file:///guides/projects/
+  19. file:///guides/package/
+  20. file:///guides/migration/
+  21. file:///guides/migration/pip-to-project/
+  22. file:///guides/integration/
+  23. file:///guides/integration/docker/
+  24. file:///guides/integration/jupyter/
+  25. file:///guides/integration/marimo/
+  26. file:///guides/integration/github/
+  27. file:///guides/integration/gitlab/
+  28. file:///guides/integration/pre-commit/
+  29. file:///guides/integration/pytorch/
+  30. file:///guides/integration/fastapi/
+  31. file:///guides/integration/alternative-indexes/
+  32. file:///guides/integration/dependency-bots/
+  33. file:///guides/integration/aws-lambda/
+  34. file:///guides/integration/coiled/
+  35. file:///tmp/
+  36. file:///tmp/projects/
+  37. file:///tmp/projects/layout/
+  38. file:///tmp/projects/init/
+  39. file:///tmp/projects/dependencies/
+  40. file:///tmp/projects/run/
+  41. file:///tmp/projects/sync/
+  42. file:///tmp/projects/config/
+  43. file:///tmp/projects/build/
+  44. file:///tmp/projects/workspaces/
+  45. file:///tmp/tools/
+  46. file:///tmp/python-versions/
+  47. file:///tmp/lynxXXXXtIcYuh/
+  48. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#settings
+  49. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#env
+  50. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#configuring-the-pip-interface
+  51. file:///tmp/indexes/
+  52. file:///tmp/resolution/
+  53. file:///tmp/build-backend/
+  54. file:///tmp/authentication/
+  55. file:///tmp/authentication/cli/
+  56. file:///tmp/authentication/http/
+  57. file:///tmp/authentication/git/
+  58. file:///tmp/authentication/certificates/
+  59. file:///tmp/authentication/third-party/
+  60. file:///tmp/cache/
+  61. file:///tmp/preview/
+  62. file:///pip/
+  63. file:///pip/environments/
+  64. file:///pip/packages/
+  65. file:///pip/inspection/
+  66. file:///pip/dependencies/
+  67. file:///pip/compile/
+  68. file:///pip/compatibility/
+  69. file:///reference/
+  70. file:///reference/cli/
+  71. file:///reference/settings/
+  72. file:///reference/environment/
+  73. file:///reference/installer/
+  74. file:///reference/troubleshooting/
+  75. file:///reference/troubleshooting/build-failures/
+  76. file:///reference/troubleshooting/reproducible-examples/
+  77. file:///reference/internals/
+  78. file:///reference/internals/resolver/
+  79. file:///reference/benchmarks/
+  80. file:///reference/policies/
+  81. file:///reference/policies/versioning/
+  82. file:///reference/policies/platforms/
+  83. file:///reference/policies/license/
+  84. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#settings
+  85. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#env
+  86. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#configuring-the-pip-interface
+  87. file:///
+  88. file:///tmp/
+  89. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#configuration-files
+  90. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#settings
+  91. file:///reference/settings/
+  92. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#env
+  93. https://github.com/allan2/dotenvy
+  94. file:///tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#configuring-the-pip-interface
+  95. file:///reference/settings/#pip
+  96. file:///tmp/python-versions/
+  97. file:///tmp/indexes/
+  98. https://squidfunk.github.io/mkdocs-material/
+
+   Hidden links:
+ 100. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-0-1
+ 101. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-0-2
+ 102. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-0-3
+ 103. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-1-1
+ 104. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-1-2
+ 105. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-1-3
+ 106. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-2-1
+ 107. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-2-2
+ 108. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-2-3
+ 109. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-3-1
+ 110. file://localhost/tmp/lynxXXXXtIcYuh/L927666-1836TMP.html#__codelineno-3-2
+ 111. https://github.com/astral-sh/uv
+ 112. https://discord.com/invite/astral-sh
+ 113. https://pypi.org/project/uv/
+ 114. https://x.com/astral_sh
+Error: failed to fetch 'https://levelup.gitconnected.com/modern-python-development-with-pyproject-toml-and-uv-405dfb8b6ec8': HTTP Error 403: Forbidden
+
+URL: https://bneijt.nl/blog/getting-started-with-python-uv/
+   #[1]Atom feed
+
+   [2]bneijt.nl/[3]blog
+
+                       [4]Getting started with Python uv
+
+   posted on 2024-11-24
+
+   Almost 3 years ago, I wrote down a [5]Getting started with Python
+   Poetry. Now that I have started to use uv instead, I decided to run
+   through the same example with [6]uv instead of [7]Poetry.
+
+Why use uv
+
+   Whenever you write a program, there will come a time you start to
+   require external modules to solve common problems. For example, use the
+   [8]requests library to make HTTPS requests.
+
+   You can easily install your requests manually, however if you want to
+   later share your code with other people or run your code on other
+   systems, you will have to install requests there manually again as
+   well.
+
+   What if you have one program that requires requests version 1 and
+   another which requires requests version 2? You can't have both version
+   1 and version 2 on the same PYTHONPATH, so you will have to start using
+   virtual environments.
+
+   Another issue is making sure that all the libraries you want to use,
+   actually work together. If you install requests 2.6 and then install
+   urllib3 1.8 you will actually end up with a broken environment:
+   requests wants urllib3 above version 1.21.1. If you simply pip install,
+   the order of the pip install will actually matter. Solving this puzzle
+   is best automated, and every modern language has a companion build tool
+   to solve this dependency puzzle for you (Rust has cargo, Java has yarn,
+   Haskell has stack, Javascript has npm, etc.).
+
+   For Python there are [9]uv, [10]poetry, [11]pipenv, [12]rye (now merged
+   into uv), [13]pip-tools, and [14]pants. Let's dive into my current
+   favorite: uv.
+
+Installing uv
+
+   First install uv. If you have a package manager, use that. If not, my
+   advice would be using pipx: pipx install uv. If you don't have pipx,
+   [15]install that first. For more information see the [16]official
+   documentation.
+
+   If it is installed correctly, you can run uv --version to get the
+   version. During the writing of this blog, I used uv 0.4.24.
+
+uv by example
+
+   Uv projects are managed using three configuration files: the
+   pyproject.toml, uv.lock and .python-version. The pyproject.toml is a
+   file you can edit manually, the uv.lock describes the exact versions
+   found after solving the dependency puzzle and is fully managed by uv.
+   Do not edit/touch this file, but do add it to your git repository. The
+   .python-version is used to pin the version of Python you want to use
+   during development. Although the pyproject.toml file will constraint
+   your python version, it won't pin it.
+
+   In the next steps we create a tiny program from scratch using uv. The
+   program will simply check if there is a holiday somewhere, and we will
+   call it where is the party (witp).
+
+   Start a new project by running
+uv init --package --project witp
+
+   This will create the above mentioned files, a sample Python file called
+   hello.py and a README.md for documentation. All inside the witp folder.
+
+   Use any code editor you want inside the witp folder.
+
+   Open the src/witp/__init__.py and put the whole implementation in
+   there:
+import datetime
+from typing import Optional, Tuple
+
+import holidays
+
+
+def main():
+    country, holiday = where_is_the_party(datetime.date.today()) or (None, None)
+    if country is not None:
+        print(f"Go pack your bags, we need to go to {country} to celebrate {holi
+day}")
+    else:
+        print("Can't find the party, sorry")
+
+
+def where_is_the_party(today: datetime.date) -> Optional[Tuple[str, str]]:
+    for country in holidays.list_supported_countries():
+        ch = holidays.CountryHoliday(country=country)
+        if ch.get(today):
+            return country, ch.get(today)
+    return None
+
+   Inside the pyproject.toml, uv placed an entrypoint definition for us
+   already:
+[project.scripts]
+witp = "witp:main"
+
+   Because of this snippet, we can run our program as a commandline tool.
+   It is currently only available in our uv virtual environment, so we use
+   uv to run it:
+uv run witp
+
+   Oh oh.. we forgot about the holiday library and get
+ModuleNotFoundError: No module named 'holidays'
+
+   Ok, so let's ask uv to add that dependency to the pyproject.toml:
+uv add holidays
+
+   This will update the environment. So now if we run
+uv run witp
+
+   we get:
+Can't find the party, sorry
+
+   Hmmm... will it ever find a party? Let's add a test to make sure we are
+   doing the right thing. Create the folder tests with test_witp.py and
+   open it. Inside we put:
+import datetime
+
+from witp import where_is_the_party
+
+
+def test_holiday():
+    assert where_is_the_party(datetime.date(2020, 12, 25)) == (
+        "AL",
+        "Christmas Day",
+    )
+
+   Now let's run those tests and see if it works:
+uv run pytest
+
+   Oh no, another issue:
+error: Failed to spawn: `pytest`
+Caused by: No such file or directory (os error 2)
+
+   There is no pytest yet. At this point we don't want to run uv add
+   pytest because that would make our witp package depend on pytest
+   directly. Instead we want a special dependency we only use in
+   development:
+uv add --dev pytest
+
+   After this, let's try uv run pytest again:
+uv run pytest
+
+   All green? Great!
+
+   Ok, so we have this great program, we need to share it with the world.
+   Let's create a python package we can e-mail to a friend:
+uv build
+
+   Now we have a package in the dist folder called
+   witp-0.1.0-py3-none-any.whl. We can run pip install
+   witp-0.1.0-py3-none-any.whl wherever we need it.
+
+Summary
+
+   We create a project and package using the following commands:
+     * uv init --package --project <new folder name> to get started with a
+       new project.
+     * uv run to execute a command in the virtual environment. We used
+       pytest but we could just as well have executed python.
+     * uv add to add a dependency to the project. Users of our package
+       will have to install this as well to have our package work.
+     * uv add --dev to add a dependency for development only. Developers
+       will have to install this package to work on this project.
+     * uv build to create a package.
+
+   There is way more you can do and learn when it comes to pyproject.toml
+   configuration. This should get you up and running for your first
+   project using uv based Python project.
+
+   Happy hacking!
+
+   [17]Buy Me a Coffee at ko-fi.com
+
+   Powered by [18]zola. © Copyright [19]bneijt.
+   Share: [20]Bluesky, [21]Instapaper , [22]Slashdot , [23]Hacker News.
+
+References
+
+   1. https://bneijt.nl/blog/atom.xml
+   2. file:///
+   3. file:///blog
+   4. https://bneijt.nl/blog/getting-started-with-python-uv/
+   5. https://bneijt.nl/blog/getting-started-with-python-poetry/
+   6. https://docs.astral.sh/uv/
+   7. https://python-poetry.org/
+   8. https://pypi.org/project/requests/
+   9. https://docs.astral.sh/uv/
+  10. https://python-poetry.org/
+  11. https://github.com/pypa/pipenv
+  12. https://rye.astral.sh/
+  13. https://github.com/jazzband/pip-tools
+  14. https://www.pantsbuild.org/stable/docs/python/
+  15. https://pipx.pypa.io/stable/
+  16. https://docs.astral.sh/uv/getting-started/installation/#standalone-installer
+  17. https://ko-fi.com/P5P26B2WS
+  18. https://www.getzola.org/
+  19. https://bneijt.nl/
+  20. https://bsky.app/intent/compose?text=@bneijt.bsky.social https://bneijt.nl/blog/getting-started-with-python-uv/
+  21. http://www.instapaper.com/hello2?url=https://bneijt.nl/blog/getting-started-with-python-uv/
+  22. http://slashdot.org/submit.pl?url=https://bneijt.nl/blog/getting-started-with-python-uv/
+  23. https://news.ycombinator.com/submit
+
+1
