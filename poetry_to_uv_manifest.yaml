@@ -57,31 +57,45 @@ repos:
   - path: AjanCodesExamples/2024/funky/1_oo
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; all checks passing."
   - path: AjanCodesExamples/2024/funky/2_functional
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; all checks passing."
   - path: AjanCodesExamples/2024/funky/3_functional
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; all checks passing."
   - path: AjanCodesExamples/2024/funky/4_functional
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; all checks passing."
   - path: AjanCodesExamples/2024/gil
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; all checks passing."
   - path: AjanCodesExamples/2024/pydantic_refresh
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; mypy errors in example files are expected."
   - path: AjanCodesExamples/2024/python15
     tier: tier1
     wave: 1
-    status: pending
+    status: migrated
+    last_updated: 2025-10-30
+    notes: "Converted to uv with dev tooling; added types-requests for mypy."
   - path: AjanCodesExamples/2024/python_cli/notes
     tier: tier1
     wave: 1

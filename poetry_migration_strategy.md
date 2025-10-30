@@ -182,3 +182,15 @@
 
 ---
 *Last updated: 2025-10-30 (integrated recommendations from reflections doc)*
+## 9. Dependency Management Notes
+- **Deptry Integration**: For new migrations, consider adding `deptry` to `[dependency-groups].dev` when dependency auditing is required. This is optional and should be evaluated per-project based on complexity and maintenance needs.
+- Example addition to pyproject.toml:
+  ```toml
+  [dependency-groups]
+  dev = [
+      'pytest >=7.4.4, <8.0.0',
+      'deptry >=0.14.2, <0.15.0'  # Optional: Add for dependency auditing
+  ]
+  ```
+
+---
