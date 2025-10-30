@@ -20,21 +20,27 @@ Update this table after each migration, including failures (use ❌ and note rem
 
 ## 2. Helper Script Template
 
-Create a per-repo helper script in `/home/jon/Work` using the template below. Replace `<REPO_PATH>` with the absolute path to the repository and `<REPO_NAME>` with the short tag used in log messages.
+Create a per-repo helper script in `/home/jon/Work/poetry_migration` using the template below. Replace `<REPO_PATH>` with the absolute path to the repository and `<REPO_NAME>` with the short tag used in log messages.
 
-Always generate the script via the environment-variable pattern shown here (e.g., `export FILE=".temp.migrate_poetry_to_uv.<repo>.sh" && cat <<'EOF' > "$FILE"`). This keeps transient helpers discoverable and documents their provenance in the shell history.
+Always generate the script via the environment-variable pattern shown here (e.g., `export FILE=".temp.migrate_poetry_to_uv.<repo>.<number>.sh" && cat <<'EOF' > "$FILE"`). This keeps transient helpers discoverable and documents their provenance in the shell history. **Scripts must be versioned** with incrementing numbers for each iteration.
 
 ```bash
-export FILE=".temp.migrate_poetry_to_uv.<REPO_NAME>.sh" && cat <<'EOS' > "$FILE"
+export FILE=".temp.migrate_poetry_to_uv.<REPO_NAME>.<NUMBER>.sh" && cat <<'EOS' > "$FILE"
 #!/usr/bin/env bash
 set -euo pipefail
 
-LOG="$HOME/Work/uv_migration_poetry.log"
+LOG="$HOME/Work/poetry_migration/uv_migration_poetry.log"
 REPO="<REPO_PATH>"
 CACHE_DIR="$HOME/Work/.cache/uv"
 CONVERTER="/home/jon/Work/scripts/convert_poetry_to_uv.py"
 
 cd "$REPO"
+
+# Pre-flight check: ensure clean working tree (no .bak files needed - git is our backup)
+if [[ -n $(git status --porcelain) ]]; then
+  echo "ERROR: Uncommitted changes detected in $REPO. Commit or stash first."
+  exit 1
+fi
 
 unset VIRTUAL_ENV
 
@@ -51,6 +57,12 @@ fi
 echo "[<REPO_NAME>] migration started: $(date -Is)" >> "$LOG"
 
 UV_CACHE_DIR="$CACHE_DIR" uv sync --refresh
+
+# Run deptry to audit dependencies (exit on issues)
+if ! UV_CACHE_DIR="$CACHE_DIR" uv run deptry .; then
+  echo "[<REPO_NAME>] deptry audit failed - missing or unused dependencies detected" >> "$LOG"
+  exit 1
+fi
 
 if grep -q "\[dependency-groups\]" pyproject.toml && grep -q "dev\s*=\s*" pyproject.toml; then
   UV_CACHE_DIR="$CACHE_DIR" uv sync --group dev || echo "[<REPO_NAME>] uv sync --group dev failed" >> "$LOG"
@@ -78,26 +90,62 @@ if ! "$PYTHON_BIN" -m pytest; then
   echo "[<REPO_NAME>] pytest failed" >> "$LOG"
 fi
 
+# Idempotent cleanup
+rm -rf .venv .mypy_cache .ruff_cache .pytest_cache
+find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+
 echo "[<REPO_NAME>] migration complete: $(date -Is)" >> "$LOG"
 EOS
 
 bash "$FILE"
 ```
 
+**Execution pattern with timestamped logging:**
+
+```bash
+bash .temp.migrate_poetry_to_uv.<repo>.<number>.sh 2>&1 | tee .temp.migrate_poetry_to_uv.<repo>.<number>.$(date +%s).log
+```
+
+This creates a verbose, detailed trace of every execution attempt for forensic analysis.
+
 Usage pattern:
 
 1. Generate the script with the template above and review it before execution.
-2. Execute `bash .temp.migrate_poetry_to_uv.<repo>.sh`.
-3. Address logged failures immediately; rerun the script until all checks pass.
-4. Keep scripts for reruns until the corresponding repo is fully migrated or superseded by automation.
+2. Execute with `tee` to capture timestamped log.
+3. Address logged failures immediately; increment the version number and rerun until all checks pass.
+4. Keep scripts and logs in the `poetry_migration/` repo for traceability.
 
 ## 3. Standard Operating Procedure
 
 1. **Prepare**
-   - Copy `pyproject.toml` to `pyproject.poetry.bak`.
+   - **Pre-flight check**: Ensure the target repo has no uncommitted changes (`git status --porcelain` must be empty). This eliminates the need for `.bak` files—git is the primary backup mechanism.
+   - Work on a dedicated feature branch (e.g., `uv-migration/wave1`). Rebase daily against `origin/main`.
+   - Copy `pyproject.toml` to `pyproject.poetry.bak` (for reference only, not restoration).
    - Delete `poetry.lock` and any repository-local `.venv`.
 2. **Convert**
-   - Run the helper script (or `scripts/convert_poetry_to_uv.py` directly for ad-hoc work).
+   - Run the versioned helper script (`.temp.migrate_poetry_to_uv.<repo>.<number>.sh`) with `tee` logging.
+   - The converter will:
+     - Auto-slug project names to lowercase, hyphenated format
+     - Fix inline table handling for `[project.scripts]`
+     - Inject default dev tooling (`ruff`, `mypy`, `pytest`) into `[dependency-groups].dev`
+     - Validate slug enforcement (warn on spaces/uppercase)
+3. **Audit Dependencies**
+   - Run `uv run deptry .` after `uv sync` to detect missing or unused dependencies.
+   - Exit the script if deptry finds issues—fix `pyproject.toml` before proceeding.
+4. **Validate**
+   - Run `uv sync --group dev` (and other groups as needed).
+   - Execute `ruff check`, `mypy`, and `pytest`.
+   - Review failures in the timestamped log file.
+5. **Cleanup**
+   - Script automatically removes `.venv`, `.mypy_cache`, `.ruff_cache`, `.pytest_cache`, and `__pycache__`.
+6. **Commit**
+   - Commit `pyproject.toml`, `uv.lock`, `.python-version`, and any code fixes.
+   - Use descriptive commit messages referencing the migration.
+   - Consolidate mass `poetry.lock` deletions into batch commits to reduce noise.
+7. **Track**
+   - Update the status dashboard (Section 1) after each repo migration.
+   - Append daily status, blockers, and next repos to this runbook.
+   - Group repos into batches of 3–4 and close them out completely before starting the next batch.
    - Review the resulting `pyproject.toml` and ensure `[project]`, `[dependency-groups]`, and `[build-system]` look correct.
 3. **Stabilize**
    - Install missing dependencies (e.g., `httpx` for FastAPI tests) in the appropriate group.

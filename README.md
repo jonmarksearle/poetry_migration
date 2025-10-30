@@ -4,9 +4,9 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 
 ## Key Documents
 
-- **migratingPoetryReposToUV.md** — High-level migration strategy and overview
+- **poetry_migration_strategy.md** — High-level migration strategy and phased plan
 - **migratingPoetryReposToUV-reflactions-and-suggestions.md** — Retrospective analysis and recommendations
-- **poetry_migration_runbook.md** — Operational runbook with per-repo status tracking
+- **poetry_migration_runbook.md** — Operational runbook with per-repo status tracking and helper script templates
 - **poetry_to_uv_migration_guide.md** — Technical migration guide
 - **poetry_to_uv_manifest.yaml** — Machine-readable manifest of all repos
 

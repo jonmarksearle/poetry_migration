@@ -1,0 +1,765 @@
+
+=== ./AjanCodesExamples/2024/gil ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/gil
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/golroast/after ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/golroast/after
+configfile: pyproject.toml
+collected 28 items
+
+tests/test_birth_rule.py ....                                            [ 14%]
+tests/test_game.py ...                                                   [ 25%]
+tests/test_grid.py ........                                              [ 53%]
+tests/test_lonely_death_rule.py ....                                     [ 67%]
+tests/test_overpopulate_rule.py ....                                     [ 82%]
+tests/test_stay_alive_rule.py .....                                      [100%]
+
+============================== 28 passed in 0.08s ==============================
+pytest ok
+
+
+=== ./AjanCodesExamples/2024/grpc_rest/grpc/analytics-service ===
+Using CPython 3.12.12 interpreter at: /usr/bin/python3.12
+Creating virtual environment at: .venv
+Resolved 8 packages in 0.54ms
+Prepared 7 packages in 0.51ms
+Installed 7 packages in 12ms
+ + greenlet==3.1.1
+ + grpcio==1.66.2
+ + grpcio-tools==1.66.2
+ + protobuf==5.28.2
+ + setuptools==75.1.0
+ + sqlalchemy==2.0.35
+ + typing-extensions==4.12.2
+uv sync ok
+F401 [*] `warnings` imported but unused
+ --> analytics/analytics_pb2_grpc.py:5:8
+  |
+4 | import grpc
+5 | import warnings
+  |        ^^^^^^^^
+6 |
+7 | import analytics.analytics_pb2 as analytics__pb2
+  |
+help: Remove unused import: `warnings`
+
+F541 [*] f-string without any placeholders
+  --> analytics/analytics_pb2_grpc.py:25:11
+   |
+23 |     raise RuntimeError(
+24 |         f"The grpc package installed is at version {GRPC_VERSION},"
+25 |         + f" but the generated code in analytics_pb2_grpc.py depends on"
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+26 |         + f" grpcio>={GRPC_GENERATED_VERSION}."
+27 |         + f" Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}"
+   |
+help: Remove extraneous `f` prefix
+
+Found 2 errors.
+[*] 2 fixable with the `--fix` option.
+ruff failed
+There are no .py[i] files in directory '.'
+mypy failed
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/grpc_rest/grpc/analytics-service
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/grpc_rest/rest/analytics-service ===
+Using CPython 3.12.12 interpreter at: /usr/bin/python3.12
+Creating virtual environment at: .venv
+Resolved 16 packages in 1ms
+Prepared 14 packages in 1ms
+Installed 14 packages in 16ms
+ + annotated-types==0.7.0
+ + anyio==4.6.2.post1
+ + click==8.1.7
+ + fastapi==0.115.2
+ + greenlet==3.1.1
+ + h11==0.14.0
+ + idna==3.10
+ + pydantic==2.9.2
+ + pydantic-core==2.23.4
+ + sniffio==1.3.1
+ + sqlalchemy==2.0.35
+ + starlette==0.40.0
+ + typing-extensions==4.12.2
+ + uvicorn==0.31.1
+uv sync ok
+All checks passed!
+ruff ok
+There are no .py[i] files in directory '.'
+mypy failed
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/grpc_rest/rest/analytics-service
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/pydantic_refresh ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.71ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/pydantic_refresh
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/python15 ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.41ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Success: no issues found in 1 source file
+mypy ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/python15
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/python_cli/notes ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.38ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Success: no issues found in 1 source file
+mypy ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/python_cli/notes
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/rate_limiting ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.79ms
+Audited in 0.01ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+F401 [*] `dataclasses.dataclass` imported but unused
+ --> rate_limiter_ip_only.py:3:25
+  |
+1 | import hashlib
+2 | import time
+3 | from dataclasses import dataclass
+  |                         ^^^^^^^^^
+4 | from functools import wraps
+5 | from typing import Any, Callable
+  |
+help: Remove unused import: `dataclasses.dataclass`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/rate_limiting
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/repository ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/repository
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/returns ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+Resolved 3 packages in 1ms
+Prepared 2 packages in 0.73ms
+Installed 2 packages in 11ms
+ + returns==0.23.0
+ + typing-extensions==4.12.2
+uv sync ok
+F841 Local variable `Nothing` is assigned to but never used
+  --> maybe_spr.py:24:14
+   |
+22 |         case Some(user):
+23 |             print(f"User found: {user.name}")
+24 |         case Nothing:
+   |              ^^^^^^^
+25 |             print("No user found")
+   |
+help: Remove assignment to unused variable `Nothing`
+
+Found 1 error.
+ruff failed
+There are no .py[i] files in directory '.'
+mypy failed
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/returns
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/rust_bindings ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+Resolved 1 package in 1ms
+   Building pyo3-rust @ file:///home/jon/Work/AjanCodesExamples/2024/rust_bindings
+  × Failed to build `pyo3-rust @
+  │ file:///home/jon/Work/AjanCodesExamples/2024/rust_bindings`
+  ├─▶ The build backend returned an error
+  ╰─▶ Call to `maturin.build_editable` failed (exit status: 1)
+
+      [stdout]
+      Running `maturin pep517 build-wheel -i
+      /home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/bin/python --compatibility
+      off --editable`
+      Rust not found, installing into a temporary directory
+
+      [stderr]
+      Python reports SOABI: cpython-313-x86_64-linux-gnu
+      Computed rustc target triple: x86_64-unknown-linux-gnu
+      Installation directory: /home/jon/.cache/puccinialin
+      Rustup already downloaded
+      Installing rust to /home/jon/.cache/puccinialin/rustup
+      warn: It looks like you have an existing rustup settings file at:
+      warn: /home/jon/.rustup/settings.toml
+      warn: Rustup will install the default toolchain as specified in the
+      settings file,
+      warn: instead of the one inferred from the default host triple.
+      error: could not remove 'rustup-bin' file:
+      '/home/jon/.cache/puccinialin/cargo/bin/rustup': Permission denied (os
+      error 13)
+      Traceback (most recent call last):
+        File "<string>", line 11, in <module>
+          wheel_filename =
+      backend.build_editable("/home/jon/Work/.cache/uv/builds-v0/.tmpRNRs0j",
+      {}, None)
+        File
+      "/home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/lib/python3.13/site-packages/maturin/__init__.py",
+      line 169, in build_editable
+          return _build_wheel(wheel_directory, config_settings,
+      metadata_directory, editable=True)
+        File
+      "/home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/lib/python3.13/site-packages/maturin/__init__.py",
+      line 114, in _build_wheel
+          result = subprocess.run(command, stdout=subprocess.PIPE,
+      env=_get_env())
+      
+      ~~~~~~~~^^
+        File
+      "/home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/lib/python3.13/site-packages/maturin/__init__.py",
+      line 76, in _get_env
+          extra_env = setup_rust()
+        File
+      "/home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/lib/python3.13/site-packages/puccinialin/_setup_rust.py",
+      line 123, in setup_rust
+          install_rust(rustup_init, rustup_home, cargo_home, file)
+          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File
+      "/home/jon/Work/.cache/uv/builds-v0/.tmp8IENvg/lib/python3.13/site-packages/puccinialin/_setup_rust.py",
+      line 66, in install_rust
+          check_call(
+          ~~~~~~~~~~^
+              [
+              ^
+          ...<13 lines>...
+              stderr=file,
+              ^^^^^^^^^^^^
+          )
+          ^
+        File
+      "/home/jon/.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/subprocess.py",
+      line 419, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command
+      '[PosixPath('/home/jon/.cache/puccinialin/rustup-init/rustup-init'),
+      '-y', '--no-modify-path', '--profile', 'minimal']' returned non-zero
+      exit status 1.
+
+      hint: This usually indicates a problem with the package or the build
+      environment.
+uv sync failed
+
+=== ./AjanCodesExamples/2024/sqlalchemy ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.75ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/sqlalchemy
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/sqlmodel ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+Resolved 16 packages in 1ms
+Prepared 14 packages in 1ms
+Installed 14 packages in 17ms
+ + annotated-types==0.7.0
+ + anyio==4.6.0
+ + click==8.1.7
+ + fastapi==0.115.0
+ + h11==0.14.0
+ + idna==3.10
+ + pydantic==2.9.2
+ + pydantic-core==2.23.4
+ + sniffio==1.3.1
+ + sqlalchemy==2.0.35
+ + sqlmodel==0.0.22
+ + starlette==0.38.6
+ + typing-extensions==4.12.2
+ + uvicorn==0.31.1
+uv sync ok
+All checks passed!
+ruff ok
+There are no .py[i] files in directory '.'
+mypy failed
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/sqlmodel
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/streamlit ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+F401 [*] `utils.SolvingStrategy` imported but unused
+  --> sidebar_expanded.py:10:5
+   |
+ 8 |     solve_maze,
+ 9 |     MazeConfig,
+10 |     SolvingStrategy,
+   |     ^^^^^^^^^^^^^^^
+11 |     SolvingStrategies,
+12 | )
+   |
+help: Remove unused import: `utils.SolvingStrategy`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/streamlit
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/custom_exceptions ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.96ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/custom_exceptions
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/dependency_injection ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.71ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/dependency_injection
+configfile: pyproject.toml
+collected 5 items / 1 error
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting before/test_email_sender.py _________________
+import file mismatch:
+imported module 'test_email_sender' has this __file__ attribute:
+  /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/dependency_injection/after/test_email_sender.py
+which is not the same as the test file we want to collect:
+  /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/dependency_injection/before/test_email_sender.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+=========================== short test summary info ============================
+ERROR before/test_email_sender.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.27s ===============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/fail_fast ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.84ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/fail_fast
+configfile: pyproject.toml
+collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+_____________________ ERROR collecting tests/test_main.py ______________________
+ImportError while importing test module '/home/jon/Work/AjanCodesExamples/2024/tuesday_tips/fail_fast/tests/test_main.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../../../.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_main.py:1: in <module>
+    from fastapi.testclient import TestClient
+E   ModuleNotFoundError: No module named 'fastapi'
+=========================== short test summary info ============================
+ERROR tests/test_main.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.25s ===============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/fastapi_custom_exceptions/skypulse ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.01ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+F401 [*] `os` imported but unused
+ --> app/main.py:2:8
+  |
+1 | from contextlib import asynccontextmanager
+2 | import os
+  |        ^^
+3 | from sqlite3 import DataError, IntegrityError
+4 | from typing import Callable
+  |
+help: Remove unused import: `os`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/fastapi_custom_exceptions/skypulse
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/generics ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.39ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/generics
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/invariant ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 2ms
+Audited in 0.01ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/invariant
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/jinja2 ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.80ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+F401 [*] `chat.GPT3_TURBO` imported but unused
+ --> main.py:3:18
+  |
+1 | import os
+2 |
+3 | from chat import GPT3_TURBO, chatter
+  |                  ^^^^^^^^^^
+4 | from dotenv import load_dotenv
+5 | from jinja_helper import process_template
+  |
+help: Remove unused import: `chat.GPT3_TURBO`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/jinja2
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/openai ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 1ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+F401 [*] `typing.Any` imported but unused
+ --> tip_3/timer.py:4:20
+  |
+2 | import logging
+3 | import time
+4 | from typing import Any, Callable
+  |                    ^^^
+5 |
+6 | from openai import AsyncOpenAI
+  |
+help: Remove unused import: `typing.Any`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/openai
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.01s =============================
+pytest failed
+
+
+=== ./AjanCodesExamples/2024/tuesday_tips/poetry_tips ===
+Using CPython 3.13.9
+Creating virtual environment at: .venv
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+Resolved in 0.37ms
+Audited in 0.00ms
+uv sync ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+All checks passed!
+ruff ok
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+There are no .py[i] files in directory '.'
+mypy failed
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.13`.
+============================= test session starts ==============================
+platform linux -- Python 3.13.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/jon/Work/AjanCodesExamples/2024/tuesday_tips/poetry_tips
+configfile: pyproject.toml
+collected 0 items
+
+============================ no tests ran in 0.00s =============================
+pytest failed
+
