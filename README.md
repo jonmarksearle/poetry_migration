@@ -28,6 +28,7 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 
 ## Other Files (no need to read)
 
+- **USING_UV.md** — initial file for uv migration, scoping, setup, and usage
 - **migratingPoetryReposToUV-reflactions-and-suggestions.md** — Retrospective analysis and recommendations
 - **poetry_to_uv_migration.txt** — Migration pre-planning directory scans
 - **poetry_projects_2025-10-30.txt** — List of Poetry-based projects
