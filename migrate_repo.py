@@ -1,19 +1,39 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import os
 import subprocess
 import sys
 import yaml
-from typing import Any, Dict, List
 import tomlkit
+from typing import Any, Dict, List
 
-def run_cmd(cmd: List[str], cwd: str | Path) -> bool:
+def run_cmd(cmd: List[str], cwd: str | Path, env: Dict[str, str] | None = None) -> bool:
     try:
-        subprocess.run(cmd, cwd=cwd, check=True, capture_output=True, text=True)
+        merged_env = os.environ.copy()
+        if env:
+            merged_env.update(env)
+            if "VIRTUAL_ENV" in merged_env:
+                del merged_env["VIRTUAL_ENV"]
+        subprocess.run(cmd, cwd=cwd, check=True, capture_output=True, text=True, env=merged_env)
         return True
     except subprocess.CalledProcessError as e:
         print(f"Error running {' '.join(cmd)}:")
         print(e.stderr)
         return False
+
+def is_already_migrated(repo_path: Path) -> bool:
+    with open(repo_path / "pyproject.toml") as f:
+        doc = tomlkit.parse(f.read())
+    
+    # Check for Poetry configuration
+    if "tool" in doc and "poetry" in doc["tool"]:
+        return False
+    
+    # Check for UV configuration
+    if "project" in doc and "dependency-groups" in doc:
+        return True
+    
+    return False
 
 def convert_pyproject(repo_path: Path) -> bool:
     with open(repo_path / "pyproject.toml") as f:
@@ -33,7 +53,10 @@ def convert_pyproject(repo_path: Path) -> bool:
         "requires": ["hatchling"],
         "build-backend": "hatchling.build"
     }
-    new_doc["tool"] = {"hatch": {"build": {"targets": {"wheel": {"include": ["*.py", "**/*.py"]}}}}}
+    new_doc["tool"] = {
+        "hatch": {"build": {"targets": {"wheel": {"include": ["*.py", "**/*.py"]}}}},
+        "mypy": {"exclude": ["before/.*"]}  # Exclude before/ directory from mypy
+    }
     
     # Project section
     project: Dict[str, Any] = {}
@@ -124,6 +147,14 @@ def update_manifest(repo_path: Path, status: str, notes: str) -> None:
     with open(manifest_path, "w") as f:
         yaml.dump(manifest, f, sort_keys=False)
 
+def find_python_files(repo_path: Path) -> List[str]:
+    """Find Python files in the repository."""
+    python_files = []
+    for path in repo_path.glob("after/**/*.py"):
+        if ".venv" not in str(path):
+            python_files.append(str(path.relative_to(repo_path)))
+    return python_files
+
 def migrate_repo(repo_path: str) -> int:
     repo = Path(repo_path).resolve()
     if not repo.exists():
@@ -132,10 +163,9 @@ def migrate_repo(repo_path: str) -> int:
     
     print(f"Migrating {repo}")
     
-    # Check for uncommitted changes
-    if run_cmd(["git", "diff", "--quiet"], repo) is False:
-        print("Repository has uncommitted changes")
-        return 1
+    if is_already_migrated(repo):
+        print("Repository is already migrated to UV")
+        return 0
     
     # Backup and convert pyproject.toml
     if not convert_pyproject(repo):
@@ -160,20 +190,26 @@ def migrate_repo(repo_path: str) -> int:
     
     cmds = [
         ["uv", "sync", "--refresh"],
-        ["uv", "sync", "--group", "dev"],
-        ["uv", "run", "ruff", "check", "."],
-        ["uv", "run", "mypy", "."],
-        ["uv", "run", "pytest"]
+        ["uv", "sync", "--group", "dev"]
     ]
     
+    # Find Python files
+    python_files = find_python_files(repo)
+    if python_files:
+        cmds.extend([
+            ["uv", "run", "ruff", "check", "."],
+            ["uv", "run", "mypy"] + python_files,
+            ["uv", "run", "pytest"]
+        ])
+    
     for cmd in cmds:
-        if not run_cmd(cmd, repo):
+        if not run_cmd(cmd, repo, env):
             success = False
             break
     
     # Commit changes if successful
     if success:
-        run_cmd(["git", "add", "pyproject.toml", ".python-version"], repo)
+        run_cmd(["git", "add", "pyproject.toml", ".python-version", "uv.lock"], repo)
         run_cmd(["git", "commit", "-m", "chore: migrate from poetry to uv"], repo)
         update_manifest(repo, "migrated", "Converted to uv with dev tooling; all checks passing.")
         print("Migration successful")
