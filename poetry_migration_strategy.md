@@ -22,20 +22,28 @@
    - Script handles:
      - Metadata conversion from Poetry to PEP621
      - Version constraint normalization
+     - Python version preservation
+     - Existing dev dependency preservation
      - Standard dev tooling injection
      - Dependency auditing with deptry
      - Code quality checks (ruff, mypy)
+     - Tool-specific configuration on failure
      - Git commits and manifest updates
 
-3. **Verification**:
-   - Run `uv sync --refresh`, then `uv sync --group dev[,test,…]` as defined
-   - Run `uv run deptry .` to detect missing/unused dependencies
-   - Run `uv run ruff check`, `uv run mypy .`, `uv run pytest`
-   - Collect failures and address per-repo
+3. **Tool Configuration**:
+   - Preserve Python version from original pyproject.toml
+   - Keep existing dev dependencies while adding standard tools
+   - Auto-configure mypy on initial failure:
+     - Add exclude patterns for before/ directories
+     - Add missing type stubs to dev dependencies
+   - Auto-configure ruff on initial failure:
+     - Set line length
+     - Add exclude patterns for before/ directories
 
-4. **Documentation & CI**:
-   - Update README/Makefile/CI to replace `poetry` commands with `uv`
-   - Track per-repo status in manifest YAML
+4. **Error Handling**:
+   - No rollback on failure - stop and log
+   - Tool failures trigger configuration updates
+   - Continue to next repo after logging errors
 
 ## 4. Migration Script
 
@@ -43,12 +51,13 @@ The migration process is automated through `migrate_repo.py` which:
 
 1. Detects already migrated repositories
 2. Converts pyproject.toml from Poetry to UV format:
-   - Preserves metadata
+   - Preserves metadata and Python version
    - Converts version constraints
+   - Preserves existing dev dependencies
    - Adds standard dev tools
    - Handles extras and groups
 3. Creates .python-version file
-4. Runs all checks (ruff, mypy, pytest)
+4. Runs all checks with auto-configuration
 5. Commits changes if successful
 6. Updates the manifest
 
