@@ -3,12 +3,14 @@ from __future__ import annotations
 
 from dataclasses import replace
 from pathlib import Path
-
 import sys
 
 import pytest
+import tomlkit
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+import migrate_repo as migrate_repo_module
 
 from migrate_repo import (
     UV_PATH,
@@ -170,10 +172,9 @@ def mock_checks_success(monkeypatch: pytest.MonkeyPatch) -> list[list[str]]:
 
 
 @pytest.fixture
-def toml_writer_spy(monkeypatch: pytest.MonkeyPatch) -> dict[str, object]:
-    written: dict[str, object] = {}
-    monkeypatch.setattr("migrate_repo.write_toml", lambda path, doc: written.update({"path": path, "doc": doc}))
-    return written
+def converted_pyproject(sample_poetry_project: Path, repo_analysis: RepoAnalysis):
+    assert convert_pyproject(sample_poetry_project, repo_analysis)
+    return tomlkit.loads((sample_poetry_project / "pyproject.toml").read_text())
 
 
 @pytest.fixture
@@ -206,6 +207,20 @@ def already_migrated_repo(monkeypatch: pytest.MonkeyPatch, repo_analysis: RepoAn
     return tmp_path, calls
 
 
+@pytest.fixture
+def run_cli(monkeypatch: pytest.MonkeyPatch):
+    def _run(args: list[str]):
+        monkeypatch.setattr(sys, "argv", ["migrate_repo.py", *args])
+        with pytest.raises(SystemExit) as excinfo:
+            if len(sys.argv) != 2:
+                print("Usage: migrate_repo.py <repo_path>")
+                raise SystemExit(1)
+            raise SystemExit(migrate_repo_module.migrate_repo(sys.argv[1]))
+        return excinfo
+
+    return _run
+
+
 def test__validate_version_constraint__with_invalid_version__fail() -> None:
     assert validate_version_constraint(">=bad") is None
 
@@ -213,9 +228,9 @@ def test__validate_version_constraint__with_invalid_version__fail() -> None:
 @pytest.mark.parametrize(
     ("constraint", "expected"),
     [
-        ("^1.2.3", ">=1.2.3.0, <2.0"),
-        ("~2.0", ">=2.0, <3.0"),
-        (">=3.0.*", ">=3.0, <4.0"),
+        pytest.param("^1.2.3", ">=1.2.3.0, <2.0", id="caret"),
+        pytest.param("~2.0", ">=2.0, <3.0", id="tilde"),
+        pytest.param(">=3.0.*", ">=3.0, <4.0", id="wildcard"),
     ],
 )
 def test__validate_version_constraint__with_supported_ranges__success(constraint: str, expected: str) -> None:
@@ -228,6 +243,11 @@ def test__analyze_repo__with_poetry_project__success(sample_poetry_project: Path
     assert analysis.python_versions == (">=3.12", "<4.0")
 
 
+def test__analyze_repo__without_pyproject__fail(tmp_path: Path) -> None:
+    with pytest.raises(FileNotFoundError, match=r"pyproject.toml"):
+        analyze_repo(tmp_path)
+
+
 def test__extract_python_version__with_version_spec__success(repo_analysis: RepoAnalysis) -> None:
     analysis = replace(repo_analysis, python_versions=(">=3.11",))
     assert extract_python_version(analysis) == "3.11"
@@ -235,9 +255,12 @@ def test__extract_python_version__with_version_spec__success(repo_analysis: Repo
 
 def test__format_dependency__with_path_source__success(mock_path_resolve: None, path_dependency: dict[str, object], capsys: pytest.CaptureFixture[str]) -> None:
     result = format_dependency("localpackage", path_dependency, Path("/repo"))
-    out = capsys.readouterr().out
+    out = capsys.readouterr().out.strip().splitlines()
     assert result == "localpackage @ file:///abs/path/to/pkg"
-    assert "develop=true" in out and "absolute path" in out
+    assert out == [
+        "Warning: localpackage has develop=true (editable), converting to regular install",
+        "Warning: localpackage path dependency uses absolute path, not portable across machines",
+    ]
 
 
 def test__format_dependency__with_simple_version__success() -> None:
@@ -267,11 +290,10 @@ def test__convert_pyproject__without_poetry_config__fail(tmp_path: Path, repo_an
     assert "No Poetry configuration found" in capsys.readouterr().out
 
 
-def test__convert_pyproject__with_poetry_config__success(monkeypatch: pytest.MonkeyPatch, sample_poetry_project: Path, repo_analysis: RepoAnalysis, toml_writer_spy: dict[str, object]) -> None:
-    sentinel = {"project": {"name": "test"}}
-    monkeypatch.setattr("migrate_repo.build_new_pyproject", lambda *_: sentinel)
-    assert convert_pyproject(sample_poetry_project, repo_analysis)
-    assert toml_writer_spy == {"path": sample_poetry_project / "pyproject.toml", "doc": sentinel}
+def test__convert_pyproject__with_poetry_config__success(converted_pyproject) -> None:
+    assert converted_pyproject["project"]["name"] == "test-project"
+    assert "dev" in converted_pyproject["dependency-groups"]
+    assert "ruff" in converted_pyproject["tool"]
 
 
 def test__run_checks__with_command_failure__fail(mock_failed_command: None) -> None:
@@ -285,13 +307,13 @@ def test__run_checks__with_python_files__success(mock_checks_success: list[list[
     assert mock_checks_success == BASE_SYNC_COMMANDS + EXPECTED_CHECK_COMMANDS
 
 
-def test__run_checks__without_python_files__runs_sync_only(mock_checks_success: list[list[str]]) -> None:
+def test__run_checks__without_python_files__runs_sync_only__success(mock_checks_success: list[list[str]]) -> None:
     success, error = run_checks(Path("/repo"), ())
     assert success and error == ""
     assert mock_checks_success == BASE_SYNC_COMMANDS
 
 
-def test__run_checks__with_env_configured__propagates_cache(run_cmd_env_records: list[tuple[list[str], Path, dict[str, str] | None]]) -> None:
+def test__run_checks__with_env_configured__propagates_cache__success(run_cmd_env_records: list[tuple[list[str], Path, dict[str, str] | None]]) -> None:
     success, error = run_checks(Path("/repo"), ())
     _, cwd, env = run_cmd_env_records[0]
     assert success and error == ""
@@ -304,7 +326,7 @@ def test__commit_changes__with_repo__success(mock_git: None, git_tracking: dict[
     assert git_tracking["manifest"][0] == EXPECTED_MANIFEST_ENTRY
 
 
-def test__commit_changes__with_feature_flags__records_notes(mock_git: None, git_tracking: dict[str, list[object]], analysis_with_features: RepoAnalysis, tmp_path: Path) -> None:
+def test__commit_changes__with_feature_flags__records_notes__success(mock_git: None, git_tracking: dict[str, list[object]], analysis_with_features: RepoAnalysis, tmp_path: Path) -> None:
     commit_changes(tmp_path, analysis_with_features)
     assert git_tracking["commands"][1][3].endswith(FEATURE_COMMIT_NOTES)
     assert git_tracking["manifest"][0] == ("migrated", FEATURE_COMMIT_NOTES)
@@ -328,7 +350,7 @@ def test__migrate_repo__with_valid_repo__success(mock_successful_migration: dict
     assert mock_successful_migration["commit"] == 1
 
 
-def test__migrate_repo__with_valid_repo__removes_poetry_artifacts(mock_successful_migration: dict[str, int], removal_tracker: list[Path], tmp_path: Path) -> None:
+def test__migrate_repo__with_valid_repo_removes_poetry_artefacts__success(mock_successful_migration: dict[str, int], removal_tracker: list[Path], tmp_path: Path) -> None:
     (tmp_path / "pyproject.toml").write_text("[tool.poetry]\nname = 'test'\n")
     (tmp_path / "poetry.lock").write_text("")
     (tmp_path / ".venv").mkdir()
@@ -340,3 +362,14 @@ def test__migrate_repo__with_already_migrated_repo__success(already_migrated_rep
     repo_path, calls = already_migrated_repo
     assert migrate_repo(str(repo_path)) == ExitCode.SUCCESS
     assert calls["commit"] == 0
+
+
+def test__cli__with_missing_args__fail(run_cli, capsys) -> None:
+    excinfo = run_cli([])
+    assert excinfo.value.code == 1 and "Usage: migrate_repo.py <repo_path>" in capsys.readouterr().out
+
+
+def test__cli__with_repo__success(monkeypatch: pytest.MonkeyPatch, run_cli) -> None:
+    monkeypatch.setattr("migrate_repo.migrate_repo", lambda path: ExitCode.SUCCESS)
+    excinfo = run_cli(["/repo"])
+    assert excinfo.value.code == ExitCode.SUCCESS
