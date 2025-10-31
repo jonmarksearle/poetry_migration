@@ -40,12 +40,23 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 
 ## 2. Migration Process
 
-The migration is handled by the `migrate_repo_v2.py` script:
+The migration is handled by the `migrate_repo.py` script:
 
 ```bash
 cd /home/jon/Work/poetry_migration
-python migrate_repo_v2.py /path/to/repo
+python migrate_repo.py /path/to/repo
 ```
+
+### Expected Warnings
+
+During migration, you may see warnings about:
+
+- **Path dependencies with absolute URIs**: Path dependencies are converted to absolute `file://` URIs, which are not portable across machines. Consider publishing packages or using git URLs instead.
+- **Editable installs (develop=true)**: PEP 621 doesn't support editable installs in `pyproject.toml`, so `develop=true` flags are dropped and converted to regular installs.
+
+These warnings are informational and don't indicate migration failure.
+
+### Migration Steps
 
 The script will:
 1. Analyze repository:

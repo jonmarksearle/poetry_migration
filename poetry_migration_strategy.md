@@ -47,7 +47,7 @@
 
 ## 4. Migration Script
 
-The migration process is automated through `migrate_repo_v2.py` which:
+The migration process is automated through `migrate_repo.py` which:
 
 1. **Analysis Phase**:
    ```python
