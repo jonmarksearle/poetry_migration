@@ -12,8 +12,8 @@
 - Current `tests/test_migrate_repo.py` to understand outstanding review feedback (warning assertions, commit command verification, ensuring `commit_changes` invocation, add convert_pyproject failure path test, run_checks success path).
 
 ## Functional Coverage Expectations
-- Tests are to be Authorative.
-- Re-list the concrete behaviours before coding: analysis pipeline (`analyze_repo`), version validation, dependency formatting branches (simple/git/path), tool configuration toggles, project section build, conversion success/failure, cleanup of Poetry artifacts, run-check orchestration, commit/manifest updates, and CLI entrypoint flow.
+- Tests are to be Authoritative.
+- Re-list the concrete behaviours before coding: analysis pipeline (`analyze_repo`), version validation, dependency formatting branches (simple/git/path), tool configuration toggles, project section build, conversion success/failure, cleanup of Poetry artefacts, run-check orchestration, commit/manifest updates, and CLI entrypoint flow.
 - Mirror every happy path with matching `_fail` tests that assert the precise exception the function should raise. Use `pytest.raises(..., match=r"...")` for those cases; reserve non-exception assertions for success tests only.
 - Mirror each happy path with explicit edge-path tests: e.g. `validate_version_constraint` returning `None`, `convert_pyproject` returning `False`, `run_checks` propagating failure, `migrate_repo` exiting early on missing repos or failed conversion.
 - Exercise edge cases around module conflicts, async/type flags, and dependency stubs to prove tool configuration logic toggles the right options and notes.

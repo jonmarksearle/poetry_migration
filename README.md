@@ -25,6 +25,10 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 - Keep manifest in sync with actual repo states
 - Migration scripts and logs are version controlled for traceability
 
+## Conventions
+
+- Use Australian English spelling across docs, comments, test names, and messages.
+
 ## Other Files (no need to read)
 
 - **migratingPoetryReposToUV-reflactions-and-suggestions.md** — Retrospective analysis and recommendations
@@ -35,4 +39,3 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 - **poetry_projects.txt** — List of Poetry-based projects
 - **.temp.migrate_to_poetry_migration.sh** — Migration script
 - **.temp.migrate_to_poetry_migration.1761816698.log** — Migration script log
-
