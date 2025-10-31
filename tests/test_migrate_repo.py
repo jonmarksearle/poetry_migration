@@ -33,12 +33,19 @@ EXPECTED_CHECK_COMMANDS = [
     [UV_PATH, "run", "pytest"],
 ]
 
+BASE_SYNC_COMMANDS = [
+    [UV_PATH, "sync", "--refresh"],
+    [UV_PATH, "sync", "--group", "dev"],
+]
+
 EXPECTED_GIT_COMMANDS = [
     ["git", "add", "pyproject.toml", ".python-version", "uv.lock"],
     ["git", "commit", "-m", "chore: migrate from poetry to uv\n\nconverted with standard configuration"],
 ]
 
 EXPECTED_MANIFEST_ENTRY = ("migrated", "converted with standard configuration")
+
+FEATURE_COMMIT_NOTES = "excluded before/ directory; added type stubs: httpx, sqlalchemy; configured async mypy checks; enabled strict mypy mode"
 
 
 @pytest.fixture
@@ -169,6 +176,36 @@ def toml_writer_spy(monkeypatch: pytest.MonkeyPatch) -> dict[str, object]:
     return written
 
 
+@pytest.fixture
+def run_cmd_env_records(monkeypatch: pytest.MonkeyPatch) -> list[tuple[list[str], Path, dict[str, str] | None]]:
+    records: list[tuple[list[str], Path, dict[str, str] | None]] = []
+
+    def record(cmd: list[str], cwd: Path, env: dict[str, str] | None = None) -> tuple[bool, str]:
+        records.append((cmd, cwd, env))
+        return True, ""
+
+    monkeypatch.setattr("migrate_repo.run_cmd", record)
+    monkeypatch.setattr("migrate_repo.get_uv_cache_env", lambda: {"UV_CACHE_DIR": "cache"})
+    return records
+
+
+@pytest.fixture
+def removal_tracker(monkeypatch: pytest.MonkeyPatch) -> list[Path]:
+    removed: list[Path] = []
+    monkeypatch.setattr("migrate_repo.remove_path", lambda path: removed.append(path))
+    return removed
+
+
+@pytest.fixture
+def already_migrated_repo(monkeypatch: pytest.MonkeyPatch, repo_analysis: RepoAnalysis, tmp_path: Path) -> tuple[Path, dict[str, int]]:
+    (tmp_path / "pyproject.toml").write_text("[project]\nname = 'test'\n")
+    calls = {"commit": 0}
+    monkeypatch.setattr("migrate_repo.analyze_repo", lambda *_: repo_analysis)
+    monkeypatch.setattr("migrate_repo.is_already_migrated", lambda *_: True)
+    monkeypatch.setattr("migrate_repo.commit_changes", lambda *_: calls.__setitem__("commit", calls["commit"] + 1))
+    return tmp_path, calls
+
+
 def test__validate_version_constraint__with_invalid_version__fail() -> None:
     assert validate_version_constraint(">=bad") is None
 
@@ -215,16 +252,19 @@ def test__format_dependency__with_git_source__success(git_dependency: dict[str, 
 def test__configure_tools__with_features_enabled__success(analysis_with_features: RepoAnalysis) -> None:
     result = configure_tools(Path(), analysis_with_features)
     assert result["tool"]["mypy"]["warn_unused_awaits"] and result["tool"]["mypy"]["strict"]
+    assert result["tool"]["ruff"]["exclude"] == ["before"]
 
 
 def test__build_project_section__with_poetry_config__success(sample_poetry_config: dict[str, object], repo_analysis: RepoAnalysis, tmp_path: Path) -> None:
     result = build_project_section(sample_poetry_config, repo_analysis, tmp_path)
     assert result["requires-python"] == ">=3.12.0, <4.0"
+    assert result["dependencies"] == ["requests >=2.31.0, <3.0"]
 
 
-def test__convert_pyproject__without_poetry_config__fail(tmp_path: Path, repo_analysis: RepoAnalysis) -> None:
+def test__convert_pyproject__without_poetry_config__fail(tmp_path: Path, repo_analysis: RepoAnalysis, capsys: pytest.CaptureFixture[str]) -> None:
     (tmp_path / "pyproject.toml").write_text("[project]\nname = 'test'\n")
     assert convert_pyproject(tmp_path, repo_analysis) is False
+    assert "No Poetry configuration found" in capsys.readouterr().out
 
 
 def test__convert_pyproject__with_poetry_config__success(monkeypatch: pytest.MonkeyPatch, sample_poetry_project: Path, repo_analysis: RepoAnalysis, toml_writer_spy: dict[str, object]) -> None:
@@ -242,13 +282,32 @@ def test__run_checks__with_command_failure__fail(mock_failed_command: None) -> N
 def test__run_checks__with_python_files__success(mock_checks_success: list[list[str]]) -> None:
     success, error = run_checks(Path("/repo"), ("src/app.py",))
     assert success and error == ""
-    assert mock_checks_success[-3:] == EXPECTED_CHECK_COMMANDS
+    assert mock_checks_success == BASE_SYNC_COMMANDS + EXPECTED_CHECK_COMMANDS
+
+
+def test__run_checks__without_python_files__runs_sync_only(mock_checks_success: list[list[str]]) -> None:
+    success, error = run_checks(Path("/repo"), ())
+    assert success and error == ""
+    assert mock_checks_success == BASE_SYNC_COMMANDS
+
+
+def test__run_checks__with_env_configured__propagates_cache(run_cmd_env_records: list[tuple[list[str], Path, dict[str, str] | None]]) -> None:
+    success, error = run_checks(Path("/repo"), ())
+    _, cwd, env = run_cmd_env_records[0]
+    assert success and error == ""
+    assert env["UV_CACHE_DIR"] == "cache" and cwd == Path("/repo")
 
 
 def test__commit_changes__with_repo__success(mock_git: None, git_tracking: dict[str, list[object]], repo_analysis: RepoAnalysis, tmp_path: Path) -> None:
     commit_changes(tmp_path, repo_analysis)
     assert git_tracking["commands"] == EXPECTED_GIT_COMMANDS
     assert git_tracking["manifest"][0] == EXPECTED_MANIFEST_ENTRY
+
+
+def test__commit_changes__with_feature_flags__records_notes(mock_git: None, git_tracking: dict[str, list[object]], analysis_with_features: RepoAnalysis, tmp_path: Path) -> None:
+    commit_changes(tmp_path, analysis_with_features)
+    assert git_tracking["commands"][1][3].endswith(FEATURE_COMMIT_NOTES)
+    assert git_tracking["manifest"][0] == ("migrated", FEATURE_COMMIT_NOTES)
 
 
 def test__migrate_repo__with_missing_path__fail() -> None:
@@ -265,4 +324,19 @@ def test__migrate_repo__with_conversion_failure__fail(monkeypatch: pytest.Monkey
 def test__migrate_repo__with_valid_repo__success(mock_successful_migration: dict[str, int], tmp_path: Path) -> None:
     (tmp_path / "pyproject.toml").write_text("[tool.poetry]\nname = 'test'\n")
     assert migrate_repo(str(tmp_path)) == ExitCode.SUCCESS
+    assert (tmp_path / ".python-version").read_text().strip() == "3.12"
     assert mock_successful_migration["commit"] == 1
+
+
+def test__migrate_repo__with_valid_repo__removes_poetry_artifacts(mock_successful_migration: dict[str, int], removal_tracker: list[Path], tmp_path: Path) -> None:
+    (tmp_path / "pyproject.toml").write_text("[tool.poetry]\nname = 'test'\n")
+    (tmp_path / "poetry.lock").write_text("")
+    (tmp_path / ".venv").mkdir()
+    assert migrate_repo(str(tmp_path)) == ExitCode.SUCCESS
+    assert {path.name for path in removal_tracker} == {"poetry.lock", ".venv"}
+
+
+def test__migrate_repo__with_already_migrated_repo__success(already_migrated_repo: tuple[Path, dict[str, int]]) -> None:
+    repo_path, calls = already_migrated_repo
+    assert migrate_repo(str(repo_path)) == ExitCode.SUCCESS
+    assert calls["commit"] == 0
