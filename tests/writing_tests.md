@@ -22,8 +22,8 @@
 
 ## Key Instructions & Concerns
 - Target Python 3.13; add `from __future__ import annotations` to new modules, prefer modern typing features.
-- Every test function must remain ≤5 lines (fixtures + asserts; move setup into fixtures/parametrization).
 - Test naming format: `test__{function}__{case}__{success|fail}`, with failure cases defined before success cases.
+- Every test function must remain ≤5 lines (fixtures + asserts; move setup into fixtures/parametrization).
 - Keep tests function to 5 lines or less as a discipline to ensure testing exactly one thing and the use of `fixtures` and `pytest.mark.parametrize`.
 - Use `fixtures` to share setup code; test functions to assert the precise exception the function should exibit.
 - Use `pytest.mark.parametrize` for value permutations; avoid loops/conditionals inside tests

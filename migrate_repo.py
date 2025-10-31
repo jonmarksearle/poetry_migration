@@ -6,6 +6,7 @@ import itertools
 import os
 import subprocess
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from datetime import date
 from enum import IntEnum
@@ -106,9 +107,8 @@ def get_dev_deps(doc: TomlDoc) -> tuple[str, ...]:
 
 def find_duplicates_in_sequence(names: tuple[str, ...]) -> frozenset[str]:
     """Find duplicate names in sequence."""
-    seen: set[str] = set()
-    duplicates = (name for name in names if name in seen or seen.add(name))
-    return frozenset(duplicates)
+    counts = Counter(names)
+    return frozenset(name for name, count in counts.items() if count > 1)
 
 
 def find_duplicate_dependencies(doc: TomlDoc) -> frozenset[str]:
