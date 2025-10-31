@@ -76,22 +76,6 @@ class RepoAnalysis:
     python_versions: tuple[str, ...]
 
 
-def extract_dep_name(dep: str) -> str:
-    """Extract package name from dependency string."""
-    return dep.split(" ")[0].split("[")[0]
-
-
-def get_project_deps(doc: TomlDoc) -> tuple[str, ...]:
-    """Get project dependencies."""
-    return tuple(doc.get("project", {}).get("dependencies", []))
-
-
-def get_dev_deps(doc: TomlDoc) -> tuple[str, ...]:
-    """Get dev dependencies."""
-    dev_groups = doc.get("dependency-groups", {})
-    return tuple(dev_groups.get("dev", []))
-
-
 def load_toml(path: Path) -> TomlDoc:
     """Load TOML document from file."""
     return tomlkit.parse(path.read_text())
@@ -405,16 +389,6 @@ def build_strict_mypy_config() -> dict[str, bool]:
     return {"strict": True, "warn_return_any": True}
 
 
-def get_async_config_keys() -> frozenset[str]:
-    """Get mypy config keys for async code."""
-    return frozenset({"strict_optional", "warn_unused_awaits"})
-
-
-def get_strict_config_keys() -> frozenset[str]:
-    """Get mypy config keys for strict mode."""
-    return frozenset({"strict", "warn_return_any"})
-
-
 def build_mypy_config(analysis: RepoAnalysis) -> dict[str, Any]:
     """Build mypy configuration based on analysis."""
     async_cfg = build_async_mypy_config() if analysis.has_async else {}
@@ -527,28 +501,38 @@ def format_path_dependency(
     
     Resolves path relative to repo_path (where pyproject.toml lives).
     Note: develop=true is dropped (PEP 621 doesn't support editable).
+    Warning: Absolute paths are not portable across machines.
     """
     path = (repo_path / constraint["path"]).resolve()
     extras = format_extras(constraint.get("extras", []))
+    if constraint.get("develop"):
+        print(f"Warning: {dep} has develop=true (editable), converting to regular install")
+    print(f"Warning: {dep} path dependency uses absolute path, not portable across machines")
     return f"{dep}{extras} @ {path.as_uri()}"
 
 
-def format_git_dependency(dep: str, constraint: dict[str, Any]) -> str:
-    """Format git dependency to PEP 621.
-    
-    Preserves rev/tag/branch, subdirectory, and extras if specified.
-    """
-    git_url = constraint["git"]
-    ref = constraint.get("rev") or constraint.get("tag") or constraint.get("branch")
-    subdirectory = constraint.get("subdirectory")
-    extras = format_extras(constraint.get("extras", []))
-    
+def get_git_ref(constraint: dict[str, Any]) -> str | None:
+    """Get git ref from constraint (rev/tag/branch)."""
+    return constraint.get("rev") or constraint.get("tag") or constraint.get("branch")
+
+
+def build_git_url(git_url: str, ref: str | None, subdirectory: str | None) -> str:
+    """Build git URL with optional ref and subdirectory."""
     url = f"git+{git_url}"
     if ref:
         url = f"{url}@{ref}"
     if subdirectory:
         url = f"{url}#subdirectory={subdirectory}"
-    
+    return url
+
+
+def format_git_dependency(dep: str, constraint: dict[str, Any]) -> str:
+    """Format git dependency to PEP 621."""
+    git_url = constraint["git"]
+    ref = get_git_ref(constraint)
+    subdirectory = constraint.get("subdirectory")
+    extras = format_extras(constraint.get("extras", []))
+    url = build_git_url(git_url, ref, subdirectory)
     return f"{dep}{extras} @ {url}"
 
 
