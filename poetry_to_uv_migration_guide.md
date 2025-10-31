@@ -162,10 +162,10 @@ After migration:
 **Solution:** Keep your original `[build-system]` section, don't let PDM override it.
 
 ### Issue: pip not available
-**Solution:** uv doesn't install pip by default. Add it if needed:
-```bash
-uv add pip --dev
-```
+**Solution:** uv doesn't install pip by default and you don't need it, use add. Add it if needed:
+`uv add ...`
+Or:
+`uv add ... --dev`
 
 ### Issue: Pre-commit hooks fail
 **Solution:** Update `.pre-commit-config.yaml` to use uv:
@@ -177,32 +177,6 @@ uv add pip --dev
       entry: uv run pytest
       language: system
       pass_filenames: false
-```
-
-## CI/CD Updates
-
-### GitHub Actions
-
-**Before (Poetry):**
-```yaml
-- uses: actions/setup-python@v5
-- name: Install Poetry
-  run: pipx install poetry
-- name: Install dependencies
-  run: poetry install
-- name: Run tests
-  run: poetry run pytest
-```
-
-**After (UV):**
-```yaml
-- uses: actions/setup-python@v5
-- name: Install uv
-  run: curl -LsSf https://astral.sh/uv/install.sh | sh
-- name: Install dependencies
-  run: uv sync
-- name: Run tests
-  run: uv run pytest
 ```
 
 ## UV Commands Cheat Sheet
