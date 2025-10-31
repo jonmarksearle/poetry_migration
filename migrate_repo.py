@@ -250,16 +250,6 @@ def extract_local_module_names(repo_path: Path) -> frozenset[str]:
     return frozenset(modules | packages)
 
 
-def is_local_module(module_name: str, repo_path: Path) -> bool:
-    """Check if module is local to the repository.
-    
-    Scans actual Python files to detect local modules regardless
-    of directory structure (src/, app/, nested packages, etc).
-    """
-    local_modules = extract_local_module_names(repo_path)
-    return module_name in local_modules
-
-
 def collect_all_imports(files: tuple[Path, ...]) -> set[str]:
     """Collect all imports from Python files."""
     all_imports: set[str] = set()
@@ -270,18 +260,19 @@ def collect_all_imports(files: tuple[Path, ...]) -> set[str]:
 
 
 def filter_external_imports(
-    imports: set[str], repo_path: Path
+    imports: set[str], local_modules: frozenset[str]
 ) -> set[str]:
     """Filter to external imports only."""
     external = imports - BUILTIN_MODULES - TYPED_PACKAGES
-    return {m for m in external if not is_local_module(m, repo_path)}
+    return {m for m in external if m not in local_modules}
 
 
 def find_required_type_stubs(repo_path: Path) -> tuple[str, ...]:
     """Find imports that might need type stubs."""
     files = get_python_files(repo_path)
     all_imports = collect_all_imports(files)
-    needs_stubs = filter_external_imports(all_imports, repo_path)
+    local_modules = extract_local_module_names(repo_path)
+    needs_stubs = filter_external_imports(all_imports, local_modules)
     return tuple(sorted(needs_stubs))
 
 
@@ -494,36 +485,58 @@ def has_non_version_keys(constraint: dict[str, Any]) -> bool:
     return any(key in constraint for key in non_version_keys)
 
 
-def format_path_dependency(dep: str, constraint: dict[str, Any]) -> str:
-    """Format path dependency to PEP 621 with absolute file URI."""
-    path = Path(constraint["path"]).resolve()
-    return f"{dep} @ {path.as_uri()}"
+def format_extras(extras: list[str]) -> str:
+    """Format extras list to [extra1,extra2] string."""
+    if not extras:
+        return ""
+    return f"[{','.join(extras)}]"
+
+
+def format_path_dependency(
+    dep: str, constraint: dict[str, Any], repo_path: Path
+) -> str:
+    """Format path dependency to PEP 621 with absolute file URI.
+    
+    Resolves path relative to repo_path (where pyproject.toml lives).
+    Note: develop=true is dropped (PEP 621 doesn't support editable).
+    """
+    path = (repo_path / constraint["path"]).resolve()
+    extras = format_extras(constraint.get("extras", []))
+    return f"{dep}{extras} @ {path.as_uri()}"
 
 
 def format_git_dependency(dep: str, constraint: dict[str, Any]) -> str:
     """Format git dependency to PEP 621.
     
-    Preserves rev/tag/branch if specified, otherwise no @ref suffix.
+    Preserves rev/tag/branch, subdirectory, and extras if specified.
     """
     git_url = constraint["git"]
     ref = constraint.get("rev") or constraint.get("tag") or constraint.get("branch")
+    subdirectory = constraint.get("subdirectory")
+    extras = format_extras(constraint.get("extras", []))
+    
+    url = f"git+{git_url}"
     if ref:
-        return f"{dep} @ git+{git_url}@{ref}"
-    return f"{dep} @ git+{git_url}"
+        url = f"{url}@{ref}"
+    if subdirectory:
+        url = f"{url}#subdirectory={subdirectory}"
+    
+    return f"{dep}{extras} @ {url}"
 
 
 def format_url_dependency(dep: str, constraint: dict[str, Any]) -> str:
     """Format url dependency to PEP 621."""
     url = constraint["url"]
-    return f"{dep} @ {url}"
+    extras = format_extras(constraint.get("extras", []))
+    return f"{dep}{extras} @ {url}"
 
 
 def format_non_version_dependency(
-    dep: str, constraint: dict[str, Any]
+    dep: str, constraint: dict[str, Any], repo_path: Path
 ) -> str:
     """Format path/git/url dependency to PEP 621."""
     if "path" in constraint:
-        return format_path_dependency(dep, constraint)
+        return format_path_dependency(dep, constraint, repo_path)
     if "git" in constraint:
         return format_git_dependency(dep, constraint)
     if "url" in constraint:
@@ -531,10 +544,12 @@ def format_non_version_dependency(
     return dep
 
 
-def format_dict_dependency(dep: str, constraint: dict[str, Any]) -> str:
+def format_dict_dependency(
+    dep: str, constraint: dict[str, Any], repo_path: Path
+) -> str:
     """Format dependency from dict constraint."""
     if has_non_version_keys(constraint):
-        return format_non_version_dependency(dep, constraint)
+        return format_non_version_dependency(dep, constraint, repo_path)
     if "version" not in constraint:
         return dep
     version = normalize_version(constraint["version"])
@@ -544,14 +559,14 @@ def format_dict_dependency(dep: str, constraint: dict[str, Any]) -> str:
     return f"{dep} {version}"
 
 
-def format_dependency(dep: str, constraint: Any) -> str:
+def format_dependency(dep: str, constraint: Any, repo_path: Path) -> str:
     """Format a single dependency with version constraint.
     
     Handles version strings, dicts with version/extras, and
     path/git/url deps by converting to PEP 621 format.
     """
     if isinstance(constraint, dict):
-        return format_dict_dependency(dep, constraint)
+        return format_dict_dependency(dep, constraint, repo_path)
     return format_simple_dependency(dep, constraint)
 
 
@@ -569,13 +584,13 @@ def get_non_python_deps(
 
 
 def extract_dependencies(
-    poetry_config: dict[str, Any],
+    poetry_config: dict[str, Any], repo_path: Path
 ) -> tuple[tuple[str, ...], str]:
     """Extract dependencies and Python version requirement."""
     deps_dict = poetry_config.get("dependencies", {})
     python_version = normalize_version(deps_dict.get("python", "^3.12"))
     dep_items = get_non_python_deps(deps_dict)
-    deps = tuple(sorted(format_dependency(d, c) for d, c in dep_items))
+    deps = tuple(sorted(format_dependency(d, c, repo_path) for d, c in dep_items))
     return deps, python_version
 
 
@@ -592,12 +607,12 @@ def get_all_group_deps(
 
 
 def extract_dev_dependencies(
-    poetry_config: dict[str, Any],
+    poetry_config: dict[str, Any], repo_path: Path
 ) -> tuple[str, ...]:
     """Extract dev dependencies from Poetry groups."""
     groups = poetry_config.get("group", {})
     all_items = get_all_group_deps(groups)
-    return tuple(format_dependency(d, c) for d, c in all_items)
+    return tuple(format_dependency(d, c, repo_path) for d, c in all_items)
 
 
 def build_type_stub_deps(missing_stubs: tuple[str, ...]) -> tuple[str, ...]:
@@ -642,14 +657,14 @@ def get_new_tools(existing_names: frozenset[str]) -> tuple[str, ...]:
 
 
 def build_dev_dependencies(
-    poetry_config: dict[str, Any], analysis: RepoAnalysis
+    poetry_config: dict[str, Any], analysis: RepoAnalysis, repo_path: Path
 ) -> tuple[str, ...]:
     """Build complete dev dependencies list.
 
     Includes deptry - not run during migration but useful for
     ongoing project maintenance to detect unused dependencies.
     """
-    existing = extract_dev_dependencies(poetry_config)
+    existing = extract_dev_dependencies(poetry_config, repo_path)
     existing_names = get_existing_dep_names(existing)
     stubs = get_new_stubs(analysis.missing_stubs, existing_names)
     tools = get_new_tools(existing_names)
@@ -657,11 +672,11 @@ def build_dev_dependencies(
 
 
 def build_project_section(
-    poetry_config: dict[str, Any], analysis: RepoAnalysis
+    poetry_config: dict[str, Any], analysis: RepoAnalysis, repo_path: Path
 ) -> dict[str, Any]:
     """Build project section for pyproject.toml."""
     project = extract_project_metadata(poetry_config)
-    deps, python_version = extract_dependencies(poetry_config)
+    deps, python_version = extract_dependencies(poetry_config, repo_path)
     project["requires-python"] = python_version
     project["dependencies"] = list(deps)
     return project
@@ -690,8 +705,8 @@ def build_new_pyproject(
     new_doc = initialize_pyproject_doc()
     tool_config = configure_tools(repo_path, analysis)
     new_doc["tool"].update(tool_config["tool"])
-    new_doc["project"] = build_project_section(poetry_config, analysis)
-    dev_deps = build_dev_dependencies(poetry_config, analysis)
+    new_doc["project"] = build_project_section(poetry_config, analysis, repo_path)
+    dev_deps = build_dev_dependencies(poetry_config, analysis, repo_path)
     add_dev_groups(new_doc, dev_deps)
     return new_doc
 
