@@ -94,6 +94,11 @@ dependencies = [
     { name = "types-pyyaml" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "types-pyyaml" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "mypy", specifier = ">=1.18.2" },
@@ -102,6 +107,9 @@ requires-dist = [
     { name = "tomlkit", specifier = ">=0.13.3" },
     { name = "types-pyyaml", specifier = ">=6.0.12.20250915" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "types-pyyaml", specifier = ">=6.0.12.20250915" }]
 
 [[package]]
 name = "pygments"

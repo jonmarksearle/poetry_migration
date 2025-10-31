@@ -11,3 +11,8 @@ dependencies = [
     "tomlkit>=0.13.3",
     "types-pyyaml>=6.0.12.20250915",
 ]
+
+[dependency-groups]
+dev = [
+    "types-pyyaml>=6.0.12.20250915",
+]
