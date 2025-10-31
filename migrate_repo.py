@@ -494,20 +494,30 @@ def format_extras(extras: list[str]) -> str:
     return f"[{','.join(extras)}]"
 
 
+def resolve_path_from_repo(repo_path: Path, rel_path: str) -> Path:
+    """Resolve path relative to repo."""
+    return (repo_path / rel_path).resolve()
+
+
+def warn_if_editable(dep: str, constraint: dict[str, Any]) -> None:
+    """Warn if develop=true is being dropped."""
+    if constraint.get("develop"):
+        print(f"Warning: {dep} has develop=true (editable), converting to regular install")
+
+
+def warn_absolute_path(dep: str) -> None:
+    """Warn about absolute path portability."""
+    print(f"Warning: {dep} path dependency uses absolute path, not portable across machines")
+
+
 def format_path_dependency(
     dep: str, constraint: dict[str, Any], repo_path: Path
 ) -> str:
-    """Format path dependency to PEP 621 with absolute file URI.
-    
-    Resolves path relative to repo_path (where pyproject.toml lives).
-    Note: develop=true is dropped (PEP 621 doesn't support editable).
-    Warning: Absolute paths are not portable across machines.
-    """
-    path = (repo_path / constraint["path"]).resolve()
+    """Format path dependency to PEP 621 with absolute file URI."""
+    path = resolve_path_from_repo(repo_path, constraint["path"])
     extras = format_extras(constraint.get("extras", []))
-    if constraint.get("develop"):
-        print(f"Warning: {dep} has develop=true (editable), converting to regular install")
-    print(f"Warning: {dep} path dependency uses absolute path, not portable across machines")
+    warn_if_editable(dep, constraint)
+    warn_absolute_path(dep)
     return f"{dep}{extras} @ {path.as_uri()}"
 
 
@@ -551,9 +561,16 @@ def format_non_version_dependency(
         return format_path_dependency(dep, constraint, repo_path)
     if "git" in constraint:
         return format_git_dependency(dep, constraint)
-    if "url" in constraint:
-        return format_url_dependency(dep, constraint)
-    return dep
+    return format_url_dependency(dep, constraint) if "url" in constraint else dep
+
+
+def format_version_with_extras(
+    dep: str, version: str, extras: list[str]
+) -> str:
+    """Format dependency with version and optional extras."""
+    if extras:
+        return format_dep_with_extras(dep, extras, version)
+    return f"{dep} {version}"
 
 
 def format_dict_dependency(
@@ -565,10 +582,7 @@ def format_dict_dependency(
     if "version" not in constraint:
         return dep
     version = normalize_version(constraint["version"])
-    extras = constraint.get("extras", [])
-    if extras:
-        return format_dep_with_extras(dep, extras, version)
-    return f"{dep} {version}"
+    return format_version_with_extras(dep, version, constraint.get("extras", []))
 
 
 def format_dependency(dep: str, constraint: Any, repo_path: Path) -> str:
@@ -668,19 +682,23 @@ def get_new_tools(existing_names: frozenset[str]) -> tuple[str, ...]:
     return filter_new_deps(tools, existing_names)
 
 
+def collect_new_dev_deps(
+    analysis: RepoAnalysis, existing_names: frozenset[str]
+) -> tuple[str, ...]:
+    """Collect new stubs and tools."""
+    stubs = get_new_stubs(analysis.missing_stubs, existing_names)
+    tools = get_new_tools(existing_names)
+    return stubs + tools
+
+
 def build_dev_dependencies(
     poetry_config: dict[str, Any], analysis: RepoAnalysis, repo_path: Path
 ) -> tuple[str, ...]:
-    """Build complete dev dependencies list.
-
-    Includes deptry - not run during migration but useful for
-    ongoing project maintenance to detect unused dependencies.
-    """
+    """Build complete dev dependencies list."""
     existing = extract_dev_dependencies(poetry_config, repo_path)
     existing_names = get_existing_dep_names(existing)
-    stubs = get_new_stubs(analysis.missing_stubs, existing_names)
-    tools = get_new_tools(existing_names)
-    return tuple(sorted(existing + stubs + tools))
+    new_deps = collect_new_dev_deps(analysis, existing_names)
+    return tuple(sorted(existing + new_deps))
 
 
 def build_project_section(
@@ -710,13 +728,18 @@ def initialize_pyproject_doc() -> TomlDoc:
     return doc
 
 
+def attach_tools_to_doc(doc: TomlDoc, repo_path: Path, analysis: RepoAnalysis) -> None:
+    """Attach tool configuration to document."""
+    tool_config = configure_tools(repo_path, analysis)
+    doc["tool"].update(tool_config["tool"])
+
+
 def build_new_pyproject(
     poetry_config: dict[str, Any], analysis: RepoAnalysis, repo_path: Path
 ) -> TomlDoc:
     """Build new pyproject.toml structure."""
     new_doc = initialize_pyproject_doc()
-    tool_config = configure_tools(repo_path, analysis)
-    new_doc["tool"].update(tool_config["tool"])
+    attach_tools_to_doc(new_doc, repo_path, analysis)
     new_doc["project"] = build_project_section(poetry_config, analysis, repo_path)
     dev_deps = build_dev_dependencies(poetry_config, analysis, repo_path)
     add_dev_groups(new_doc, dev_deps)
