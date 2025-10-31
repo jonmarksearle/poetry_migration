@@ -92,6 +92,34 @@ def get_dev_deps(doc: TomlDoc) -> tuple[str, ...]:
     return tuple(dev_groups.get("dev", []))
 
 
+def load_toml(path: Path) -> TomlDoc:
+    """Load TOML document from file."""
+    return tomlkit.parse(path.read_text())
+
+
+def get_python_files(repo_path: Path) -> tuple[Path, ...]:
+    """Get all Python files excluding .venv."""
+    all_files = repo_path.glob("**/*.py")
+    return tuple(p for p in all_files if ".venv" not in str(p))
+
+
+def extract_dep_name(dep: str) -> str:
+    """Extract package name from dependency string."""
+    return dep.split("[")[0].split(" ")[0].split("@")[0].strip()
+
+
+def get_project_deps(doc: TomlDoc) -> tuple[str, ...]:
+    """Get project dependencies."""
+    project = doc.get("project", {})
+    return tuple(project.get("dependencies", []))
+
+
+def get_dev_deps(doc: TomlDoc) -> tuple[str, ...]:
+    """Get dev dependencies."""
+    dev_groups = doc.get("dependency-groups", {})
+    return tuple(dev_groups.get("dev", []))
+
+
 def find_duplicates_in_sequence(names: tuple[str, ...]) -> frozenset[str]:
     """Find duplicate names in sequence."""
     seen: set[str] = set()
@@ -164,12 +192,6 @@ def validate_version_constraints(
     name_versions = (extract_dep_version(dep) for dep in all_deps)
     invalid = ((n, v) for n, v in name_versions if is_invalid_version(n, v))
     return tuple(invalid)
-
-
-def get_python_files(repo_path: Path) -> tuple[Path, ...]:
-    """Get all Python files excluding .venv."""
-    all_files = repo_path.glob("**/*.py")
-    return tuple(p for p in all_files if ".venv" not in str(p))
 
 
 def build_module_map(files: tuple[Path, ...]) -> dict[str, str]:
@@ -294,6 +316,17 @@ def has_async_code(repo_path: Path) -> bool:
     return any(file_has_async_code(f) for f in files)
 
 
+def is_annotation_node(node: ast.AST) -> bool:
+    """Check if AST node represents a type annotation."""
+    if isinstance(node, ast.AnnAssign):
+        return True
+    if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+        return node.returns is not None or any(
+            arg.annotation is not None for arg in node.args.args
+        )
+    return False
+
+
 def file_has_type_annotations(file: Path) -> bool:
     """Check if file uses type annotations."""
     tree = read_file_as_syntax_tree(file)
@@ -331,11 +364,6 @@ def has_long_lines(repo_path: Path, max_length: int = 88) -> bool:
     """Check if repository has lines longer than max_length."""
     files = get_python_files(repo_path)
     return any(file_has_long_lines(f, max_length) for f in files)
-
-
-def load_toml(path: Path) -> TomlDoc:
-    """Load TOML document from file."""
-    return tomlkit.parse(path.read_text())
 
 
 def extract_python_versions(doc: TomlDoc) -> tuple[str, ...]:
@@ -721,6 +749,14 @@ def has_poetry_config(doc: TomlDoc) -> bool:
     return "tool" in doc and "poetry" in doc["tool"]
 
 
+def is_already_migrated(repo_path: Path) -> bool:
+    """Check if repository is already migrated to UV."""
+    doc = load_toml(repo_path / "pyproject.toml")
+    has_poetry = has_poetry_config(doc)
+    has_uv = "project" in doc and "dependency-groups" in doc
+    return not has_poetry and has_uv
+
+
 def convert_pyproject(repo_path: Path, analysis: RepoAnalysis) -> bool:
     """Convert pyproject.toml to UV format."""
     doc = load_toml(repo_path / "pyproject.toml")
@@ -733,47 +769,32 @@ def convert_pyproject(repo_path: Path, analysis: RepoAnalysis) -> bool:
     return True
 
 
-def get_manifest_path() -> Path:
-    """Get path to migration manifest."""
-    return Path.home() / "Work/poetry_migration/poetry_to_uv_manifest.yaml"
+def extract_python_version(analysis: RepoAnalysis) -> str:
+    """Extract major.minor Python version."""
+    version = analysis.python_versions[0].replace(">=", "").strip()
+    major, minor = version.split(".")[:2]
+    return f"{major}.{minor}"
 
 
-def load_manifest() -> dict[str, Any]:
-    """Load migration manifest."""
-    return yaml.safe_load(get_manifest_path().read_text())
+def create_python_version_file(repo_path: Path, version: str) -> None:
+    """Create .python-version file."""
+    (repo_path / ".python-version").write_text(f"{version}\n")
 
 
-def save_manifest(manifest: dict[str, Any]) -> None:
-    """Save migration manifest."""
-    manifest_yaml = yaml.dump(manifest, sort_keys=False)
-    get_manifest_path().write_text(manifest_yaml)
+def remove_path(path: Path) -> None:
+    """Remove file or directory."""
+    if path.is_file():
+        path.unlink()
+    else:
+        subprocess.run(["rm", "-rf", str(path)], check=True)
 
 
-def find_repo_in_manifest(
-    manifest: dict[str, Any], rel_path: str
-) -> dict[str, Any] | None:
-    """Find repository entry in manifest."""
-    matching = (repo for repo in manifest["repos"] if repo["path"] == rel_path)
-    return next(matching, None)
-
-
-def update_repo_entry(
-    repo_entry: dict[str, Any], status: str, notes: str
-) -> None:
-    """Update repository entry with new status."""
-    repo_entry["status"] = status
-    repo_entry["last_updated"] = date.today().isoformat()
-    repo_entry["notes"] = notes
-
-
-def update_manifest(repo_path: Path, status: str, notes: str) -> None:
-    """Update migration manifest."""
-    manifest = load_manifest()
-    rel_path = str(repo_path.relative_to(Path.home() / "Work"))
-    repo_entry = find_repo_in_manifest(manifest, rel_path)
-    if repo_entry:
-        update_repo_entry(repo_entry, status, notes)
-        save_manifest(manifest)
+def clean_old_files(repo_path: Path) -> None:
+    """Remove Poetry lock file and virtualenv."""
+    for file in ("poetry.lock", ".venv"):
+        path = repo_path / file
+        if path.exists():
+            remove_path(path)
 
 
 def find_python_files(repo_path: Path) -> tuple[str, ...]:
@@ -815,76 +836,6 @@ def run_cmd(
         return True, ""
     except subprocess.CalledProcessError as e:
         return False, f"Error running {' '.join(cmd)}:\n{e.stderr}"
-
-
-def is_already_migrated(repo_path: Path) -> bool:
-    """Check if repository is already migrated to UV."""
-    doc = load_toml(repo_path / "pyproject.toml")
-    has_poetry = has_poetry_config(doc)
-    has_uv = "project" in doc and "dependency-groups" in doc
-    return not has_poetry and has_uv
-
-
-def print_analysis_header() -> None:
-    """Print analysis results header."""
-    print("\nAnalysis Results:")
-
-
-def print_analysis_counts(analysis: RepoAnalysis) -> None:
-    """Print analysis counts."""
-    print(f"- Duplicate dependencies: {len(analysis.duplicate_deps)}")
-    print(f"- Invalid versions: {len(analysis.invalid_versions)}")
-    print(f"- Module conflicts: {len(analysis.module_conflicts)}")
-    print(f"- Missing type stubs: {len(analysis.missing_stubs)}")
-
-
-def print_analysis_flags(analysis: RepoAnalysis) -> None:
-    """Print analysis boolean flags."""
-    print(f"- Has async code: {analysis.has_async}")
-    print(f"- Has type annotations: {analysis.has_type_annotations}")
-    print(f"- Has long lines: {analysis.has_long_lines}")
-
-
-def print_analysis_versions(analysis: RepoAnalysis) -> None:
-    """Print Python versions."""
-    versions_str = ", ".join(analysis.python_versions)
-    print(f"- Python versions: {versions_str}\n")
-
-
-def print_analysis_results(analysis: RepoAnalysis) -> None:
-    """Print analysis results to console."""
-    print_analysis_header()
-    print_analysis_counts(analysis)
-    print_analysis_flags(analysis)
-    print_analysis_versions(analysis)
-
-
-def extract_python_version(analysis: RepoAnalysis) -> str:
-    """Extract major.minor Python version."""
-    version = analysis.python_versions[0].replace(">=", "").strip()
-    major, minor = version.split(".")[:2]
-    return f"{major}.{minor}"
-
-
-def create_python_version_file(repo_path: Path, version: str) -> None:
-    """Create .python-version file."""
-    (repo_path / ".python-version").write_text(f"{version}\n")
-
-
-def remove_path(path: Path) -> None:
-    """Remove file or directory."""
-    if path.is_file():
-        path.unlink()
-    else:
-        subprocess.run(["rm", "-rf", str(path)], check=True)
-
-
-def clean_old_files(repo_path: Path) -> None:
-    """Remove Poetry lock file and virtualenv."""
-    for file in ("poetry.lock", ".venv"):
-        path = repo_path / file
-        if path.exists():
-            remove_path(path)
 
 
 def build_base_commands() -> tuple[list[str], ...]:
@@ -1006,6 +957,49 @@ def build_commit_notes(analysis: RepoAnalysis) -> str:
     return "; ".join(notes) if notes else default
 
 
+def get_manifest_path() -> Path:
+    """Get path to migration manifest."""
+    return Path.home() / "Work/poetry_migration/poetry_to_uv_manifest.yaml"
+
+
+def load_manifest() -> dict[str, Any]:
+    """Load migration manifest."""
+    return yaml.safe_load(get_manifest_path().read_text())
+
+
+def save_manifest(manifest: dict[str, Any]) -> None:
+    """Save migration manifest."""
+    manifest_yaml = yaml.dump(manifest, sort_keys=False)
+    get_manifest_path().write_text(manifest_yaml)
+
+
+def find_repo_in_manifest(
+    manifest: dict[str, Any], rel_path: str
+) -> dict[str, Any] | None:
+    """Find repository entry in manifest."""
+    matching = (repo for repo in manifest["repos"] if repo["path"] == rel_path)
+    return next(matching, None)
+
+
+def update_repo_entry(
+    repo_entry: dict[str, Any], status: str, notes: str
+) -> None:
+    """Update repository entry with new status."""
+    repo_entry["status"] = status
+    repo_entry["last_updated"] = date.today().isoformat()
+    repo_entry["notes"] = notes
+
+
+def update_manifest(repo_path: Path, status: str, notes: str) -> None:
+    """Update migration manifest."""
+    manifest = load_manifest()
+    rel_path = str(repo_path.relative_to(Path.home() / "Work"))
+    repo_entry = find_repo_in_manifest(manifest, rel_path)
+    if repo_entry:
+        update_repo_entry(repo_entry, status, notes)
+        save_manifest(manifest)
+
+
 def commit_changes(repo_path: Path, analysis: RepoAnalysis) -> None:
     """Commit migration changes to git."""
     files = ["pyproject.toml", ".python-version", "uv.lock"]
@@ -1014,6 +1008,48 @@ def commit_changes(repo_path: Path, analysis: RepoAnalysis) -> None:
     commit_msg = f"chore: migrate from poetry to uv\n\n{note}"
     run_cmd(["git", "commit", "-m", commit_msg], repo_path)
     update_manifest(repo_path, "migrated", note)
+
+
+def print_analysis_header() -> None:
+    """Print analysis results header."""
+    print("\nAnalysis Results:")
+
+
+def print_analysis_counts(analysis: RepoAnalysis) -> None:
+    """Print analysis counts."""
+    print(f"- Duplicate dependencies: {len(analysis.duplicate_deps)}")
+    print(f"- Invalid versions: {len(analysis.invalid_versions)}")
+    print(f"- Module conflicts: {len(analysis.module_conflicts)}")
+    print(f"- Missing type stubs: {len(analysis.missing_stubs)}")
+
+
+def print_analysis_flags(analysis: RepoAnalysis) -> None:
+    """Print analysis boolean flags."""
+    print(f"- Has async code: {analysis.has_async}")
+    print(f"- Has type annotations: {analysis.has_type_annotations}")
+    print(f"- Has long lines: {analysis.has_long_lines}")
+
+
+def print_analysis_versions(analysis: RepoAnalysis) -> None:
+    """Print Python versions."""
+    versions_str = ", ".join(analysis.python_versions)
+    print(f"- Python versions: {versions_str}\n")
+
+
+def print_analysis_results(analysis: RepoAnalysis) -> None:
+    """Print analysis results to console."""
+    print_analysis_header()
+    print_analysis_counts(analysis)
+    print_analysis_flags(analysis)
+    print_analysis_versions(analysis)
+
+
+def check_repo_exists(repo: Path) -> bool:
+    """Check if repository exists."""
+    if not repo.exists():
+        print(f"Repository {repo} does not exist")
+        return False
+    return True
 
 
 def perform_analysis(repo: Path) -> RepoAnalysis | None:
@@ -1025,6 +1061,14 @@ def perform_analysis(repo: Path) -> RepoAnalysis | None:
     except Exception as e:
         print(f"Analysis failed: {e}")
         return None
+
+
+def check_already_migrated(repo: Path) -> bool:
+    """Check if already migrated."""
+    if is_already_migrated(repo):
+        print("Repository is already migrated to UV")
+        return True
+    return False
 
 
 def perform_migration(repo: Path, analysis: RepoAnalysis) -> bool:
@@ -1055,22 +1099,6 @@ def handle_migration_success(repo: Path, analysis: RepoAnalysis) -> int:
     commit_changes(repo, analysis)
     print("Migration successful")
     return ExitCode.SUCCESS
-
-
-def check_repo_exists(repo: Path) -> bool:
-    """Check if repository exists."""
-    if not repo.exists():
-        print(f"Repository {repo} does not exist")
-        return False
-    return True
-
-
-def check_already_migrated(repo: Path) -> bool:
-    """Check if already migrated."""
-    if is_already_migrated(repo):
-        print("Repository is already migrated to UV")
-        return True
-    return False
 
 
 def run_migration_and_checks(repo: Path, analysis: RepoAnalysis) -> int:
