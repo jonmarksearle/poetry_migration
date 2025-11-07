@@ -20,6 +20,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2024/dependency_injection | 2025-11-07 | ✅ | Removed fake stubs; typed inject + FastAPI examples |
 | 2024/golroast/after | 2025-11-07 | ✅ | Removed types-matplotlib stub, added typing to grid/game + uv lock |
 | 2024/rate_limiting | 2025-11-07 | ✅ | Removed fake types-* deps, typed decorators, added pytest smoke |
+| 2024/repository | 2025-11-07 | ✅ | Removed fake stub deps, downgraded generics, ignored legacy demos |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |

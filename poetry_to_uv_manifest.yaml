@@ -251,7 +251,9 @@ repos:
 - path: AjanCodesExamples/2024/repository
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Removed fake stub deps, downgraded generics for 3.11, ignored legacy demos, added pytest smoke
 - path: AjanCodesExamples/2024/sqlalchemy
   tier: tier2
   wave: 2
