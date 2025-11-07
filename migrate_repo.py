@@ -405,7 +405,7 @@ def analyze_repo(repo_path: Path) -> RepoAnalysis:
 
 def build_async_mypy_config() -> dict[str, bool]:
     """Build mypy config for async code."""
-    return {"strict_optional": True, "warn_unused_awaits": True}
+    return {"strict_optional": True}
 
 
 def build_strict_mypy_config() -> dict[str, bool]:

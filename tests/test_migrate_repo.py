@@ -288,7 +288,7 @@ def test__format_dependency__with_git_source__success(git_dependency: dict[str, 
 
 def test__configure_tools__with_features_enabled__success(analysis_with_features: RepoAnalysis) -> None:
     result = configure_tools(Path(), analysis_with_features)
-    assert result["tool"]["mypy"]["warn_unused_awaits"] and result["tool"]["mypy"]["strict"]
+    assert result["tool"]["mypy"]["strict_optional"] and result["tool"]["mypy"]["strict"]
     assert result["tool"]["ruff"]["exclude"] == ["before"]
 
 

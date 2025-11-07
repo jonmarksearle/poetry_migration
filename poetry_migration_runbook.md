@@ -2,13 +2,14 @@
 
 This runbook captures in-flight progress for migrating Poetry-based repositories to uv. Strategic context and the overall migration plan remain in `poetry_migration_strategy.md`.
 
-## 1. Status Dashboard (updated 2025-10-30)
+## 1. Status Dashboard (updated 2025-11-07)
 
 | Repository | Migration Date | Status | Notes |
 | --- | --- | --- | --- |
 | 2023/apitesting | 2025-10-30 | ✅ | Added httpx to dev deps; refactored db_update_item |
 | 2023/funclass | 2025-10-30 | ✅ | Added Counter typing; smoke test keeps pytest happy |
 | 2023/shellroast/after | 2025-10-30 | ✅ | Typed algorithm registry, added path-aware conftest |
+| 2023/fastapi-router/api | 2025-11-07 | ✅ | Added pulumi deps, Annotated FastAPI deps, strict mypy |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |

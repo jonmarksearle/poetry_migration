@@ -185,7 +185,9 @@ repos:
 - path: AjanCodesExamples/2023/fastapi-router/api
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Added pulumi deps + type annotations; uv checks clean
 - path: AjanCodesExamples/2023/orm
   tier: tier2
   wave: 2
