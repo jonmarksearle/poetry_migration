@@ -197,7 +197,9 @@ repos:
 - path: AjanCodesExamples/2023/pandera
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Upgraded pandas/pandera deps, added pandas-stubs, fixed type hints
 - path: AjanCodesExamples/2023/poetry/app
   tier: tier2
   wave: 2
