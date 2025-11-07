@@ -161,7 +161,9 @@ repos:
 - path: AjanCodesExamples/2024/tuesday_tips/regex
   tier: tier1
   wave: 1
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Already migrated; stub deps + regex examples verified
 - path: AjanCodesExamples/2024/tuesday_tips/storing_credentials
   tier: tier1
   wave: 1
