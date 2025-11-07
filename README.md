@@ -18,6 +18,14 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 - `.temp.migrate_poetry_to_uv.<repo>.<number>.sh` — Versioned migration scripts per repo
 - `.temp.migrate_poetry_to_uv.<repo>.<number>.<timestamp>.log` — Execution logs for forensic analysis
 
+### Running the uv-managed tool
+
+1. `cd /home/jon/Work/poetry_migration`
+2. `uv sync` (once per environment to install dependencies)
+3. `uv run migrate-poetry /absolute/path/to/repo`
+
+The `migrate-poetry` entry point delegates to `migrate_repo.py`, ensuring the shared lockfile, manifest updates, and logging behaviour stay consistent.
+
 ## Maintenance
 
 - Update runbook after each repo migration

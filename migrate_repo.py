@@ -5,7 +5,6 @@ import ast
 import itertools
 import os
 import subprocess
-import sys
 from collections import Counter
 from dataclasses import dataclass
 from datetime import date
@@ -15,8 +14,33 @@ from typing import Any
 
 import tomlkit
 import yaml
+from rich.console import Console
+import typer
 
 UV_PATH = "/home/jon/Work/.local/bin/uv"
+
+console = Console(soft_wrap=True)
+app = typer.Typer(help="Migrate Poetry-based repositories under /home/jon/Work from Poetry to uv.")
+
+
+def log_info(message: str) -> None:
+    """Log informational messages with cyan styling."""
+    console.print(message, style="cyan")
+
+
+def log_warning(message: str) -> None:
+    """Log warning messages with yellow styling."""
+    console.print(message, style="yellow")
+
+
+def log_error(message: str) -> None:
+    """Log error messages with red styling."""
+    console.print(message, style="red")
+
+
+def log_rich(message: str) -> None:
+    """Log messages that already contain Rich markup."""
+    console.print(message, markup=True)
 
 
 class ExitCode(IntEnum):
@@ -502,12 +526,16 @@ def resolve_path_from_repo(repo_path: Path, rel_path: str) -> Path:
 def warn_if_editable(dep: str, constraint: dict[str, Any]) -> None:
     """Warn if develop=true is being dropped."""
     if constraint.get("develop"):
-        print(f"Warning: {dep} has develop=true (editable), converting to regular install")
+        log_warning(
+            f"Warning: {dep} has develop=true (editable), converting to regular install"
+        )
 
 
 def warn_absolute_path(dep: str) -> None:
     """Warn about absolute path portability."""
-    print(f"Warning: {dep} path dependency uses absolute path, not portable across machines")
+    log_warning(
+        f"Warning: {dep} path dependency uses absolute path, not portable across machines"
+    )
 
 
 def format_path_dependency(
@@ -768,7 +796,7 @@ def convert_pyproject(repo_path: Path, analysis: RepoAnalysis) -> bool:
     """Convert pyproject.toml to UV format."""
     doc = load_toml(repo_path / "pyproject.toml")
     if not has_poetry_config(doc):
-        print("No Poetry configuration found")
+        log_error("No Poetry configuration found")
         return False
     poetry_config = doc["tool"]["poetry"]
     new_doc = build_new_pyproject(poetry_config, analysis, repo_path)
@@ -1019,28 +1047,28 @@ def commit_changes(repo_path: Path, analysis: RepoAnalysis) -> None:
 
 def print_analysis_header() -> None:
     """Print analysis results header."""
-    print("\nAnalysis Results:")
+    log_info("\nAnalysis Results:")
 
 
 def print_analysis_counts(analysis: RepoAnalysis) -> None:
     """Print analysis counts."""
-    print(f"- Duplicate dependencies: {len(analysis.duplicate_deps)}")
-    print(f"- Invalid versions: {len(analysis.invalid_versions)}")
-    print(f"- Module conflicts: {len(analysis.module_conflicts)}")
-    print(f"- Missing type stubs: {len(analysis.missing_stubs)}")
+    log_info(f"- Duplicate dependencies: {len(analysis.duplicate_deps)}")
+    log_info(f"- Invalid versions: {len(analysis.invalid_versions)}")
+    log_info(f"- Module conflicts: {len(analysis.module_conflicts)}")
+    log_info(f"- Missing type stubs: {len(analysis.missing_stubs)}")
 
 
 def print_analysis_flags(analysis: RepoAnalysis) -> None:
     """Print analysis boolean flags."""
-    print(f"- Has async code: {analysis.has_async}")
-    print(f"- Has type annotations: {analysis.has_type_annotations}")
-    print(f"- Has long lines: {analysis.has_long_lines}")
+    log_info(f"- Has async code: {analysis.has_async}")
+    log_info(f"- Has type annotations: {analysis.has_type_annotations}")
+    log_info(f"- Has long lines: {analysis.has_long_lines}")
 
 
 def print_analysis_versions(analysis: RepoAnalysis) -> None:
     """Print Python versions."""
     versions_str = ", ".join(analysis.python_versions)
-    print(f"- Python versions: {versions_str}\n")
+    log_info(f"- Python versions: {versions_str}\n")
 
 
 def print_analysis_results(analysis: RepoAnalysis) -> None:
@@ -1054,7 +1082,7 @@ def print_analysis_results(analysis: RepoAnalysis) -> None:
 def check_repo_exists(repo: Path) -> bool:
     """Check if repository exists."""
     if not repo.exists():
-        print(f"Repository {repo} does not exist")
+        log_error(f"Repository {repo} does not exist")
         return False
     return True
 
@@ -1066,14 +1094,14 @@ def perform_analysis(repo: Path) -> RepoAnalysis | None:
         print_analysis_results(analysis)
         return analysis
     except Exception as e:
-        print(f"Analysis failed: {e}")
+        log_error(f"Analysis failed: {e}")
         return None
 
 
 def check_already_migrated(repo: Path) -> bool:
     """Check if already migrated."""
     if is_already_migrated(repo):
-        print("Repository is already migrated to UV")
+        log_info("Repository is already migrated to UV")
         return True
     return False
 
@@ -1096,15 +1124,15 @@ def run_migration_checks(repo: Path) -> tuple[bool, str]:
 
 def handle_migration_failure(error: str) -> int:
     """Handle migration failure."""
-    print("Migration failed")
-    print(error)
+    log_error("Migration failed")
+    log_error(error)
     return ExitCode.FAILURE
 
 
 def handle_migration_success(repo: Path, analysis: RepoAnalysis) -> int:
     """Handle successful migration."""
     commit_changes(repo, analysis)
-    print("Migration successful")
+    log_info("Migration successful")
     return ExitCode.SUCCESS
 
 
@@ -1136,13 +1164,27 @@ def migrate_repo(repo_path: str) -> int:
     repo = Path(repo_path).resolve()
     if not check_repo_exists(repo):
         return ExitCode.FAILURE
-    print(f"Migrating {repo}")
+    log_info(f"Migrating {repo}")
     analysis = perform_analysis(repo)
     return handle_analysis_and_checks(repo, analysis)
 
 
+@app.callback(invoke_without_command=True)
+def run_command(
+    ctx: typer.Context,
+    repo: Path = typer.Argument(..., help="Path to the repository to migrate."),
+) -> None:
+    """Run the migration via Typer CLI when no subcommand is provided."""
+    if ctx.invoked_subcommand:
+        return
+    exit_code = migrate_repo(str(repo))
+    raise typer.Exit(code=int(exit_code))
+
+
+def main() -> None:
+    """Entrypoint used by uv/console_scripts."""
+    app()
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: migrate_repo.py <repo_path>")
-        sys.exit(1)
-    sys.exit(migrate_repo(sys.argv[1]))
+    main()

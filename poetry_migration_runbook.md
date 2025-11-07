@@ -44,7 +44,8 @@ The migration is handled by the `migrate_repo.py` script:
 
 ```bash
 cd /home/jon/Work/poetry_migration
-python migrate_repo.py /path/to/repo
+uv sync  # first time only
+uv run migrate-poetry /path/to/repo
 ```
 
 ### Expected Warnings

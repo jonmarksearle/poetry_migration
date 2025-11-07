@@ -3,10 +3,12 @@ from __future__ import annotations
 
 from dataclasses import replace
 from pathlib import Path
+from typing import Iterator, TypedDict
 import sys
 
 import pytest
 import tomlkit
+from typer.testing import CliRunner
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
@@ -26,7 +28,16 @@ from migrate_repo import (
     run_checks,
     commit_changes,
     migrate_repo,
+    log_info,
+    log_warning,
+    log_error,
+    log_rich,
 )
+
+
+class GitTracking(TypedDict):
+    commands: list[list[str]]
+    manifest: list[tuple[str, str]]
 
 
 EXPECTED_CHECK_COMMANDS = [
@@ -115,27 +126,44 @@ def path_dependency() -> dict[str, object]:
 
 
 @pytest.fixture
-def mock_path_resolve(monkeypatch: pytest.MonkeyPatch) -> None:
+def mock_path_resolve(monkeypatch: pytest.MonkeyPatch) -> Iterator[None]:
     with monkeypatch.context() as ctx:
         ctx.setattr(Path, "resolve", lambda _: Path("/abs/path/to/pkg"))
         yield
 
 
 @pytest.fixture
-def git_tracking() -> dict[str, list[object]]:
+def git_tracking() -> GitTracking:
     return {"commands": [], "manifest": []}
 
 
 @pytest.fixture
-def mock_git(monkeypatch: pytest.MonkeyPatch, git_tracking: dict[str, list[object]]) -> None:
-    monkeypatch.setattr(
-        "migrate_repo.run_cmd",
-        lambda cmd, *_args, **_kwargs: git_tracking["commands"].append(cmd) or (True, ""),
-    )
-    monkeypatch.setattr(
-        "migrate_repo.update_manifest",
-        lambda path, status, notes: git_tracking["manifest"].append((status, notes)),
-    )
+def cli_runner() -> CliRunner:
+    return CliRunner()
+
+
+@pytest.fixture
+def console_spy(monkeypatch: pytest.MonkeyPatch) -> list[tuple[str, dict[str, object]]]:
+    calls: list[tuple[str, dict[str, object]]] = []
+
+    def record(message: str, **kwargs: object) -> None:
+        calls.append((message, kwargs))
+
+    monkeypatch.setattr(migrate_repo_module.console, "print", record)
+    return calls
+
+
+@pytest.fixture
+def mock_git(monkeypatch: pytest.MonkeyPatch, git_tracking: GitTracking) -> None:
+    def record_cmd(cmd: list[str], *_args, **_kwargs) -> tuple[bool, str]:
+        git_tracking["commands"].append(cmd)
+        return True, ""
+
+    def record_manifest(_path: Path, status: str, notes: str) -> None:
+        git_tracking["manifest"].append((status, notes))
+
+    monkeypatch.setattr("migrate_repo.run_cmd", record_cmd)
+    monkeypatch.setattr("migrate_repo.update_manifest", record_manifest)
 
 
 @pytest.fixture
@@ -205,20 +233,6 @@ def already_migrated_repo(monkeypatch: pytest.MonkeyPatch, repo_analysis: RepoAn
     monkeypatch.setattr("migrate_repo.is_already_migrated", lambda *_: True)
     monkeypatch.setattr("migrate_repo.commit_changes", lambda *_: calls.__setitem__("commit", calls["commit"] + 1))
     return tmp_path, calls
-
-
-@pytest.fixture
-def run_cli(monkeypatch: pytest.MonkeyPatch):
-    def _run(args: list[str]):
-        monkeypatch.setattr(sys, "argv", ["migrate_repo.py", *args])
-        with pytest.raises(SystemExit) as excinfo:
-            if len(sys.argv) != 2:
-                print("Usage: migrate_repo.py <repo_path>")
-                raise SystemExit(1)
-            raise SystemExit(migrate_repo_module.migrate_repo(sys.argv[1]))
-        return excinfo
-
-    return _run
 
 
 def test__validate_version_constraint__with_invalid_version__fail() -> None:
@@ -317,16 +331,16 @@ def test__run_checks__with_env_configured__propagates_cache__success(run_cmd_env
     success, error = run_checks(Path("/repo"), ())
     _, cwd, env = run_cmd_env_records[0]
     assert success and error == ""
-    assert env["UV_CACHE_DIR"] == "cache" and cwd == Path("/repo")
+    assert env is not None and env["UV_CACHE_DIR"] == "cache" and cwd == Path("/repo")
 
 
-def test__commit_changes__with_repo__success(mock_git: None, git_tracking: dict[str, list[object]], repo_analysis: RepoAnalysis, tmp_path: Path) -> None:
+def test__commit_changes__with_repo__success(mock_git: None, git_tracking: GitTracking, repo_analysis: RepoAnalysis, tmp_path: Path) -> None:
     commit_changes(tmp_path, repo_analysis)
     assert git_tracking["commands"] == EXPECTED_GIT_COMMANDS
     assert git_tracking["manifest"][0] == EXPECTED_MANIFEST_ENTRY
 
 
-def test__commit_changes__with_feature_flags__records_notes__success(mock_git: None, git_tracking: dict[str, list[object]], analysis_with_features: RepoAnalysis, tmp_path: Path) -> None:
+def test__commit_changes__with_feature_flags__records_notes__success(mock_git: None, git_tracking: GitTracking, analysis_with_features: RepoAnalysis, tmp_path: Path) -> None:
     commit_changes(tmp_path, analysis_with_features)
     assert git_tracking["commands"][1][3].endswith(FEATURE_COMMIT_NOTES)
     assert git_tracking["manifest"][0] == ("migrated", FEATURE_COMMIT_NOTES)
@@ -364,12 +378,30 @@ def test__migrate_repo__with_already_migrated_repo__success(already_migrated_rep
     assert calls["commit"] == 0
 
 
-def test__cli__with_missing_args__fail(run_cli, capsys) -> None:
-    excinfo = run_cli([])
-    assert excinfo.value.code == 1 and "Usage: migrate_repo.py <repo_path>" in capsys.readouterr().out
+def test__cli__with_missing_args__fail(cli_runner: CliRunner) -> None:
+    result = cli_runner.invoke(migrate_repo_module.app, [])
+    assert result.exit_code == 2
 
 
-def test__cli__with_repo__success(monkeypatch: pytest.MonkeyPatch, run_cli) -> None:
+def test__cli__with_repo__success(monkeypatch: pytest.MonkeyPatch, cli_runner: CliRunner) -> None:
     monkeypatch.setattr("migrate_repo.migrate_repo", lambda path: ExitCode.SUCCESS)
-    excinfo = run_cli(["/repo"])
-    assert excinfo.value.code == ExitCode.SUCCESS
+    result = cli_runner.invoke(migrate_repo_module.app, ["/repo"])
+    assert result.exit_code == 0
+def test__log_info__prints_cyan__success(console_spy: list[tuple[str, dict[str, object]]]) -> None:
+    log_info("hello")
+    assert console_spy == [("hello", {"style": "cyan"})]
+
+
+def test__log_warning__prints_yellow__success(console_spy: list[tuple[str, dict[str, object]]]) -> None:
+    log_warning("warn")
+    assert console_spy == [("warn", {"style": "yellow"})]
+
+
+def test__log_error__prints_red__success(console_spy: list[tuple[str, dict[str, object]]]) -> None:
+    log_error("boom")
+    assert console_spy == [("boom", {"style": "red"})]
+
+
+def test__log_rich__prints_markup__success(console_spy: list[tuple[str, dict[str, object]]]) -> None:
+    log_rich("[bold]hi[/bold]")
+    assert console_spy == [("[bold]hi[/bold]", {"markup": True})]
