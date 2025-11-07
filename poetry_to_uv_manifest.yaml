@@ -203,7 +203,9 @@ repos:
 - path: AjanCodesExamples/2023/poetry/app
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Cleaned dev deps, added __all__, improved mypy config
 - path: AjanCodesExamples/2024/apidesign
   tier: tier2
   wave: 2
