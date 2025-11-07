@@ -5,8 +5,9 @@
 - Add `from __future__ import annotations` to new modules and prefer Python 3.13 typing features (PEP 695 generics, `typing.TypeAliasType`, `typing.override`, `typing.final`) where they clarify intent.
 - Language: Australian English spelling across docs, comments, log/test messages, and identifiers where appropriate (e.g., behaviour, colour).
 - Prefer `@dataclass(frozen=True)`, `enum.StrEnum`, or typed immutable collections (`tuple`, `collections.abc.Sequence`) for fixed data.
+- Use `typing.Protocol` for interfaces.
 - Functions: ≤10 lines, prefer early returns, avoid nesting ("Never Nester").
-- Only use multi-line docstrings for API functions where logic or parameters are not obvious.
+- Functions must follow the Single Responsibility Principle: perform exactly one concern. A function handles business logic or exception management, never both. Split work into helpers when needed.
 - A function must appear before the first function that calls it.
 - Order functions by the order they are called in the main execution flow (top-down).
 - All helper functions used by a function must appear as a group immediately before that function.
@@ -14,10 +15,12 @@
 - Use meaningful names over comments.
 - Use 1-line docstrings for helper functions only when behaviour is non-obvious.
 - Use 1-line docstrings for all non-helper functions, and helper functions > 5 lines.
+- Use multi-line docstrings for API functions where parameters are not obvious.
+- Use multi-line docstring for all functions (including helper function) where function name, parameters and logic together are not obvious.
+- For multi-line docstrings, meaningful examples are prefered over per-parameter documentation.
 - Use precise type hints. Avoid `Any` unless unavoidable.
-- Use `typing.Protocol` for interfaces.
-- Functions must follow the Single Responsibility Principle: perform exactly one concern. A function handles business logic or exception management, never both. Split work into helpers when needed.
 - Prefer pattern matching (`match`/`case`) when it simplifies branching; keep cases small and pure.
+- Prefer function mapping or poly-morphism over conditionals or pattern matching.
 - Prefer pure functions. Use mutable state only if clearer.
 - Keep side effects (I/O, logging, DB access) out of core logic functions.
 - Isolate side effects from logic.
