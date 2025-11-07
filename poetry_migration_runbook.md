@@ -10,6 +10,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2023/funclass | 2025-10-30 | ✅ | Added Counter typing; smoke test keeps pytest happy |
 | 2023/shellroast/after | 2025-10-30 | ✅ | Typed algorithm registry, added path-aware conftest |
 | 2023/fastapi-router/api | 2025-11-07 | ✅ | Added pulumi deps, Annotated FastAPI deps, strict mypy |
+| 2023/orm | 2025-11-07 | ✅ | Removed invalid stub deps, added mypy override and typing fixes |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |

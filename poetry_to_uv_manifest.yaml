@@ -191,7 +191,9 @@ repos:
 - path: AjanCodesExamples/2023/orm
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Removed unavailable stub deps; added Annotated types + mypy overrides
 - path: AjanCodesExamples/2023/pandera
   tier: tier2
   wave: 2
