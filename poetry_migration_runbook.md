@@ -24,6 +24,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2024/sqlalchemy | 2025-11-07 | ✅ | Adopted DeclarativeBase + typed rows, added pytest auth smoke |
 | 2024/streamlit | 2025-11-07 | ✅ | Fixed version specs, removed fake stubs, typed utils + Streamlit views |
 | 2024/uncommon_db | 2025-11-07 | ✅ | Removed fake stubs, typed Redis/influx demos, added numpy + pytest smoke |
+| 2024/unit_of_work | 2025-11-07 | ✅ | Removed fake stubs, moved to DeclarativeBase, added pytest smoke |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |
