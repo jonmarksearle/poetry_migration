@@ -22,9 +22,17 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 
 1. `cd /home/jon/Work/poetry_migration`
 2. `uv sync` (once per environment to install dependencies)
-3. `uv run migrate-poetry /absolute/path/to/repo`
+3. `uv run migrate-poetry /absolute/path/to/repo` (or `uv run python -m migrate_repo /absolute/path/to/repo` if you prefer the Typer module entrypoint)
 
-The `migrate-poetry` entry point delegates to `migrate_repo.py`, ensuring the shared lockfile, manifest updates, and logging behaviour stay consistent.
+Both commands delegate to `migrate_repo.py`, ensuring the shared lockfile, manifest updates, and logging behaviour stay consistent.
+
+#### Handling repositories that already use uv
+
+1. `cd /path/to/repo`
+2. `uv sync --refresh`
+3. Fix any dependency or typing issues (update `pyproject.toml`, rerun `uv run ruff check`, `uv run mypy .`, `uv run pytest`)
+4. Rerun the migration command (`uv run migrate-poetry …` or `uv run python -m migrate_repo …`) to refresh analysis output
+5. Update `poetry_to_uv_manifest.yaml`, `poetry_migration_runbook.md`, and `/home/jon/Work/change_log.md`, then commit both the target repo and this documentation project
 
 ## Maintenance
 
