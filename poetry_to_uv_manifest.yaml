@@ -143,7 +143,9 @@ repos:
 - path: AjanCodesExamples/2024/tuesday_tips/jinja2
   tier: tier1
   wave: 1
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Already migrated; stub packages added earlier
 - path: AjanCodesExamples/2024/tuesday_tips/openai
   tier: tier1
   wave: 1
