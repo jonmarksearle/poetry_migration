@@ -107,11 +107,15 @@ repos:
 - path: AjanCodesExamples/2024/tuesday_tips/custom_exceptions
   tier: tier1
   wave: 1
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Already converted to uv before manifest refresh
 - path: AjanCodesExamples/2024/tuesday_tips/dependency_injection
   tier: tier1
   wave: 1
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Already converted to uv; manifest drift corrected
 - path: AjanCodesExamples/2024/tuesday_tips/fail_fast
   tier: tier1
   wave: 1
