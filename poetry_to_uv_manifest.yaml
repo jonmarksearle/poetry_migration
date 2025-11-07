@@ -287,7 +287,9 @@ repos:
 - path: AjanCodesExamples/2023/money
   tier: tier3
   wave: 3
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Removed fake stubs, tightened Money operators, added pytest smoke
 - path: AjanCodesExamples/2024/build_deploy_host_backend/skypulse
   tier: tier3
   wave: 3
