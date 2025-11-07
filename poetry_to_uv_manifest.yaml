@@ -215,7 +215,9 @@ repos:
 - path: AjanCodesExamples/2024/asyncio_dive
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Updated aiofiles deps, added type hints + fixed mypy config
 - path: AjanCodesExamples/2024/badoo
   tier: tier2
   wave: 2
