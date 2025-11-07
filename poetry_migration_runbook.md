@@ -13,6 +13,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2023/orm | 2025-11-07 | ✅ | Removed invalid stub deps, added mypy override and typing fixes |
 | 2023/pandera | 2025-11-07 | ✅ | Upgraded pandas deps, added pandas-stubs, cleaned SchemaModel usage |
 | 2023/poetry/app | 2025-11-07 | ✅ | Removed fake stub deps, added __all__, tuned mypy overrides |
+| 2024/apidesign | 2025-11-07 | ✅ | Dropped invalid stubs, typed DB deps, uv sync clean |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |
