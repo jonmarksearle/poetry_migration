@@ -245,7 +245,9 @@ repos:
 - path: AjanCodesExamples/2024/rate_limiting
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Dropped fake types-* stubs, typed decorators, added pytest smoke + deptry ignore rationale
 - path: AjanCodesExamples/2024/repository
   tier: tier2
   wave: 2
