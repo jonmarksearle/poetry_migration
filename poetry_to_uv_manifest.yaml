@@ -281,7 +281,9 @@ repos:
 - path: AjanCodesExamples/2023/langchain
   tier: tier3
   wave: 3
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Renamed package to avoid conflicts, imported langchain-community, added pytest smoke
 - path: AjanCodesExamples/2023/money
   tier: tier3
   wave: 3
