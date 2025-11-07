@@ -221,7 +221,9 @@ repos:
 - path: AjanCodesExamples/2024/badoo
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Removed fake stub deps; uv sync/mypy/ruff verified
 - path: AjanCodesExamples/2024/burn
   tier: tier2
   wave: 2
