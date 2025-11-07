@@ -257,7 +257,9 @@ repos:
 - path: AjanCodesExamples/2024/sqlalchemy
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Swapped to DeclarativeBase/Mapped columns, typed engines, added pytest auth smoke
 - path: AjanCodesExamples/2024/streamlit
   tier: tier2
   wave: 2
