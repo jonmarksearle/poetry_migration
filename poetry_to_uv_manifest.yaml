@@ -227,7 +227,9 @@ repos:
 - path: AjanCodesExamples/2024/burn
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Fixed Stripe helpers + json loader; uv checks pass
 - path: AjanCodesExamples/2024/dependency_injection
   tier: tier2
   wave: 2

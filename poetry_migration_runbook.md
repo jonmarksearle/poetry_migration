@@ -16,6 +16,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2024/apidesign | 2025-11-07 | ✅ | Dropped invalid stubs, typed DB deps, uv sync clean |
 | 2024/asyncio_dive | 2025-11-07 | ✅ | Bumped aiofiles, removed fake stubs, annotated servers |
 | 2024/badoo | 2025-11-07 | ✅ | Dropped nonexistent stub deps; uv sync/mypy clean |
+| 2024/burn | 2025-11-07 | ✅ | Typed Stripe helpers + config loader; uv gate green |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |
