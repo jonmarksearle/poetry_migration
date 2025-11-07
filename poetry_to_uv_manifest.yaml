@@ -263,7 +263,9 @@ repos:
 - path: AjanCodesExamples/2024/streamlit
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Fixed invalid version specs, removed fake stubs, typed utils + Streamlit views, added pytest smoke
 - path: AjanCodesExamples/2024/uncommon_db
   tier: tier2
   wave: 2
