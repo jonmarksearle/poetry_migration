@@ -269,7 +269,9 @@ repos:
 - path: AjanCodesExamples/2024/uncommon_db
   tier: tier2
   wave: 2
-  status: pending
+  status: migrated
+  last_updated: 2025-11-07
+  notes: Dropped fake stub deps, hardened Redis/influx examples, added numpy + pytest smoke
 - path: AjanCodesExamples/2024/unit_of_work
   tier: tier2
   wave: 2
