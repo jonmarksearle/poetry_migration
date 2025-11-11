@@ -27,6 +27,7 @@ This runbook captures in-flight progress for migrating Poetry-based repositories
 | 2024/unit_of_work | 2025-11-07 | ✅ | Removed fake stubs, moved to DeclarativeBase, added pytest smoke |
 | 2023/langchain | 2025-11-07 | ✅ | Renamed package, switched to langchain-community, added pytest smoke |
 | 2023/money | 2025-11-07 | ✅ | Removed fake stubs, typed Money ops, added pytest smoke |
+| 2024/build_deploy_host_backend/skypulse | 2025-11-11 | ✅ | Fixed FastAPI config imports, typed SQLAlchemy base/models, trimmed unused deps |
 | 2024/clean_code/after | 2025-10-30 | ✅ | Added python-dotenv + dev tooling |
 | 2024/clean_code/before | 2025-10-30 | ✅ | Added dev tool deps, stubbed invoices import |
 | 2024/func | 2025-10-30 | ✅ | Converted with standard dev tooling |
