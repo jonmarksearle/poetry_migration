@@ -7,6 +7,7 @@ This repository contains all documentation, runbooks, tracking artifacts, and mi
 - **poetry_migration_strategy.md** — High-level migration strategy and phased plan
 - **poetry_migration_runbook.md** — Operational runbook with per-repo status tracking and helper script templates
 - **poetry_to_uv_manifest.yaml** — Machine-readable manifest of all repos
+- **/home/jon/Work/writing_tests.md** — Shared testing protocol (roles, coverage expectations). Read this before editing or reviewing tests in this repo.
 
 ## Tracking Files
 
