@@ -11,3 +11,7 @@ __pycache__/
 *.swp
 *~
 .uv-cache/
+
+# Environment
+.venv/
+.env
