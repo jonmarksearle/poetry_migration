@@ -31,7 +31,7 @@ Both commands delegate to `migrate_repo.py`, ensuring the shared lockfile, manif
 
 1. `cd /path/to/repo`
 2. `uv sync --refresh`
-3. Fix any dependency or typing issues (update `pyproject.toml`, rerun `uv run ruff check`, `uv run mypy .`, `uv run pytest`)
+3. Fix any dependency or typing issues (update `pyproject.toml`, rerun `uv run ruff check`, `uv run mypy .`, `uvx pytest`)
 4. Rerun the migration command (`uv run migrate-poetry …` or `uv run python -m migrate_repo …`) to refresh analysis output
 5. Update `poetry_to_uv_manifest.yaml`, `poetry_migration_runbook.md`, and `/home/jon/Work/change_log.md`, then commit both the target repo and this documentation project
 

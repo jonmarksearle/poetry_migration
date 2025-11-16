@@ -102,7 +102,7 @@ A repository is considered successfully migrated when:
    - `uv run deptry .`
    - `uv run ruff check .`
    - `uv run mypy .`
-   - `uv run pytest`
+   - `uvx pytest`
 6. Changes are committed
 7. Manifest is updated
 

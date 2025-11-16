@@ -73,7 +73,7 @@ uv run python -m migrate_repo /path/to/repo
 
 1. `cd /path/to/repo`
 2. `uv sync --refresh`
-3. Address any dependency or typing issues (`uv run ruff check`, `uv run mypy .`, `uv run pytest`)
+3. Address any dependency or typing issues (`uv run ruff check`, `uv run mypy .`, `uvx pytest`)
 4. Rerun the migration command so `migrate_repo.py` refreshes analysis output and logging
 5. Update `poetry_to_uv_manifest.yaml`, this runbook, and `/home/jon/Work/change_log.md`, then commit both the target repo and `poetry_migration`
 

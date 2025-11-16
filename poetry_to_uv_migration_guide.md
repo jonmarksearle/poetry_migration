@@ -149,7 +149,7 @@ After migration:
 
 1. **Check pyproject.toml** - Verify all dependencies are present
 2. **Test installation** - `uv sync`
-3. **Run tests** - `uv run pytest`
+3. **Run tests** - `uvx pytest`
 4. **Check scripts** - Verify any `[project.scripts]` entries work
 5. **Verify extras** - Test optional dependencies: `uv sync --extra duckdb`
 
@@ -174,7 +174,7 @@ Or:
   hooks:
     - id: pytest
       name: pytest
-      entry: uv run pytest
+      entry: uvx pytest
       language: system
       pass_filenames: false
 ```
@@ -202,7 +202,7 @@ uv remove requests
 
 # Run a command in the environment
 uv run python script.py
-uv run pytest
+uvx pytest
 
 # Update dependencies
 uv lock --upgrade
